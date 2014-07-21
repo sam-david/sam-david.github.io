@@ -11,4 +11,4 @@ However, I really cannot complain because for the most part it is a pretty chill
 
 Although working for Tesla is great, and I strongly believe in what the company is doing, I am not sure I would want to pursue a career working there. I am not sure I would want to work in sales. Also, I see that position my managers are in and I am not sure I would want that. You really have to be passionate about Tesla, and be in it for the long haul knowing you are going to make some sacrifices now while the company is growing. If Tesla were to higher me as web developer after school, then that is another story.
 
-![My helpful screenshot](/assets/models.jpg)
+![models](/assets/models.jpg)
