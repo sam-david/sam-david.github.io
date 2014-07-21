@@ -11,4 +11,4 @@ The other day I was biking Walnut Creek after the most recent rainstorm. The tra
 
 Stopping on the fixed gear bikes is tough and I am still learning how to do it more quickly. I ended up going under the tree but smacking my helmet on the bottom of it causing it to hit my nose. Not a big deal though, I was more upset about how dirty my bike got! I am really starting to enjoy riding the fixed gear as I get more use to it.
 
-![mudpit](/assets/mudpit.jpg)
+![mudpit](/assets/mudpit.JPG)
