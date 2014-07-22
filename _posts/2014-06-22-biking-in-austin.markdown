@@ -9,4 +9,9 @@ Cycling around Austin is very different from Los Angeles. In Los Angeles there w
 
 When I moved to Austin I knew I was going to have a lot more options for bike routes. I started mountain biking around town lake and have found other road routes like Shoal Creek blvd and even the 360. The town lake is a nice shorter route that I can do in about an hour or so. I frequently do this before work or on days I know I do not have as much time. 
 
+<img src="/assets/shoalcreek.png" class="blog-image">
+<img src="/assets/walnutcreek.png" class="blog-image">
+
 After saving up for quite some time, I saved up to purchase a new road bike. For the past year, I have been using a hybrid bike, which is much heavier and not quite is good for longer rides. I decided it was time to pull the trigger and purchase a new road bike. I have had it for a couple weeks now but love the difference so far. Some of my favorite routes to go on around here are Shoal Creek Blvd and the 360. I tried the 360 for the very first time with this bike and reached a large hill where I was able to go 45 mph! Check out this route map to see my max speed on that trip. Up until then, I had never gone any faster than 35 mph so this was a very wild experience. 
+
+<img src="/assets/roadbike.jpg" class="blog-image center-image">
