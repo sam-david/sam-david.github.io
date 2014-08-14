@@ -71,6 +71,7 @@
 	border-radius: 4px;
 	color: #2ab6ff;
 	text-align: center;
+	font-size: 1.25em;
 	/*text-shadow: -1px -1px 0 rgba(0,0,0,.5);*/
 }
 	.alertify-log-error {
