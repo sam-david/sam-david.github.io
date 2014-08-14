@@ -6,8 +6,8 @@ function submitContact () {
 	var contact = $('#email').val();
 	myDataRef.push(contact);
 	$('#email').val("");
-      alertify.alert("Thank you for your interest");
-      // alertify.log("Thank you for your interest");
+      // alertify.alert("Thank you for your interest");
+      alertify.log("Thank you for your interest");
 }
 
       // $('#submit').keypress(function (e) {
