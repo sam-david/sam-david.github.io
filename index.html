@@ -1,38 +1,526 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
-  <title>The Global CO2 Science Initiative</title>
-  <link href="css/main.css" rel="stylesheet" type="text/css" />
-  <link href="css/alertify.core.css" rel="stylesheet" type="text/css" />
-  <link href="css/alertify.default.css" rel="stylesheet" type="text/css" />
-  <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+	<title>Tesla Model S Vechicle Comparison</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fugaz+One|Racing+Sans+One|Black+Ops+One|Bangers' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Michroma|Fredoka+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css" />
+	<link href="css/simple-slider.css" rel="stylesheet" type="text/css" />
+	<link href="css/simple-slider-volume.css" rel="stylesheet" type="text/css" />
+	<link href="css/alertify.core.css" rel="stylesheet" type="text/css" />
+	<link href="css/alertify.default.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="css/chosen.css" rel="stylesheet" type="text/css" /> -->
+	<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
 </head>
+<body>
+<div class="background-div">
 
-<body class="page-body">
-    <div id="pagebody">
-        <div id="newsletter">
-        <div class="contact-heading">Follow our progress</div>
-        <div class="input-elements">
-        <input id="email" name="email" type="email" placeholder="Enter Your Email Address">
-        <input type="image" src="images/submit-flat.png" class="submit-button" onclick="submitContact()">
-        </div>
-        </div> 
-    </div>
+	<header>
+	</header>
+
+	<article class="intro-paragraph">
+		<p>Pick your Tesla and Comparison car to get started</p>
+	</article>
+<div class="all-selectors">
+	<div class="vehicle-selector">
+		<div class="tesla-selector-list">
+			<div id="60kwh" class="battery-option"><img src="images/battery_60.png" class="battery-image"></div><div class="battery-description" id="60kwh-description"><p class="battery-title">60 kWh Battery</p><p class="model-description">208 miles range, 0-60: 5.9 sec, 302 hp</p>
+		</div>
+
+			<div id="85kwh" class="battery-option"><img src="images/battery_85.png" class="battery-image"></div><div class="battery-description" id="85kwh-description"><p class="battery-title">85 kWh Battery</p><p class="model-description">265 miles range, 0-60: 5.4 sec, 362 hp</p></div>
+			<div id="p85kwh" class="battery-option"><img src="images/battery_p85.png" class="battery-image"></div><div class="battery-description" id="p85kwh-description"><p class="battery-title">85 kWh Performance</p><p class="model-description">265 miles range, 0-60: 4.2 sec, 416 hp</p></div>
+		</div>
+
+		<div class="middle-divider"></div>
+	</div>
+		<div class="comparison-vehicle-selector">
+			<select class="year-select-box" id="yearSelect">
+				<option value="" disabled selected>Year</option>
+				<option value="2014">2014</option>
+				<option value="2013">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+				<option value="2010">2010</option>
+				<option value="2009">2009</option>
+				<option value="2008">2008</option>
+				<option value="2007">2007</option>
+				<option value="2006">2006</option>
+				<option value="2005">2005</option>
+				<option value="2004">2004</option>
+				<option value="2003">2003</option>
+				<option value="2002">2002</option>
+				<option value="2001">2001</option>
+				<option value="2000">2000</option>
+				<option value="1990">1999</option>
+				<option value="1990">1998</option>
+				<option value="1990">1997</option>
+				<option value="1990">1996</option>
+				<option value="1990">1995</option>
+				<option value="1990">1994</option>
+				<option value="1990">1993</option>
+				<option value="1992">1992</option>
+				<option value="1991">1991</option>
+				<option value="1990">1990</option>
+			</select>
+
+			<select class="select-box" id="makeSelect" disabled>
+				<option value="" disabled>Select Make</option>
+			</select>
+			<select class="model-select-box" id="modelSelect" disabled>
+				<option value="" disabled>Select Base Model</option>
+			</select>
+			<select class="long-select-box" id="specificModelSelect" disabled>
+				<option value="" disabled>Select Specific Model</option>
+			</select>
+			<hr class="select-line">
+			<select class="state-select-box" id="stateSelect" disabled>
+				<option value="0" disabled selected>Select State</option>
+				<option value="AL">AL</option>
+				<option value="AK">AK</option>
+				<option value="AZ">AZ</option>
+				<option value="AR">AR</option>
+				<option value="CA">CA</option>
+				<option value="CO">CO</option>
+				<option value="CT">CT</option>
+				<option value="DE">DE</option>
+				<option value="FL">FL</option>
+				<option value="GA">GA</option>
+				<option value="HI">HI</option>
+				<option value="IA">IA</option>
+				<option value="ID">ID</option>
+				<option value="IL">IL</option>
+				<option value="IN">IN</option>
+				<option value="KS">KS</option>
+				<option value="KY">KY</option>
+				<option value="LA">LA</option>
+				<option value="MA">MA</option>
+				<option value="MD">MD</option>
+				<option value="ME">ME</option>
+				<option value="MI">MI</option>
+				<option value="MN">MN</option>
+				<option value="MS">MS</option>
+				<option value="MO">MO</option>
+				<option value="MT">MT</option>
+				<option value="NC">NC</option>
+				<option value="ND">ND</option>
+				<option value="NE">NE</option>
+				<option value="NH">NH</option>
+				<option value="NJ">NJ</option>
+				<option value="NM">NM</option>
+				<option value="NV">NV</option>
+				<option value="NY">NY</option>
+				<option value="OH">OH</option>
+				<option value="OK">OK</option>
+				<option value="OR">OR</option>
+				<option value="PA">PA</option>
+				<option value="RI">RI</option>
+				<option value="SC">SC</option>
+				<option value="SD">SD</option>
+				<option value="TN">TN</option>
+				<option value="TX">TX</option>
+				<option value="UT">UT</option>
+				<option value="VA">VA</option>
+				<option value="VT">VT</option>
+				<option value="WA">WA</option>
+				<option value="WI">WI</option>
+				<option value="WV">WV</option>
+				<option value="WY">WY</option>
+			</select>
+			<input class="zip-text" id="zipCode" type="text" placeholder="Zip Code" disabled>
+			<button class="submit-button" type="button" onclick="submitCar()">Submit</button>
+			<button class="submit-button" type="button" onclick="reset()">Reset</button>
+		</div>
+	<div class="page-navigator">
+		<a class="navigator-cell disabled" href="#fueleconcomparison" id="fuel-link">Fuel<img src="images/elements/empty-light.png" id="fuel-light"class="nav-light"></a>
+		<a class="navigator-cell disabled" href="#performance" id="performance-link">Performance<img src="images/elements/empty-light.png" id="performance-light" class="nav-light"></a>
+		<a class="navigator-cell disabled" href="#cost" id="cost-link">Cost<img src="images/elements/empty-light.png" id="cost-light" class="nav-light"></a>
+		<a class="navigator-cell bottom-nav disabled" href="#teslaannual" id="tesla-annual-link">Tesla Annual<img src="images/elements/empty-light.png" id="tesla-light" class="nav-light"></a>
+		<a class="navigator-cell bottom-nav disabled" href="#compannual" id="comp-annual-link">Comp Annual<img src="images/elements/empty-light.png" class="nav-light"></a>
+		<div class="nav-info"><img src="images/elements/green-light.png" class="tiny-light"> = Data Complete<img src="images/elements/yellow-light.png" class="tiny-light"> = Data Missing<img src="images/elements/red-light.png" class="tiny-light"> = No Data</div>
+
+	</div>
+
+</div>
+
+<a name="fueleconcomparison"></a>
+<div class="car-battle-display">
+	<div class="tesla-display">
+		<img src="images/model-s-60.jpg" class="car-photo" id="tesla-photo">
+		<h2 class="car-display-title tesla-color" id="tesla-title">Tesla</h2>
+	</div>
+	<div class="vs-display">
+			<img src="images/elements/vs-formal.png" class="vs-icon">
+	</div>
+	<div class="comparison-display">
+		<img src="images/model-s-60.jpg" class="car-photo" id="comparison-photo">
+		<h2 class="car-display-title" id="comparison-title">Comparison Auto</h2>
+	</div>
+
+</div>
+
+
+<div class="fuel-economy-comparison">
+	<div class="tesla-fuel-economy">
+		<div class="tesla-fuel-background">
+		<div class="tesla-fuel-cell border-top-class"><span id="tesla-MPG-combined"></span><span class="small-label"> combined</span></div>
+		<div class="tesla-fuel-cell"><span id="tesla-MPG"></span><span class="small-label"> city/Highway</span></div>
+		<div class="tesla-bottom-fuel-cell"><span id="tesla-capacity"></span><span class="small-label"> electric range</span></div>
+		</div>
+	</div>
+	<div class="comp-fuel-economy">
+		<div class="comp-fuel-background">
+		<div class="comp-fuel-cell border-top-class"><span id="comp-MPG-combined"></span><span class="small-label"> combined</span></div>
+		<div class="comp-fuel-cell"><span id="comp-MPG"></span><span class="small-label"> city/Highway</span></div>
+		<div class="comp-bottom-fuel-cell"><span id="comp-capacity"></span><span class="small-label"> cap (total miles)</span></div>
+		</div>
+	</div>
+	<div class="fuel-milage-slider">
+		<h2 class="mile-heading">Miles Driven: <span id="annualMiles">0 Miles</span></h2>
+ 		<div class="slider-box"><input id="mileslide" type="text" data-slider="true" data-slider-range="5000,150000" data-slider-step="5000" data-slider-theme="volume" data-slider-highlight="true"></div>
+ 		<div class="mile-slider-label">
+ 			<div class="mile-box clear-both">10k</div>
+ 			<div class="mile-box">20k</div>
+ 			<div class="mile-box">30k</div>
+ 			<div class="mile-box">40k</div>
+ 			<div class="mile-box">50k</div>
+ 			<div class="mile-box">60k</div>
+ 			<div class="mile-box">70k</div>
+ 			<div class="mile-box">80k</div>
+ 			<div class="mile-box">90k</div>
+ 			<div class="mile-box">100k</div>
+ 			<div class="mile-box">110k</div>
+ 			<div class="mile-box">120k</div>
+ 			<div class="mile-box">130k</div>
+ 			<div class="mile-box">140k</div>
+ 			<div class="mile-box">150k</div>
+ 		</div>
+	</div>
+	<div class="final-fuel-costs">
+		<div class="final-fuel-cell" id="tesla-fuel-cost">Move Slider</div>
+		<div class="final-fuel-cell-difference gas-color"><span id="fuel-cost-difference"></span><span class="small-label"> +/-</span></div>
+		<div class="final-fuel-cell" id="comp-fuel-cost"> Move Slider</div>
+	</div>
+</div>
+
+<div class="fuel-price-bar">
+	<div class="energy-price">
+		<span class="energy-heading">Current Energy Price: </span><img src="images/elements/electric-button-up-normal.png" class="energy-arrow" onclick="adjustEnergyPrice('up')"><img src="images/elements/electric-button-down-normal.png" class="energy-arrow" onclick="adjustEnergyPrice('down')"><span id="currentenergy" class="energy-price-number">$.11</span><img src="images/elements/electric-icon-small.png" class="electric-icon">
+	</div>
+	<div class="gas-price">
+		<span class="gas-heading">Current Gas Price: </span><img src="images/elements/gas-button-up-normal.png" class="gas-arrow" onclick="adjustGasPrice('up')"><img src="images/elements/gas-button-down-normal2.png" class="gas-arrow" onclick="adjustGasPrice('down')"><span id="currentgas" class="gas-price-number">$3.67</span><img src="images/elements/fuel-icon-small.png" class="gas-icon">
+	</div>
+</div>
+
+<a name="performance"></a>
+
+<div class="performance-section">
+	<div class="car-titles">
+<h2 class="car-performance-title tesla-color" id="tesla-title-performance">Tesla</h2>
+
+<h2 class="car-performance-title" id="comparison-title-performance">Comparison Auto</h2>
+</div>
+
+<h2 class="comparison-heading performance-heading">Performance</h2>
+
+<div class="performance-comparison">
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-horsepower"></div>
+		<div class="performance-stat small-label">Horsepower</div>
+		<div class="performance-stat" id="comp-horsepower"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-torque"></div>
+		<div class="performance-stat small-label">Torque</div>
+		<div class="performance-stat" id="comp-torque"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-0-60"></div>
+		<div class="performance-stat small-label">0-60 Speed</div>
+		<div class="performance-stat" id="comp-0-60"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-radius"></div>
+		<div class="performance-stat small-label">Turn Radius</div>
+		<div class="performance-stat" id="comp-radius"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-airdrag"></div>
+		<div class="performance-stat small-label">Air Drag</div>
+		<div class="performance-stat" id="comp-airdrag"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-weight"></div>
+		<div class="performance-stat small-label">Curb Weight</div>
+		<div class="performance-stat" id="comp-weight"></div>
+	</div>
+</div>
+
+</div>
+<a name="cost"></a>
+<h2 class="comparison-heading cost-heading">Year One Cost</h2>
+
+<div class="cost-comparison">
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-fuel"></div>
+		<div class="performance-stat small-label">Fuel</div>
+		<div class="performance-stat" id="comp-fuel"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-insurance"></div>
+		<div class="performance-stat small-label">Insurance</div>
+		<div class="performance-stat" id="comp-insurance"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-maintenance"></div>
+		<div class="performance-stat small-label">Maintenance</div>
+		<div class="performance-stat" id="comp-maintenance"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-repairs"></div>
+		<div class="performance-stat small-label">Repairs</div>
+		<div class="performance-stat" id="comp-repairs"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-depreciation"></div>
+		<div class="performance-stat small-label">Depreciation</div>
+		<div class="performance-stat" id="comp-depreciation"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-tax"></div>
+		<div class="performance-stat small-label">Taxes and Fees</div>
+		<div class="performance-stat" id="comp-tax"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-financing"></div>
+		<div class="performance-stat small-label">Financing</div>
+		<div class="performance-stat" id="comp-financing"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-tax-credit"></div>
+		<div class="performance-stat small-label">Tax Credit</div>
+		<div class="performance-stat" id="comp-tax-credit"></div>
+	</div>
+	<div class="performance-cell">
+		<div class="performance-stat" id="tesla-total"></div>
+		<div class="performance-stat small-label">Total Cost</div>
+		<div class="performance-stat" id="comp-total"></div>
+	</div>
+</div>
+<a name="teslaannual"></a>
+<div class="bottom-table-headings">
+<h2 class="tesla-cost-heading tesla-heading">Tesla Annual Cost</h2>
+</div>
+
+<div class="bottom-tables tesla-table">
+	<div class="cost-row">
+		<div class="cost-cell-heading" id="tesla-value"></div>
+		<div class="cost-cell-heading">Year 1</div>
+		<div class="cost-cell-heading">Year 2</div>
+		<div class="cost-cell-heading">Year 3</div>
+		<div class="cost-cell-heading">Year 4</div>
+		<div class="cost-cell-heading">Year 5</div>
+		<div class="cost-cell-heading">5 Year Total</div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Fuel</div>
+		<div class="cost-cell" id="tesla-fuel1"></div>
+		<div class="cost-cell" id="tesla-fuel2"></div>
+		<div class="cost-cell" id="tesla-fuel3"></div>
+		<div class="cost-cell" id="tesla-fuel4"></div>
+		<div class="cost-cell" id="tesla-fuel5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-fuel-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Insurance</div>
+		<div class="cost-cell" id="tesla-insurance1"></div>
+		<div class="cost-cell" id="tesla-insurance2"></div>
+		<div class="cost-cell" id="tesla-insurance3"></div>
+		<div class="cost-cell" id="tesla-insurance4"></div>
+		<div class="cost-cell" id="tesla-insurance5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-insurance-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Maintenance</div>
+		<div class="cost-cell" id="tesla-maintenance1"></div>
+		<div class="cost-cell" id="tesla-maintenance2"></div>
+		<div class="cost-cell" id="tesla-maintenance3"></div>
+		<div class="cost-cell" id="tesla-maintenance4"></div>
+		<div class="cost-cell" id="tesla-maintenance5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-maintenance-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Repairs</div>
+		<div class="cost-cell" id="tesla-repairs1"></div>
+		<div class="cost-cell" id="tesla-repairs2"></div>
+		<div class="cost-cell" id="tesla-repairs3"></div>
+		<div class="cost-cell" id="tesla-repairs4"></div>
+		<div class="cost-cell" id="tesla-repairs5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-repairs-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Depreciation</div>
+		<div class="cost-cell" id="tesla-depreciation1"></div>
+		<div class="cost-cell" id="tesla-depreciation2"></div>
+		<div class="cost-cell" id="tesla-depreciation3"></div>
+		<div class="cost-cell" id="tesla-depreciation4"></div>
+		<div class="cost-cell" id="tesla-depreciation5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-depreciation-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Taxes and Fees</div>
+		<div class="cost-cell" id="tesla-tax1"></div>
+		<div class="cost-cell" id="tesla-tax2"></div>
+		<div class="cost-cell" id="tesla-tax3"></div>
+		<div class="cost-cell" id="tesla-tax4"></div>
+		<div class="cost-cell" id="tesla-tax5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-tax-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Financing</div>
+		<div class="cost-cell" id="tesla-financing1"></div>
+		<div class="cost-cell" id="tesla-financing2"></div>
+		<div class="cost-cell" id="tesla-financing3"></div>
+		<div class="cost-cell" id="tesla-financing4"></div>
+		<div class="cost-cell" id="tesla-financing5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-financing-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Tax Credit</div>
+		<div class="cost-cell" id="tesla-tax-credit1"></div>
+		<div class="cost-cell" id="tesla-tax-credit2"></div>
+		<div class="cost-cell" id="tesla-tax-credit3"></div>
+		<div class="cost-cell" id="tesla-tax-credit4"></div>
+		<div class="cost-cell" id="tesla-tax-credit5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-tax-credit-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading">Total Cost</div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-total-year1"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-total-year2"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-total-year3"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-total-year4"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-total-year5"></div>
+		<div class="cost-cell cost-cell-tesla-bold" id="tesla-grand-total"></div>
+	</div>
+</div>
+
+<div class="comp-annual">
+<a name="compannual"></a>
+<div class="bottom-table-headings">
+<h2 class="tesla-cost-heading comp-heading">Comparison Annual Cost</h2>
+</div>
+
+<div class="bottom-tables comp-table">
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color" id="comp-value"></div>
+		<div class="cost-cell-heading comp-color">Year 1</div>
+		<div class="cost-cell-heading comp-color">Year 2</div>
+		<div class="cost-cell-heading comp-color">Year 3</div>
+		<div class="cost-cell-heading comp-color">Year 4</div>
+		<div class="cost-cell-heading comp-color">Year 5</div>
+		<div class="cost-cell-heading comp-color">5 Year Total</div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Fuel</div>
+		<div class="cost-cell" id="comp-fuel1"></div>
+		<div class="cost-cell" id="comp-fuel2"></div>
+		<div class="cost-cell" id="comp-fuel3"></div>
+		<div class="cost-cell" id="comp-fuel4"></div>
+		<div class="cost-cell" id="comp-fuel5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-fuel-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Insurance</div>
+		<div class="cost-cell" id="comp-insurance1"></div>
+		<div class="cost-cell" id="comp-insurance2"></div>
+		<div class="cost-cell" id="comp-insurance3"></div>
+		<div class="cost-cell" id="comp-insurance4"></div>
+		<div class="cost-cell" id="comp-insurance5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-insurance-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Maintenance</div>
+		<div class="cost-cell" id="comp-maintenance1"></div>
+		<div class="cost-cell" id="comp-maintenance2"></div>
+		<div class="cost-cell" id="comp-maintenance3"></div>
+		<div class="cost-cell" id="comp-maintenance4"></div>
+		<div class="cost-cell" id="comp-maintenance5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-maintenance-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Repairs</div>
+		<div class="cost-cell" id="comp-repairs1"></div>
+		<div class="cost-cell" id="comp-repairs2"></div>
+		<div class="cost-cell" id="comp-repairs3"></div>
+		<div class="cost-cell" id="comp-repairs4"></div>
+		<div class="cost-cell" id="comp-repairs5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-repairs-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Depreciation</div>
+		<div class="cost-cell" id="comp-depreciation1"></div>
+		<div class="cost-cell" id="comp-depreciation2"></div>
+		<div class="cost-cell" id="comp-depreciation3"></div>
+		<div class="cost-cell" id="comp-depreciation4"></div>
+		<div class="cost-cell" id="comp-depreciation5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-depreciation-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Taxes and Fees</div>
+		<div class="cost-cell" id="comp-tax1"></div>
+		<div class="cost-cell" id="comp-tax2"></div>
+		<div class="cost-cell" id="comp-tax3"></div>
+		<div class="cost-cell" id="comp-tax4"></div>
+		<div class="cost-cell" id="comp-tax5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-tax-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Financing</div>
+		<div class="cost-cell" id="comp-financing1"></div>
+		<div class="cost-cell" id="comp-financing2"></div>
+		<div class="cost-cell" id="comp-financing3"></div>
+		<div class="cost-cell" id="comp-financing4"></div>
+		<div class="cost-cell" id="comp-financing5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-financing-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Tax Credit</div>
+		<div class="cost-cell" id="comp-tax-credit1"></div>
+		<div class="cost-cell" id="comp-tax-credit2"></div>
+		<div class="cost-cell" id="comp-tax-credit3"></div>
+		<div class="cost-cell" id="comp-tax-credit4"></div>
+		<div class="cost-cell" id="comp-tax-credit5"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-tax-credit-total"></div>
+	</div>
+	<div class="cost-row">
+		<div class="cost-cell-heading comp-color">Total Cost</div>
+		<div class="cost-cell cost-cell-bold" id="comp-year1-total"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-year2-total"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-year3-total"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-year4-total"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-year5-total"></div>
+		<div class="cost-cell cost-cell-bold" id="comp-grand-total"></div>
+	</div>
+</div>
+</div>
+
+<!-- <div id="chart_div" style="width: 900px; height: 500px;"></div> -->
+<footer>
+		<a href="mailto:sfd1987@gmail.com" class="footer-link">Contact</a>
+		<a href="mailto:sfd1987@gmail.com" class="footer2-link">About</a>
+		<a href="http://www.teslamotors.com/" class="footer2-link">Tesla</a>
+		<a href="http://www.edmunds.com/" class="footer2-link">Edmunds</a>
+</footer>
+</div>
+	<script src="jquery-2.1.0.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/alertify.js"></script>
+	<script src="js/simple-slider.js"></script>
+	<script src="js/chosen.jquery.js"></script>
+	<script src="js/chosen.proto.js"></script>
+	<script src="script.js"></script>
 </body>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-49226266-3', 'co2sciences.org');
-  ga('send', 'pageview');
-
-</script>
-<script src="js/jquery-2.1.0.js"></script>
-<script src="js/alertify.js"></script>
-<script src="js/script.js"></script>
-
 </html>

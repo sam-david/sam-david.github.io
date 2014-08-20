@@ -3,13 +3,12 @@
  */
 .alertify,
 .alertify-log {
-	font-family: 'Josefin Sans', sans-serif;
-	font-weight: 700;
+	font-family: sans-serif;
 }
 .alertify {
 	background: #FFF;
-	border: 5px solid #2ab6ff; /* browsers that don't support rgba */
-	border: 5px solid rgba(42,182,255,.7);
+	border: 10px solid #333; /* browsers that don't support rgba */
+	border: 10px solid rgba(0,0,0,.7);
 	border-radius: 8px;
 	box-shadow: 0 3px 3px rgba(0,0,0,.3);
 	-webkit-background-clip: padding;     /* Safari 4? Chrome 6? */
@@ -60,19 +59,17 @@
 		.alertify-button-ok,
 		.alertify-button-ok:hover,
 		.alertify-button-ok:focus {
-			background-color: #2ab6ff;
+			background-color: #bf0021;
 			border: 1px solid #3B7808;
 		}
 
 .alertify-log {
-	background: #FFF;
-	background: rgba(255,255,255,1);
+	background: #1F1F1F;
+	background: rgba(0,0,0,.9);
 	padding: 15px;
 	border-radius: 4px;
-	color: #2ab6ff;
-	text-align: center;
-	font-size: 1.25em;
-	/*text-shadow: -1px -1px 0 rgba(0,0,0,.5);*/
+	color: #FFF;
+	text-shadow: -1px -1px 0 rgba(0,0,0,.5);
 }
 	.alertify-log-error {
 		background: #FE1A00;
