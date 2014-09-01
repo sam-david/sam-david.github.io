@@ -104,7 +104,7 @@ header:before {
 }
 
 .pagearticle table {
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 #aboutmeparagraph {
@@ -135,6 +135,10 @@ header:before {
 #blogtitle {
   text-align: center;
   text-decoration: underline;
+}
+
+.blog-heading {
+  text-align: center;
 }
 
 .blogcontent {
