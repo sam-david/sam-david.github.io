@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Monoton|Righteous' rel='stylesheet' type='text/css'>
+<title>Sam David: Week 4 Technical Blog</title>
+<link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+   <header>
+    <h1 class="name-title"> Sam David </h1>
+  </header>
+<nav id="mainNav">
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="about.html">Projects</a>
+  <a href="contact.html">Contact Me</a>
+</nav>
+<article class="pagearticle">
+  <h2 id="blogtitle">Ruby Method Blog: .map Method </h2>
+<p class="blogcontent">The enumerable method I decided to write a blog on is the .map method. This method is used to iterate over each element in an array or range and returns an array with the specified function you provided. For example, if you wanted to multiply every number in the array against itself you can write a .map method to do just that.</p>
+<p class="code-example"> [1,2,3].map {|x| x * x} <span class="ruby-return">#=> [1, 4, 6]</span></p>
+<p class="blogcontent">You can also use .map on a range to perform similar tasks on a specific range of numbers</p>
+<p class="code-example"> (1..5).map {|x| (x * x) + 2} <span class="ruby-return">#=> [3, 6, 11, 18, 27]</span></p>
+<p class="blogcontent">.map is also useful on an array of strings. Lets say you wanted to capitalize every element in an array</p>
+<p class="code-example"> ["sam","fred","david"].map {|x| x.capitalize} <span class="ruby-return">#=> ["Sam", "Fred", "David"]</span></p>
+<p class="blogcontent">A super clever thing that people like to do is pass in a callable proc object, with a method, to run on each element in the array. By doing this you can write your function on a separate line in the proc, then call it on your array using .map</p>
+<p class="code-example"> triple = Proc.new{|n| n*3} </br> [1,2,3].map(&triple) <span class="ruby-return">#=> [3, 6, 9]</span></p>
+<p class="blogcontent">Lastly, if you want to call a method instead of a proc, you can do this by using the METHOD method (confusing but look below)</p>
+<p class="code-example"> def triple(n) </br> n * 2 </br> end </br> [1,2,3].map(&method(:triple)) <span class="ruby-return">#=> [3, 6, 9]</span></p>
+<p class="blogcontent">You can use .map destructively by placing a '!' at the end of it. This will modify the original array though so be careful before using. Here I also show you how you could convert numbers into strings using .map</p>
+<p class="code-example"> number_string = [1,2,3,4] </br> number_string.map!(&:to_s) <span class="ruby-return">#=> ["1", "2", "3", "4"]</span></p>
+</article>
+<footer class="social-media">
+  <a href="mailto:sfd1987@gmail.com">E-mail Me</a>
+  <a href="tel:3025931771">Call Me</a>
+  <a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/">LinkedIn</a>
+  <a href="https://github.com/sfd1987">GitHub:sfd1987</a>
+</footer>
+</body>
+
+</html>

@@ -146,6 +146,19 @@ header:before {
   margin-right: 15px;
 }
 
+.code-example {
+  font-family: monospace;
+  margin-left: 25px;
+}
+
+.ruby-return {
+  color: #5eff1f;
+}
+
+.caption {
+  text-align: center;
+}
+
 .social-media {
 clear: both;
   float: left;
