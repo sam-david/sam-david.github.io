@@ -1,15 +1,32 @@
+/* ----------------- Color Palette --------------------
+
+Zion National Park Theme:
+Blue: #506A8D
+Light Green: #727447
+Dark Green: #413D22
+Light Brown: #C0A581
+Brown: #8B625C
+
+*/
+
 body {
-  width: 1000px;
-  position: relative;
-  margin: 0 auto;
-  background-color: #012340;
-  color: white;
-  font-family: 'Righteous', cursive;
+
+
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #506A8D;
+  color: #413D22;
+  font-family: 'Nunito', cursive;
+}
+
+.main-background {
+  background-color: #C0A581;
+  border-left: solid #8B625C 2px;
+  border-right: solid #8B625C 2px;
 }
 
 header {
-  width: 800px;
-  margin-left: 80px;
+  width: 1000px;
 }
 header:after {
   clear: both;
@@ -21,33 +38,21 @@ header:before {
   display: block;
 }
 
-.name-title {
-  text-align: center;
-  font-size: 2.8em;
-  float: left;
-  font-family: 'Monoton', cursive;
-  color: #F23827;
-  margin-top: 90px;
-  margin-left: 80px;
+.header-image {
+  border: solid #413D22 2px;
+  border-bottom: solid #413D22 4px;
+  border-top: solid #413D22 4px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
-
-.my-photo {
-  width: 200px;
-  float: right;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 100px;
-  opacity: .85;
-  border: solid white 8px;
-  border-radius: 35px;
-}
-
 
 #pagetitle {
   clear: both;
-  text-align: center;
+  text-align: left;
   margin-top: 10px;
-  text-decoration: underline;
+  margin-left: 10px;
+  font-family: 'Nunito', cursive;
+  color: #1A4F63;
 }
 
 .blogtitle {
@@ -59,37 +64,31 @@ header:before {
   font-size: .8em;
 }
 
-#mainNav {
-  margin-left: 138px;
+.nav-link {
+  background-color: #C0A581;
+  border: solid #8B625C 4px;
+  text-align: center;
+  height: 32px;
 }
-
 #mainNav a {
-  display: block;
-  float: left;
-  width: 170px;
-  height: 25px;
-  align-content:center;
   text-align: center;
   text-decoration: none;
-  border: solid #F23827 2px;
-  border-radius: 3px;
-  padding-top: 5px;
-  margin-right: 4px;
-  color: #400101;
-  background-color: #03658C;
+  /*color: #413D22;*/
+}
+
+#mainNav a:hover {
+  /*color: #727447;*/
 }
 
 .pagearticle {
   clear: both;
   float: left;
-  margin-top: 30px;
-  margin-left: 140px;
-  margin-bottom: 20px;
-  background-color: #03658C;
-  border: solid #F23827 2px;
-  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #C0A581;
+  border: solid #8B625C 2px;
   box-sizing: border-box;
-  width: 700px;
+  width: 100%;
 }
 
 .pagearticle a {
@@ -161,21 +160,26 @@ header:before {
 
 .social-media {
 clear: both;
-  float: left;
-  margin-left: 140px;
   margin-bottom: 20px;
-  background-color: #03658C;
-  border: solid #F23827 2px;
+  background-color: #C0A581;
+  border: solid #8B625C 2px;
   border-radius: 3px;
-  box-sizing: border-box;
-  width: 700px;
+  width: 100%;
 }
 
 .social-media a {
   color: #400101;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 80px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  margin-left: 130px;
+  height: 40px;
   text-decoration: none;
+}
+
+.footer-image {
+  clear: both;
+  margin-top: 10px;
+  opacity: .9;
+  border-top: solid #413D22 2px;
 }
 
