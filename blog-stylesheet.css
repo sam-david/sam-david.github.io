@@ -27,12 +27,13 @@ body {
 
 #pagetitle {
   text-align: center;
-  text-decoration: underline;
+
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
   font-family: 'Nunito', cursive;
   color: #FCB03C;
+  background-color: rgba(0, 0, 0, 0.6);
 
 }
 
