@@ -186,6 +186,7 @@ body {
 .tesla-comparison {
   box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);
   margin-bottom: 15px;
+  margin-top: 10px;
   border: solid #1B3017 5px;
   border-radius: 20px;
 }
