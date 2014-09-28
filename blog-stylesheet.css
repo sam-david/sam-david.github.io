@@ -174,3 +174,33 @@ body {
   }
 }
 
+
+/*-----------Projects------------*/
+
+.tesla-comparison {
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);
+  margin-bottom: 15px;
+  border: solid #1B3017 5px;
+  border-radius: 20px;
+}
+
+.project-description {
+  font-size: 1.6em;
+  text-align: justify;
+  color: black;
+  font-family: 'Nunito', cursive;
+}
+
+.project-description-small {
+  font-size: 1.2em;
+  text-align: justify;
+  color: black;
+  font-family: 'Nunito', cursive;
+}
+
+.gallery-project {
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);
+  margin-bottom: 15px;
+  border: solid #1B3017 5px;
+  border-radius: 15px;
+}
