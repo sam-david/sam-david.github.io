@@ -161,6 +161,7 @@ body {
 }
 .footer-image {
   margin-top: 10px;
+  margin-bottom: 15px;
   opacity: .9;
   border: solid #1B3017 5px;
   border-bottom-right-radius: 25px;
