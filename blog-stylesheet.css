@@ -30,6 +30,7 @@ body {
   text-decoration: underline;
   margin-top: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
   font-family: 'Nunito', cursive;
   color: #FCB03C;
 
@@ -206,7 +207,22 @@ body {
   border-radius: 15px;
 }
 
+/*-----------Photos------------*/
+
 
 .banner { position: relative; overflow: auto; }
     .banner li { list-style: none; }
         .banner ul li { float: left; }
+
+/*-----------About------------*/
+
+.about-image {
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);
+  margin-bottom: 15px;
+  border: solid #1B3017 5px;
+  border-radius: 15px;
+}
+
+.about-text {
+  color: black;
+}
