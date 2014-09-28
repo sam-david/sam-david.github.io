@@ -21,12 +21,13 @@ body {
   border: solid #1B3017 6px;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
   margin-top: 4px;
 }
 
 #pagetitle {
   text-align: center;
+  text-decoration: underline;
   margin-top: 10px;
   margin-left: 10px;
   font-family: 'Nunito', cursive;
@@ -44,7 +45,7 @@ body {
 
 .blogblurb {
   font-size: 1em;
-  text-align: justify;
+  text-align: center;
 }
 
 .blog-box {
@@ -204,3 +205,8 @@ body {
   border: solid #1B3017 5px;
   border-radius: 15px;
 }
+
+
+.banner { position: relative; overflow: auto; }
+    .banner li { list-style: none; }
+        .banner ul li { float: left; }
