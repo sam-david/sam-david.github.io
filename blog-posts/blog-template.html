@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sam David : Week 1 Favorite Websites</title>
+  <title>Sam David: Week 5 Technical Blog</title>
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../css/foundation.css" />
   <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
@@ -30,32 +30,50 @@
     </div>
   </nav>
   <div class="row">
-  <h2 id="pagetitle" class="large-12 columns">My Favorite Websites</h2>
+  <h2 id="pagetitle" class="large-12 columns">Ruby Method Blog: .map Method</h2>
   </div>
   <div class="row">
-    <div class="large-8 medium-8 columns">
-      <h2 class="blog-heading">ESPN.com</h2>
-      <p class="blogcontent">ESPN has been one of my favorite sites for years. They have a wealth of up to the minute sports information available at your fingertips. The way it is organized is very intuitive and it has not changed that much in years. You are naturally drawn to the center of the page right below the top nav where they almost always have some animated ad these days. However, I almost always look at the top score bar to see the current scores and if any of my teams are playing. I love this because it quickly lets you see the games going on today and their progress. </p>
-      <p class="blogcontent">ESPN is straight forward, organized, content heavy, colorful, boxy. This website organizes current sports articles, stats, and video into a large website. One could argue all sports news is entertainment but is is also very informative due to ESPNs constant coverage. ESPN has more reporters on the scene than most networks so they usually have the most recent news. The homepage can be rather daunting, but they leave the best stuff at the top. The score bar and the quick articles on the right make it easy to scan quickly without having the read the majority of a content heavy site if you are just looking for a quick update. </p>
-    </div>
-    <div class="large-4 medium-4 columns">
-      <img src="../images/espn-logo-small.png">
-    </div>
-    <div class="large-6 columns">
-      <h2 class="blog-heading">Amazon.com</h2>
-      <p class="blogcontent">Amazon is how i get he majority of stuff I buy these days. They make it so easy with Amazon Prime to get almost anything within two days. I like their site because even though it could be overwhelming with the amount of products they have, they do a great job of organizing the best products you could be interested in based on your search inquiry. The search bar is conveniently located at the top of the page, which is what I use most often as I rarely search by category. Once you type in your search term, you are redirected to a new page which organizes all of the most popular related searches.</p>
-      <p class="blogcontent">Amazon lets you sort by customer rating, price, category, etc. They are very well organized and have now built up enough of a customer base to have quite a few reviews on popular products. It is very easy to tell what is the best type of item you are looking for just by reading what other wrote, easily displayed by their 5 star rating system. Amazon also marks all the Prime eligible items with a unique logo letting us know that we can get that product with free two-day shipping.</p>
+    <div class="large-12 columns">
+      <p class="blogcontent">The enumerable method I decided to write a blog on is the .map method. This method is used to iterate over each element in an array or range and returns an array with the specified function you provided. For example, if you wanted to multiply every number in the array against itself you can write a .map method to do just that.</p>
     </div>
   </div>
-    <div class="row">
-      <div class="large-6 columns">
-      <h2 class="blog-heading">Google Maps</h2>
-      <p class="blogcontent"> Maybe this isn't exactly what you meant by "website" but I consider Google Maps to be its own beast of a website. I use it almost every day to locate retailers, offices, bike trails, etc. It has developed over the years and the latest version is excellent to use. When loading Google maps it uses your location to preload a map of where you are. You are then quickly able to search for a location in the top left search bar. The search bar works seamlessly over the map. As soon as you press enter on the bar, the map shows markers related to the item you searched. Linking your Google account, you are able to save your favorite locations on Google's server to easily keep track of places you go to often. You can even save your home and work address so to have quick access when trying to navigate to and from those locations</p>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> [1,2,3].map {|x| x * x} <span class="ruby-return">#=> [1, 4, 6]</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">You can also use .map on a range to perform similar tasks on a specific range of numbers</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> (1..5).map {|x| (x * x) + 2} <span class="ruby-return">#=> [3, 6, 11, 18, 27]</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">.map is also useful on an array of strings. Lets say you wanted to capitalize every element in an array</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> ["sam","fred","david"].map {|x| x.capitalize} <span class="ruby-return">#=> ["Sam", "Fred", "David"]</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">A super clever thing that people like to do is pass in a callable proc object, with a method, to run on each element in the array. By doing this you can write your function on a separate line in the proc, then call it on your array using .map</p>
       </div>
-      <div class="large-6 columns">
-        <img src="../images/google-maps.png">
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> triple = Proc.new{|n| n*3} </br> [1,2,3].map(&triple) <span class="ruby-return">#=> [3, 6, 9]</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">Lastly, if you want to call a method instead of a proc, you can do this by using the METHOD method (confusing but look below)</p>
       </div>
-    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> def triple(n) </br> n * 2 </br> end </br> [1,2,3].map(&method(:triple)) <span class="ruby-return">#=> [3, 6, 9]</span></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">You can use .map destructively by placing a '!' at the end of it. This will modify the original array though so be careful before using. Here I also show you how you could convert numbers into strings using .map</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> number_string = [1,2,3,4] </br> number_string.map!(&:to_s) <span class="ruby-return">#=> ["1", "2", "3", "4"]</span></p></div>
+  </div>
+
 <footer class="social-media row">
   <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
   <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
@@ -65,6 +83,9 @@
 <div class="row">
   <div class="large-12 columns"><img src="../images/bike-footer-short.jpg" class="footer-image"></div>
   </div>
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/jquery.slides.js"></script>
+  <script src="../script.js"></script>
 </body>
 
 </html>

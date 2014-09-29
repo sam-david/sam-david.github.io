@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sam David : Week 5 Technical Blog</title>
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="../js/modernizr.js"></script>
+</head>
+<body>
+  <header class="row">
+    <div class="large-12 columns">
+      <img src="../images/zion-header-small.jpg" class="header-image">
+    </div>
+  </header>
+  <nav id="mainNav" class="row">
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="../index.html">Blogs</a>
+    </div>
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="about.html">About Me</a>
+    </div>
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="about.html">Projects</a>
+    </div>
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="contact.html">Contact Me</a>
+    </div>
+  </nav>
+  <div class="row">
+  <h2 id="pagetitle" class="large-12 columns">Ruby Method Blog: .rand </h2>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent">There are always times where you are going to some way to generate random numbers. We can find a variety of uses for these from a random roll of a die, to a word scrambler that might randomize the letters. Whatever it is, programmers know that the use of random numbers does come up here and there. Luckily, Ruby has a pretty easy method already in place that can produce pseudo random integers, floats, or binary strings. They say pseudorandom because no computer can produce truly random numbers by computation. This also means that to the casual observer the numbers will appear random but over time there is a pattern to the numbers based on the original seed, and you could eventually guess what the next number in the order is.</p>
+      <p class="blogcontent">
+        The easiest way to execute the rand function is shown below. This would generate a random number between 0 and 1.  </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> rand() <span class="ruby-return">#=> 0.34242484593133105</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent"> If you would like a random integer from 0 to 10 you could type to following.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> rand(10) <span class="ruby-return">#=> 5</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">How about a specific range, say from 5 through 9?</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example">rand(5..9)<span class="ruby-return">#=> 7</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">So as we said these numbers aren't truly random, they all start at a seed. You can specify the seed by doing the following.</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> prng1 = Random.new(1234) </br> prng1.seed <span class="ruby-return">#=> 1234</span> </br> prng1.rand(100) <span class="ruby-return">#=> 47</span></br> prng1.rand(100) <span class="ruby-return">#=> 83</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">From then on when you call a random number using that same seed value, you will get the same results for your random numbers. This can be useful, however if you want to call on the results of your random numbers later on in a program. See below the results are the same with the same seed.</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> prng2 = Random.new(1234) </br> prng2.seed <span class="ruby-return">#=> 1234</span> </br> prng2.rand(100) <span class="ruby-return">#=> 47</span></br> prng2.rand(100) <span class="ruby-return">#=> 83</span></p></div>
+  </div>
+
+<footer class="social-media row">
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/"  class="footer-link">LinkedIn</a></div>
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="https://github.com/sfd1987"  class="footer-link">GitHub:sfd1987</a></div>
+</footer>
+<div class="row">
+  <div class="large-12 columns"><img src="../images/bike-footer-short.jpg" class="footer-image"></div>
+  </div>
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/jquery.slides.js"></script>
+  <script src="../script.js"></script>
+</body>
+
+</html>
