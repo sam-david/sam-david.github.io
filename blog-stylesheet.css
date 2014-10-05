@@ -192,18 +192,21 @@ body {
 /*-----------Projects------------*/
 
 .tesla-comparison {
-  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);
-  margin-bottom: 15px;
-  margin-top: 10px;
-  border: solid #1B3017 5px;
-  border-radius: 20px;
+ /* box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);*/
+  margin-top: 25px;
+  border: solid #FCB03C 3px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .project-description {
   font-size: 1.6em;
   text-align: justify;
-  color: black;
+  color: white;
   font-family: 'Nunito', cursive;
+  font-size: 1.2em;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.3)
 }
 
 .project-description-small {
@@ -216,7 +219,8 @@ body {
 .gallery-project {
   box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);
   margin-bottom: 15px;
-  border: solid #1B3017 5px;
+  margin-top: 20px;
+  border: solid #FCB03C 3px;
   border-radius: 15px;
 }
 
