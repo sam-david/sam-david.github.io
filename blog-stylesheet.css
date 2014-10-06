@@ -195,8 +195,6 @@ body {
  /* box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);*/
   margin-top: 25px;
   border: solid #FCB03C 3px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
 }
 
 .project-description {
@@ -217,11 +215,10 @@ body {
 }
 
 .gallery-project {
-  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);
+ /* box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.8);*/
   margin-bottom: 15px;
   margin-top: 20px;
   border: solid #FCB03C 3px;
-  border-radius: 15px;
 }
 
 /*-----------Photos------------*/

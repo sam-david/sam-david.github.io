@@ -34,14 +34,17 @@
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <p class="blogcontent">The enumerable method I decided to write a blog on is the .map method. This method is used to iterate over each element in an array or range and returns an array with the specified function you provided. For example, if you wanted to multiply every number in the array against itself you can write a .map method to do just that.</p>
+      <p class="blogcontent">Blocs, Procs, and Lambdas are all a way of grouping code together. With procs and lambdas you can call on that block of code later because it is an object. Blocks are not objects so they cannot be called, they are just part of the method syntax. Below are a few examples of a block. We use them all the time already.</p>
     </div>
   </div>
   <div class="row">
-    <div class="large-12 columns"><p class="code-example"> [1,2,3].map {|x| x * x} <span class="ruby-return">#=> [1, 4, 6]</span></p></div>
+    <div class="large-12 columns"><p class="code-example"> [1,2,3].each {|x| x * x} <span class="ruby-return">| {|x| x * x} is the block</span></p></div>
   </div>
   <div class="row">
-    <div class="large-12 columns"><p class="blogcontent">You can also use .map on a range to perform similar tasks on a specific range of numbers</p></div>
+    <div class="large-12 columns"><p class="code-example"> [1,2,3].each do |x| </br> x * x </br> end </br> <span class="ruby-return">Between do to end is the block</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">Procs and lambdas have a similar purpose by differ in a few different ways. Shown below is a basic example of how to construct a proc and a lambda.</p></div>
   </div>
   <div class="row">
     <div class="large-12 columns"><p class="code-example"> (1..5).map {|x| (x * x) + 2} <span class="ruby-return">#=> [3, 6, 11, 18, 27]</span></p></div>
