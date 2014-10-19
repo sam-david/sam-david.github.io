@@ -17,6 +17,11 @@ body {
   font-family: 'Nunito', cursive;
 }
 
+
+.bold-text {
+  font-weight: bold;
+}
+
 .header-image {
   border: solid #1B3017 6px;
   border-top-right-radius: 25px;
@@ -239,4 +244,5 @@ body {
 
 .about-text {
   color: black;
+  text-align: justify;
 }
