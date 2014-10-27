@@ -157,6 +157,25 @@ body {
   color: #5eff1f;
 }
 
+.blue {
+  color: #00008b;
+}
+
+.red {
+  color: #800000;
+}
+
+.comment {
+  color: #808080;
+}
+.indent {
+  margin-left: 4%;
+}
+
+.double-indent {
+  margin-left: 8%;
+}
+
 .caption {
   text-align: center;
 }

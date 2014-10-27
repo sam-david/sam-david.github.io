@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sam David : Week 9 Cultural Blog</title>
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="../js/modernizr.js"></script>
+</head>
+<body>
+  <header class="row">
+    <div class="large-12 columns">
+      <img src="../images/zion-header-small.jpg" class="header-image">
+    </div>
+  </header>
+  <nav id="mainNav" class="row">
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="../index.html">Blogs</a>
+    </div>
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="about.html">About Me</a>
+    </div>
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="about.html">Projects</a>
+    </div>
+    <div class="large-3 medium-3 small-6 columns nav-link">
+      <a href="contact.html">Contact Me</a>
+    </div>
+  </nav>
+  <div class="row">
+  <h2 id="pagetitle" class="large-12 columns">Asking Great Questions</h2>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent">One of the questions I came across this week was how to loop through a JavaScript object and it's members? This is how I phrased it in Google but the stack overflow question was: </p>
+      <p class="blogcontent">
+      How to Loop through JavaScript object literal with objects as members? It then gives an example of how you would access the properties and objects of an object within an object like the one below:</p>
+      <p class="code-example">
+        <span class="blue">var</span> validation_messages = { </br>
+          <span class="red indent">"key_1"</span>: { </br>
+            <span class="red double-indent">"your_name"</span>: <span class="red">"jimmy"</span>, </br>
+            <span class="red double-indent">"your_msg"</span>: <span class="red">"hello world"</span> </br>
+          }, </br>
+          <span class="red indent">"key_2"</span>: { </br>
+            <span class="red double-indent">"your_name"</span>: <span class="red">"billy"</span>, </br>
+            <span class="red double-indent">"your_msg"</span>: <span class="red">"foo equals bar"</span> </br>
+          } </br>
+      }</br>
+      </p>
+      <p class="blogcontent">
+        This was very useful for the exercise where we needed to count votes for an election for various positions. All of the votes were stored in objects and we needed to loop through the object first to count how many votes each person received, and then declare winner in another object. I used the basic syntax of the question above to answer this. I think this is a good question because it is a very direct, problem statement. The question also includes a great sample object people were able to work off of. In this case there is no trial and failure, it is more a question of how to implement something outright. I like these types of question because you aren’t distracted by bad code that somebody has written that for some reason won't work. However, sometimes that is helpful too but not in this case. Plus, my object looked very similar to theirs. Just in case you are curious of the answer I put it below as well ; )</p>
+        <p class="code-example">
+         <span class="blue"> for </span> (var key in validation_messages) { </br>
+             <span class="blue indent">var </span>obj = validation_messages[key]; </br>
+             <span class="blue indent">for </span> (<span class="blue">var</span> prop in obj) { </br>
+                <span class="comment double-indent">// important check that this is objects own property </span></br>
+                <span class="comment double-indent">// not from prototype prop inherited </span></br>
+                <span class="blue double-indent">if</span>(obj.hasOwnProperty(prop)){ </br>
+                  alert(prop + " = " + obj[prop]); </br>
+               <span class="double-indent"> } </span> </br>
+             <span class="indent">} </span> </br>
+          } </br>
+        </p>
+    </div>
+  </div>
+
+<footer class="social-media row">
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/"  class="footer-link">LinkedIn</a></div>
+  <div class="large-3 medium-3 columns left footer-link-box"><a href="https://github.com/sfd1987"  class="footer-link">GitHub:sfd1987</a></div>
+</footer>
+<div class="row">
+  <div class="large-12 columns"><img src="../images/bike-footer-short.jpg" class="footer-image"></div>
+  </div>
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/jquery.slides.js"></script>
+  <script src="../script.js"></script>
+</body>
+
+</html>
