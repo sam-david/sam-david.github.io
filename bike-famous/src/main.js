@@ -202,7 +202,7 @@ stateWheel.pipe(stateWheelSync);
 
 var stateWheelRight = new ImageSurface({
 	size: [300,300],
-	content: '../images/state-wheel.png',
+	content: 'bike-famous/images/state-wheel.png',
 	properties: {
 		zIndex: 1
 	}
