@@ -142,7 +142,7 @@ var saddlePlatformOriginModifier = new StateModifier({
 
 var jamaicanFrame = new ImageSurface({
 	size: [500,329],
-	content: '../images/jamaican-frame.png',
+	content: 'bike-famous/images/jamaican-frame.png',
 	properties: {
 		zIndex: 10
 	}
@@ -163,7 +163,7 @@ jamaicanFrame.pipe(jamaicanFrameSync);
 
 var bomberFrame = new ImageSurface({
 	size: [500,322],
-	content: '../images/bomber-frame.png',
+	content: 'bike-famous/images/bomber-frame.png',
 	properties: {
 		zIndex: 10
 	}
@@ -184,7 +184,7 @@ bomberFrame.pipe(bomberFrameSync);
 
 var stateWheel = new ImageSurface({
 	size: [300,300],
-	content: '../images/state-wheel.png',
+	content: 'bike-famous/images/state-wheel.png',
 	properties: {
 		zIndex: 1
 	}
@@ -222,7 +222,7 @@ stateWheelRight.pipe(stateWheelSync);
 
 var vigorWheelLeft = new ImageSurface({
 	size: [300,300],
-	content: '../images/vigor-wheel-large.png',
+	content: 'bike-famous/images/vigor-wheel-large.png',
 	properties: {
 		zIndex: 1
 	}
@@ -240,7 +240,7 @@ vigorWheelLeft.pipe(vigorWheelSync);
 
 var vigorWheelRight = new ImageSurface({
 	size: [300,300],
-	content: '../images/vigor-wheel-large.png',
+	content: 'bike-famous/images/vigor-wheel-large.png',
 	properties: {
 		zIndex: 1
 	}
@@ -260,7 +260,7 @@ vigorWheelRight.pipe(vigorWheelSync);
 
 var stateSaddle = new ImageSurface({
 	size: [130,93],
-	content: '../images/state-saddle.png',
+	content: 'bike-famous/images/state-saddle.png',
 	properties: {
 		zIndex: 1
 	}
@@ -280,7 +280,7 @@ stateSaddle.pipe(stateSaddleSync);
 
 var brooksSaddle = new ImageSurface({
 	size: [198,152],
-	content: '../images/brooks-black.png',
+	content: 'bike-famous/images/brooks-black.png',
 	properties: {
 		zIndex: 1
 	}
