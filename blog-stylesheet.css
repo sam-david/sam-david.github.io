@@ -7,12 +7,19 @@ Dark Green: #413D22
 Light Brown: #C0A581
 Brown: #8B625C
 
+Second Midori theme
+Dark Blue: #0F2D40
+Ocean Blue: 194759
+Seagreen: 296B73
+light blue green: 3E8C84
+greenwhite: D8F2F0
+
 */
 
 body {
 
 
-  background-color: #506A8D;
+  background-color: #194759;
   color: #1B3017;
   font-family: 'Nunito', cursive;
 }
@@ -21,19 +28,32 @@ body {
 .bold-text {
   font-weight: bold;
 }
+.wide-row {min-width:100% !important;}
+.wide-column {
+  width: 100%;
+  float: left;
+}
 
 .header-image {
-  border: solid #1B3017 6px;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-  margin-bottom: 10px;
-  margin-top: 4px;
+  border: solid #296B73 2px;
+  width: 100%;
+}
+
+.top-bar {
+  background-color: #0F2D40;
+}
+
+.name {
+}
+
+.nav-title {
+  font-size: 1.3em;
+  
 }
 
 #pagetitle {
   text-align: center;
-
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 15px;
   font-family: 'Nunito', cursive;
   color: #FCB03C;
@@ -43,6 +63,14 @@ body {
 
 .underline {
   text-decoration: underline;
+}
+
+.skill-image {
+  width: 50%;
+}
+
+.skill-box {
+  text-align: center;
 }
 
 .blogtitle {
