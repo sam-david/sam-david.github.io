@@ -17,18 +17,19 @@ greenwhite: D8F2F0
 */
 
 body {
-
-
   background-color: #194759;
-  color: #1B3017;
+  color: white;
   font-family: 'Nunito', cursive;
 }
-
 
 .bold-text {
   font-weight: bold;
 }
-.wide-row {min-width:100% !important;}
+
+.wide-row {
+  min-width:100% !important; //make rows %100 of page 
+} 
+
 .wide-column {
   width: 100%;
   float: left;
@@ -44,19 +45,20 @@ body {
 }
 
 .name {
+
 }
 
 .nav-title {
   font-size: 1.3em;
-  
+  color: #D8F2F0 !important; //foundation's classes overide links post page load
 }
 
 #pagetitle {
   text-align: center;
-  margin-top: 0px;
-  margin-bottom: 15px;
+  margin-top: 2%;
+  margin-bottom: 2%;
   font-family: 'Nunito', cursive;
-  color: #FCB03C;
+  color: white;
   background-color: rgba(0, 0, 0, 0.6);
 
 }
@@ -66,12 +68,37 @@ body {
 }
 
 .skill-image {
-  width: 50%;
+  width: 25%;
+  margin: 2%;
+}
+
+.foundation-image {
+  width: 35%;
+}
+
+.sinatra-image {
+  width: 40%;
+}
+
+.node-image {
+  width: 45%;
 }
 
 .skill-box {
   text-align: center;
 }
+
+.skill-heading {
+  text-align: center;
+  color: #D8F2F0;
+  font-size: 1.8em;
+}
+
+.skill-text {
+  text-align: justify;
+}
+
+//Blog classes
 
 .blogtitle {
   font-size: 1.5em;
@@ -226,9 +253,8 @@ body {
   margin-top: 10px;
   margin-bottom: 15px;
   opacity: .9;
-  border: solid #1B3017 5px;
-  border-bottom-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  width: 100%;
+  border: solid #296B73 4px;
 }
 
 @media all and (max-width: 1001px) {
