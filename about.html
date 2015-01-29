@@ -3,84 +3,107 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sam David : About</title>
+  <title>Sam David : Blog</title>
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
   <link href="blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-2.1.0.js"></script>
   <script src="js/modernizr.js"></script>
 </head>
 <body>
-  <header class="row">
-    <div class="large-12 columns">
-      <img src="images/zion-header-small.jpg" class="header-image">
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="index.html" class="nav-title">Sam David</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a class="nav-button" href="about.html">About</a></li>
+        <li><a class="nav-button" href="blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
+        <li class="has-dropdown not-click">
+          <a class="nav-button" href="projects.html">Projects</a>
+          <ul class="dropdown">
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="images/zion-header-small2.jpg" class="header-image">
     </div>
   </header>
-  <nav id="mainNav" class="row">
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="index.html">Blogs</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="about.html">About Me</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="projects.html">Projects</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="photos.html">Photos</a>
-    </div>
-  </nav>
   <div class="row">
-    <div class="large-12 columns"><h1 id="pagetitle">About Me</h1></div>
+    <div class="large-8 large-centered columns"><h1 id="pagetitle">About Me</h1></div>
   </div>
-
   <div class="row">
     <div class="large-6 medium-6 columns">
-    <p class="about-text">I grew up in Wilmington, DE, just outside of Philadelphia, PA. I attended a small, Quaker school from grade through high school. As far as programming goes, in middle school I started experimenting with BASIC language on my TI-83 calculator. I made simple applications like a homework logger and a casino game but nothing too serious. In high school, I started working with Visual Basic creating smaller applications. I enjoyed math and science in high school and found myself naturally drawn towards programming.</p><p class="about-text">For college, I made my way to Los Angeles to attend the University of Southern California. My major, Interactive Entertainment, was in the School of Cinematic Arts. It was mainly focused on video game design but also had elements of cinema and television as well. Many of my final projects involved designing actual video game programs. It was here where I realized I enjoy both the creative front-end aspect of design and the programming elements necessary to make an application.</p></div>
+    <p class="about-text">I grew up in Wilmington, DE, a suburban town just outside of Philadelphia, Pennsylvania where I attended a  small Quaker school. As far as programming goes, in middle school I started experimenting with BASIC language on my TI-83 calculator. I made simple applications like a homework logger and a casino game but nothing too robust. In high school, I started working with Visual Basic creating smaller applications. I enjoyed math and science in high school and found myself naturally drawn towards programming.</p><p class="about-text">For college, I made my way to Los Angeles to attend the University of Southern California. My major, Interactive Entertainment, was in the School of Cinematic Arts. It focused mainly on video game design but also had elements of cinema and television. Many of my final projects involved designing actual video game programs. It was here where I realized I enjoy both the creative front-end aspect of design and the back-end programming elements necessary to make an application.</p></div>
     <div class="large-6 medium-6 columns">
       <img src="images/grand-canyon.jpg" class="about-image">
     </div>
   </div>
-<div class="row">
-  <div class="large-12 medium-12 columns">
-    <p class="about-text">After college, I worked at Activision Publishing, the publishers for <span class="underline">Call of Duty</span>, as an intern on a new game called <span class="underline">Skylanders</span>. I enjoyed the experience, because it was valuable working in a dynamic environment like that, but I realized even before the internship that the video game world was not for me.</p>
-    <p class="about-text">
-    I then got into real estate as an analyst for a startup real estate investment firm. The firm invested in apartment complexes all over California. I created financial models in Microsoft Excel to show whether properties were good potential investments. I also had to do a wide variety of other tasks because it was such a small company. This was a great learning experience as well because the company was so small. I learned lots of things about small business from property accounting to developing a budget. However, after a year and a half in real estate, I could sense myself losing interest in the field. I desired something a little more creative.</p>
+  <div class="row">
+    <div class="large-12 medium-12 columns">
+      <p class="about-text">After college, I worked at Activision Publishing, the publishers for <span class="underline">Call of Duty</span>, as an intern on a new game called <span class="underline">Skylanders</span>. I enjoyed the experience, because it was valuable working in a dynamic environment like that. I knew even before the internship that the video game industry was not for me at that point in my life. If I was going to work with video games I would rather be a developer than working in production.</p>
+      <p class="about-text">
+      I found myself moving towards real estate as so many of my friends were. I started as an analyst for a startup real estate investment firm. The firm invested in apartment complexes all over California. I created financial models in Microsoft Excel to show whether properties were good potential ventures. I also had to do a wide variety of other tasks because it was such a small company. This was a great learning experience as well because the company was so small and vertical. I learned lots of things regarding managing a small business from property accounting to developing a budget. However, after a year and a half in real estate, I could sense myself losing interest in the field. I desired something a little more creative.</p>
+    </div>
   </div>
-</div>
-<div class="row">
+  <div class="row">
   <div class="large-6 medium-6 columns">
     <img src="images/berlin-wall.jpg" class="about-image">
   </div>
 <div class="large-6 medium-6 columns">
-  <p class="about-text">
-I started creating websites for family members using Squarespace.com to set up online stores for their artwork. Squarespace is very powerful, and the sites look great, feel free to check them out at <a href="http://lisa-david.squarespace.com/">Lisa-David.com</a> and <a href="https://kristina-zallinger.squarespace.com/">KristinaZallinger.com</a>. Soon though, I felt compelled to make more custom sites where I could design the layouts from scratch. I started using Lynda.com to teach myself HTML, CSS, JavaScript, and Photoshop. As an experiment, I made my first site <a href="http://clashofclanscalculator.com/">ClashOfClansCalculator.com</a> around the popular iPhone game, Clash of Clans. It was kind of ambitious but it proved to be a worthy learning experience. I really enjoyed the entire process of designing a site from start to finish and this proved that I want to pursue web development as a career.</p>
-<p class="about-text">
-From there I have continued to practice by making additional sites for myself and others. I know that in order to become a good web developer I really need more and more experience. Teaching myself online using Lynda.com is great, but I desire to be around others in classroom environment. Working on projects and discussing ideas is something I miss from my college experience.</p>
+    <p class="about-text">
+    I started creating websites for family members using Squarespace.com to set up online stores for their artwork. Squarespace is very powerful, and the sites look great, feel free to check them out at <a href="http://lisa-david.squarespace.com/">Lisa-David.com</a> and <a href="https://kristina-zallinger.squarespace.com/">KristinaZallinger.com</a>. Soon though, I felt compelled to make more custom sites where I could design the layouts from scratch. I started using Lynda.com to teach myself HTML, CSS, JavaScript, and Photoshop. As an experiment, I made my first site <a href="http://clashofclanscalculator.com/">ClashOfClansCalculator.com</a> around the popular mobile game, Clash of Clans. It was kind of ambitious but it proved to be a worthy learning experience. I really enjoyed the entire process of designing a site from start to finish and this proved that I want to pursue web development as a career.</p>
+    <p class="about-text">
+    I continued to practice by making additional sites for myself and others. I know that in order to become a good web developer you need more and more experience. Teaching myself online using Lynda.com was great, but I desired to be around others in classroom environment. Working on projects and discussing ideas is something I missed from my college experience.</p>
+
 </div>
 <div class="large-12 medium-12 columns">
-
 <p class="about-text">
-Personally, I love to stay active and explore the world around me. Some of the photos you see on this site are from trips to Germany, Israel, Prague, and Utah. I enjoy traveling, but now it is time for me to focus on my career. To stay in shape I bike quite often around the city. When I'm not biking, I golf, do yoga, ski, play lacrosse, racquetball, whatever. As far as sports teams go, I'm very partial to Philadelphia teams because I grew up in that area. I like to cook my own meals whenever I can, not just to save money but because I enjoy creating all kinds of dishes. I try to create things in as many ways as I can in my daily life.</p>
+    This is why I decided to attend DevBootcamp and get a head start on a career as a web developer. DevBootcamp provided me with a solid environment to learn as much as I could within a short period of time. The program consisted of 10 weeks of preparation (Phase 0) reviewing basic OO concepts and fundamentals of Ruby and JavaScript. Following the 10 weeks of prep, we spent 9 weeks on site programming for more than 1,000 hours! It was a great experience as I believe there is no better way to learn this stuff than to just dive right into it. It is up to me now to use what I have learned and apply it in the real world!</p>
+  <p class="about-text">
+  Personally, I love to stay active and explore the world around me. Some of the photos you see on this site are from trips to Germany, Israel, Prague, and even Utah. I enjoy traveling, but now it is time for me to focus on my career. To stay in shape I bike quite often around the city. When I'm not biking, I golf, practice yoga, ski, play lacrosse, tennis, racquetball, whatever. As far as sports teams go, I'm very partial to Philadelphia teams because I grew up in that area. I like to cook my own meals whenever I can, not just to save money but because I enjoy creating all kinds of new dishes. I like to create things in as many ways as I can in my daily life.</p>
   </div>
 </div>
-<footer class="social-media row">
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/"  class="footer-link">LinkedIn</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="https://github.com/sfd1987"  class="footer-link">GitHub:sfd1987</a></div>
-</footer>
-<div class="row">
-  <div class="large-12 columns"><img src="images/bike-footer-short.jpg" class="footer-image"></div>
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
   </div>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-49226266-5', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<div class="row">
+  <div class="large-12 columns"></div>
+  </div>
+  <img src="images/bike-footer-short.jpg" class="footer-image">
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>

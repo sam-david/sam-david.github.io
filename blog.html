@@ -2,18 +2,23 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width" />
   <title>Sam David : Blog</title>
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
   <link href="blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-2.1.0.js"></script>
   <script src="js/modernizr.js"></script>
+  <script src="js/projects.js"></script>
 </head>
 <body>
+  <div class="fixed">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="" class="nav-title">Sam David</a></h1>
+        <h1><a href="index.html" class="nav-title">Sam David</a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -22,163 +27,234 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li><a href="about.html">Blog</a></li>
-        <li><a href="#">Resume</a></li>
-        <li class="has-dropdown">
-          <a href="projects.html">Projects</a>
+        <li><a class="nav-button" href="about.html">About</a></li>
+        <li><a class="nav-button" href="blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
+        <li class="has-dropdown not-click">
+          <a class="nav-button" href="projects.html">Projects</a>
           <ul class="dropdown">
-            <li><a href="#">First link in dropdown</a></li>
-            <li><a href="#">Active link in dropdown</a></li>
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
           </ul>
         </li>
       </ul>
     </section>
   </nav>
+</div>
   <header class="wide-row">
     <div class="large-12 wide-column">
-      <img src="images/zion-header-plain2.jpg" class="header-image">
+      <img src="images/zion-header-small2.jpg" class="header-image">
     </div>
   </header>
-  <nav id="mainNav" class="row">
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="index.html">Blogs</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="about.html">About Me</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="projects.html">Projects</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="photos.html">Photos</a>
-    </div>
-  </nav>
   <div class="row">
-    <div class="large-12 columns"><h1 id="pagetitle">DevBootcamp Blogs</h1></div>
+    <div class="large-6 large-centered columns"><h1 id="pagetitle">DevBootcamp Blogs</h1></div>
   </div>
   <div class="row">
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 8: Technical Blog</h2>
-      <p class="blogblurb">Ruby on Rails</p>
-      <div class="center-link"><a href="blog-posts/week8_technical.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 8: Cultural Blog</h2>
-      <p class="blogblurb">Dealing with Conflict</p>
-      <div class="center-link"><a href="blog-posts/week8_cultural.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 7: Cultural Blog</h2>
-      <p class="blogblurb">Exploring our Values</p>
-      <div class="center-link"><a href="blog-posts/week7_cultural.html" class="blog-link">Read more...</a></div>
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week8_technical.html"><h2 class="blog-title left">Week 8: Ruby on Rails</h2></a>
+          <h2 class="blog-date right">10/17/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">Ruby on rails is a web application framework originally founded in 2004, by David Heinemeier Hansson. Hansson is a Danish programmer who is also a partner with Basecamp. Interestingly enough, Hansson is not only a programmer, but a race car driver as well! A major breakthrough in Rails history was when Apple chose to include it with its shipment of their new operating system Leopard in 2007. <a href="blog-posts/week8_technical.html">Read more...</a></h2>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 7:Technical Blog</h2>
-      <p class="blogblurb">SQL vs. NoSQL Databases</p>
-      <div class="center-link"><a href="blog-posts/week7_technical.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 6: Cultural Blog</h2>
-      <p class="blogblurb">Stereotype Threat</p>
-      <div class="center-link"><a href="blog-posts/week6_cultural.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 6:Technical Blog</h2>
-      <p class="blogblurb">Blocs, Procs, and Lambdas</p>
-      <div class="center-link"><a href="blog-posts/week6_technical.html" class="blog-link">Read more...</a></div>
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week8_cultural.html"><h2 class="blog-title left">Week 8: Dealing with Conflict</h2></a>
+          <h2 class="blog-date right">10/17/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">The most relevant experience I had was with my boss at a real estate investment firm I use to work for. There was a time where we had hired an outside accounting firm to do our numbers because we were a small shop with not too many resources. Things went sour with the accounting firm as they started charging us exorbitant amounts <a href="blog-posts/week8_cultural.html">Read more...</a></h2>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 5: Cultural Blog</h2>
-      <p class="blogblurb">Pairing and Feedback so far</p>
-      <div class="center-link"><a href="blog-posts/week5_cultural.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 5: Technical Blog</h2>
-      <p class="blogblurb">Using .rand function in Ruby</p>
-      <div class="center-link"><a href="blog-posts/week5_technical.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 4: Cultural Blog</h2>
-      <p class="blogblurb">Diversity in Tech</p>
-      <div class="center-link"><a href="blog-posts/week4_cultural.html" class="blog-link">Read more...</a></div>
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week7_cultural.html"><h2 class="blog-title left">Week 7: Exploring Our Values</h2></a>
+          <h2 class="blog-date right">10/10/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">I'm a believer of figuring out anything that could make my life better, even if it means putting some work in.  Growing up I liked to look to others as to see how I could improve, by listening and observing. I would pick out what I could and continue to find ways to improve in school, sports, etc. <a href="blog-posts/week7_cultural.html">Read more...</a></h2>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 4: Technical Blog</h2>
-      <p class="blogblurb">Ruby Method: .map</p>
-      <div class="center-link"><a href="blog-posts/week4_technical.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 3: Technical Blog</h2>
-      <p class="blogblurb">JS is for cool kids...</p>
-      <div class="center-link"><a href="blog-posts/week3_technical.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 3: Cultural Blog</h2>
-      <p class="blogblurb">My Gregorc Thinking Style</p>
-      <div class="center-link"><a href="blog-posts/week3_cultural.html" class="blog-link">Read more...</a></div>
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week7_technical.html"><h2 class="blog-title left">Week 7: SQL vs. NoSQL Databases</h2></a>
+          <h2 class="blog-date right">10/10/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">This weeks technical blog is about the difference between SQL and NoSQL DBMSs. SQL servers have been around since the 1970s when programs started requiring ways to store and access data. With SQL servers, their records are stored in tables, with rows and columns storing a specific piece about that record. <a href="blog-posts/week7_technical.html">Read more...</a></h2>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 2: Technical Blog</h2>
-      <p class="blogblurb">CSS and HTML technical elements</p>
-      <div class="center-link"><a href="blog-posts/week2_technical.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 2: Cultural Blog</h2>
-      <p class="blogblurb">Blog description goes here...</p>
-      <div class="center-link"><a href="blog-posts/c1-chefs-kitchen.html" class="blog-link">Read more...</a></div>
-      </div>
-    </div>
-    <div class="large-4 medium-4 columns left">
-      <div class="blog-box">
-      <h2 class="blogtitle">Week 1: My Favorite Websites</h2>
-      <p class="blogblurb">I compare three of my favorite websites UI</p>
-      <div class="center-link"><a href="blog-posts/t1-compare-websites.html" class="blog-link">Read more...</a></div>
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week6_cultural.html"><h2 class="blog-title left">Week 6: Stereotype Threat</h2></a>
+          <h2 class="blog-date right">10/3/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">I enjoyed watching Claude Steele's lecture on Identity and Stereotype Threat, as psychology is a subject I enjoy very much. He described stereotype threat as the impact on your ability to perform based on the perception that it was a certain identity causing you not to succeed when you hit points of frustration. <a href="blog-posts/week6_cultural.html">Read more...</a></h2>
+        </div>
       </div>
     </div>
   </div>
-<footer class="social-media row">
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/"  class="footer-link">LinkedIn</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="https://github.com/sfd1987"  class="footer-link">GitHub:sfd1987</a></div>
-</footer>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week6_technical.html"><h2 class="blog-title left">Week 6: Blocs, Procs, and Lambdas</h2></a>
+          <h2 class="blog-date right">10/3/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">Blocs, Procs, and Lambdas are all a way of grouping code together. With procs and lambdas you can call on that block of code later because it is an object. <a href="blog-posts/week6_technical.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week5_cultural.html"><h2 class="blog-title left">Week 5: Pairing and Feedback so far</h2></a>
+          <h2 class="blog-date right">9/26/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">When I first heard of pairing via Google Hangouts, I was a little skeptical as to how effective it would be to work with someone in this way. It is clear to me now though, with Google Hangout and Stypi we are able to pretty easily collaborate on a single Ruby doc at one time. <a href="blog-posts/week5_cultural.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week5_technical.html"><h2 class="blog-title left">Week 5: Using .rand function in Ruby</h2></a>
+          <h2 class="blog-date right">9/26/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">There are always times where you are going to some way to generate random numbers. We can find a variety of uses for these from a random roll of a die, to a word scrambler that might randomize the letters. Whatever it is, programmers know that the use of random numbers does come up here and there. <a href="blog-posts/week5_technical.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week4_cultural.html"><h2 class="blog-title left">Week 4: Diversity in Tech</h2></a>
+          <h2 class="blog-date right">9/19/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">Diversity has always been a huge issue in the tech industry. The industry today is primarily male, and primarily white. It seems even the companies at the top are huge culprits of this stereotype. Some seven out of every 10 employees at Twitter are men. Similar statistics are shown below for many of the top companies in the industry, Google, Yahoo, Facebook, and LinkedIn. <a href="blog-posts/week4_cultural.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week4_technical.html"><h2 class="blog-title left">Week 4: Ruby .map method</h2></a>
+          <h2 class="blog-date right">9/19/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">The enumerable method I decided to write a blog on is the .map method. This method is used to iterate over each element in an array or range and returns an array with the specified function you provided. <a href="blog-posts/week4_technical.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week3_technical.html"><h2 class="blog-title left">Week 3: JS is for cool kids...</h2></a>
+          <h2 class="blog-date right">9/12/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">Why is JavaScript popular in web development? Javascript initally became popular because it was made for Netscape Navigator, which was the dominate browser at the time it was introduced in 1994. Netscape wanted to introduce a competitor to Java and some say the rode off the popularity of Java by naming their language JavaScript. <a href="blog-posts/week3_technical.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week3_cultural.html"><h2 class="blog-title left">Week 3: My Gregorc Thinking Style</h2></a>
+          <h2 class="blog-date right">9/12/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">So according to the gregorc thinking style quiz, I am pretty evenly spread out. However, the two styles that were slightly higher than the rest were concrete random and abstract random. After reading into these a little bit, I would say that I demonstrate qualities of both. <a href="blog-posts/week3_cultural.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week2_technical.html"><h2 class="blog-title left">Week 2: CSS and HTML technical elements</h2></a>
+          <h2 class="blog-date right">9/5/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">What is the difference between Margin, Border, and Padding? The easiest way to answer this question is that padding is the space between the content and the border, whereas margin is the space outside the border. This is the case even if you are not using the border property. <a href="blog-posts/week2_technical.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns blog-box">
+      <div class="row">
+        <div class="large-12 columns">
+          <a href="blog-posts/week1_technical.html"><h2 class="blog-title left">Week 1: My favorite websites</h2></a>
+          <h2 class="blog-date right">8/29/14</h2>
+        </div>
+        <div class="large-12 columns">
+          <h2 class="blog-description">ESPN has been one of my favorite sites for years. They have a wealth of up to the minute sports information available at your fingertips. The way it is organized is very intuitive and it has not changed that much in years. <a href="blog-posts/week1_technical.html">Read more...</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
+  </div>
 <div class="row">
-  <div class="large-12 columns"><img src="images/bike-footer-short.jpg" class="footer-image"></div>
+  <div class="large-12 columns"></div>
   </div>
+  <img src="images/bike-footer-short.jpg" class="footer-image">
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>

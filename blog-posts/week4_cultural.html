@@ -2,36 +2,58 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sam David : Week 4 Cultural Blog</title>
+  <meta name="viewport" content="width=device-width" />
+  <title>Sam David : Blog</title>
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/normalize.css" />
   <link rel="stylesheet" href="../css/foundation.css" />
   <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/jquery.slides.js"></script>
   <script src="../js/modernizr.js"></script>
+  <script src="../script.js"></script>
+  <script src="../js/projects.js"></script>
 </head>
 <body>
-  <header class="row">
-    <div class="large-12 columns">
-      <img src="../images/zion-header-small.jpg" class="header-image">
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="../index.html" class="nav-title">Sam David</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a class="nav-button" href="../about.html">About</a></li>
+        <li><a class="nav-button" href="../blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="../Sam David Resume.pdf">Resume</a></li>
+        <li class="has-dropdown not-click">
+          <a class="nav-button" href="../projects.html">Projects</a>
+          <ul class="dropdown">
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="../images/zion-header-small2.jpg" class="header-image">
     </div>
   </header>
-  <nav id="mainNav" class="row">
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="../index.html">Blogs</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="about.html">About Me</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="about.html">Projects</a>
-    </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="contact.html">Contact Me</a>
-    </div>
-  </nav>
   <div class="row">
-  <h2 id="pagetitle" class="large-12 columns">Diversity in Tech</h2>
+    <div class="large-6 large-centered columns"><h1 class="blog-heading">Diversity in Tech</h1></div>
   </div>
+
   <div class="row">
     <div class="large-12 columns">
       <p class="blogcontent">Diversity has always been a huge issue in the tech industry. The industry today is primarily male, and primarily white. It seems even the companies at the top are huge culprits of this stereotype. Some seven out of every 10 employees at Twitter are men. Similar statistics are shown below for many of the top companies in the industry, Google, Yahoo, Facebook, and LinkedIn.</p>
@@ -79,19 +101,29 @@
   </p>
   </div>
 </div>
-
-<footer class="social-media row">
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/"  class="footer-link">LinkedIn</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="https://github.com/sfd1987"  class="footer-link">GitHub:sfd1987</a></div>
-</footer>
-<div class="row">
-  <div class="large-12 columns"><img src="../images/bike-footer-short.jpg" class="footer-image"></div>
+  
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
   </div>
-  <script src="../js/jquery-2.1.0.js"></script>
-  <script src="../js/jquery.slides.js"></script>
-  <script src="../script.js"></script>
+<div class="row">
+  <div class="large-12 columns"></div>
+  </div>
+  <img src="../images/bike-footer-short.jpg" class="footer-image">
+  <script src="../js/foundation.min.js"></script>
+  <script src="../js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
 </body>
-
 </html>

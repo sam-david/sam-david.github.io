@@ -2,77 +2,132 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sam David : Projects</title>
+  <meta name="viewport" content="width=device-width" />
+  <title>Sam David : Blog</title>
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
   <link href="blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-2.1.0.js"></script>
   <script src="js/modernizr.js"></script>
+  <script src="js/projects.js"></script>
 </head>
 <body>
-  <header class="row">
-    <div class="large-12 columns">
-      <img src="images/zion-header-small.jpg" class="header-image">
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="index.html" class="nav-title">Sam David</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a class="nav-button" href="about.html">About</a></li>
+        <li><a class="nav-button" href="blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
+        <li class="has-dropdown not-click">
+          <a class="nav-button" href="projects.html">Projects</a>
+          <ul class="dropdown">
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="images/zion-header-small2.jpg" class="header-image">
     </div>
   </header>
-  <nav id="mainNav" class="row">
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="index.html">Blogs</a>
+  <div class="row">
+    <div class="large-8 large-centered columns"><h1 id="pagetitle">Projects</h1></div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns project-box">
+      <h2 class="project-title">Code Crush</h2>
+      <h2 class="project-description">Final project of DevBootcamp, a coding typing game with a full backend to save high scores. We also use OAuth Login for Google and Facebook to allow users to login with these accounts. I was the team lead of this project which we made it about a week.</h2>
     </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="about.html">About Me</a>
+  </div>
+  <div class="row">
+    <div class="large-10 large-centered columns project-link"><a class="" target="_blank" href ="http://codecrush.herokuapp.com/"><img src="images/projects/code-crush-top.jpg" id="code-crush-top" class="project-image"><img src="images/projects/code-crush-bottom.jpg" id="code-crush-bottom" class="project-image bottom"></a></div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns project-box">
+      <h2 class="project-title">Teslacomparison.com</h2>
+      <h2 class="project-description">Using APIs courtesy of Edmunds.com, this site compares the Tesla Model S to any car on the market across a variety of statistics</h2>
     </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="projects.html">Projects</a>
+  </div>
+  <div class="row">
+    <div class="large-10 large-centered columns project-link"><a class="" target="_blank" href="http://www.teslacomparison.com/"><img src="images/projects/tesla-comparison-top.jpg" id="tesla-top" class="project-image"><img src="images/projects/tesla-comparison-bottom.jpg" id="tesla-bottom" class="project-image bottom"></a></div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns"><h1 id="pagetitle">In Development</h1></div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns project-box">
+      <h2 class="project-title">Who To Follow</h2>
+      <h2 class="project-description">A major solo project during the DevBootcamp curriculum in which we were required to use Oauth and the Sinatra framework. I chose to make an app that gave you suggestions of people to follow based on category by querying hashtags.</h2>
     </div>
-    <div class="large-3 medium-3 small-6 columns nav-link">
-      <a href="photos.html">Photos</a>
+  </div>
+  <div class="row">
+    <div class="large-10 large-centered columns project-link"><a target="_blank" href="https://who-to-follow.herokuapp.com/"><img src="images/projects/who-to-follow-top.jpg" id="who-to-follow-top" class="project-image"><img src="images/projects/who-to-follow-bottom.jpg" id="who-to-follow-bottom" class="project-image bottom"></a></div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns project-box">
+      <h2 class="project-title">Famo.us Bike App</h2>
+      <h2 class="project-description">My First app made with the Famo.us platform during a 3-day workshop. Very early stages of development but shows the power of Famo.us transitions and draggable properties.</h2>
     </div>
-  </nav>
-  <div class="row">
-    <div class="large-12 columns"><h1 id="pagetitle">Projects</h1></div>
-  </div>
-
-  <div class="row">
-    <div class="large-12 columns"><a href="http://www.teslacomparison.com/"><img src="images/projects/tesla-comparison.png" class="tesla-comparison"></a></div>
   </div>
   <div class="row">
-    <div class="large-12 columns"><h2 class="project-description">Teslacomparison.com: Using APIs courtesy of Edmunds.com, this site compares the Tesla Model S to any car on the market across a variety of statistics</h2></div>
+    <div class="large-10 large-centered columns project-link"><a target="_blank" href="http://sfd1987.github.io/bike-famous.html"><img src="images/projects/bike-famous-top.png" id="bike-top" class="project-image"><img src="images/projects/bike-famous-bottom.png" id="bike-bottom" class="project-image bottom"></a></div>
+  </div>
+  
+  <div class="row">
+    <div class="large-8 large-centered columns"><h1 id="pagetitle">Early Projects</h1></div>
   </div>
   <div class="row">
-    <div class="large-12 columns"><a href="http://www.co2sciences.org/"><img src="images/projects/co2-sciences.png" class="tesla-comparison"></a></div>
+    <div class="large-8 large-centered columns project-box">
+      <h2 class="project-title">Clash of Clans Calculator</h2>
+      <h2 class="project-description">Really my first website that I created from scratch. This was used mainly to practice JavaScript functions and CSS design layouts. jQuery elements are used as well.</h2>
+    </div>
   </div>
   <div class="row">
-    <div class="large-12 columns"><h2 class="project-description">CO2Sciences.org: CO2 Science Initiative is using this site to define the preliminary stages of their vision, mission, and initial strategies.</h2></div>
+    <div class="large-10 large-centered columns project-link"><a target="_blank" href="http://clashofclanscalculator.com/"><img src="images/projects/coc-calc-top.jpg" id="coc-top" class="project-image"><img src="images/projects/coc-calc-bottom.jpg" id="coc-bottom" class="project-image bottom"></a></div>
   </div>
   <div class="row">
-    <div class="large-12 columns"><a href="http://clashofclanscalculator.com/"><img src="images/projects/coc-calc-project.png" class="tesla-comparison"></a></div>
+    <div class="large-12 columns"><h2 class="project-description"></h2></div>
   </div>
-  <div class="row">
-    <div class="large-12 columns"><h2 class="project-description">ClashofClansCalculator.com: Really my first website that I created from scratch. This was used mainly to practice JavaScript functions and CSS design layouts. jQuery elements are used as well.</h2></div>
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
   </div>
-  <div class="row">
-    <div class="large-6 medium-6 columns"><a href="http://lisa-david.squarespace.com/"><img src="images/projects/lisa-david.png" class="gallery-project"></a><p class="project-description-small">Lisa-David.com: Gallery made for my mother, Lisa David. Using Squarespace, this is both a gallery and a store</div>
-    <div class="large-6 medium-6 columns"><a href="http://lisa-david.squarespace.com/"><img src="images/projects/kristina-zallinger.png" class="gallery-project"></a><p class="project-description-small">Kristina Zallinger Squarespace: Similar to my other gallery project, this site is both a store and gallery for the artwork of Kristina Zallinger</p></div>
-  </div>
-<footer class="social-media row">
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/"  class="footer-link">LinkedIn</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="https://github.com/sfd1987"  class="footer-link">GitHub:sfd1987</a></div>
-</footer>
 <div class="row">
-  <div class="large-12 columns"><img src="images/bike-footer-short.jpg" class="footer-image"></div>
+  <div class="large-12 columns"></div>
   </div>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-49226266-5', 'auto');
-  ga('send', 'pageview');
-
-</script>
+  <img src="images/bike-footer-short.jpg" class="footer-image">
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>

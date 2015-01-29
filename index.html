@@ -4,19 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sam David : Blog</title>
+  <!-- favicon image doesn't seem to be working!! -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
   <link href="blog-stylesheet.css" rel="stylesheet" type="text/css" />
   <script src="js/jquery-2.1.0.js"></script>
   <script src="js/modernizr.js"></script>
-  <script src="js/foundation.min.js"></script>
+
 </head>
 <body>
+  <div class="fixed">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="#" class="nav-title">Sam David</a></h1>
+        <h1><a href="index.html" class="nav-title">Sam David</a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -25,20 +30,22 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#">Resume</a></li>
+        <li><a class="nav-button" href="about.html">About</a></li>
+        <li><a class="nav-button" href="blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
         <li class="has-dropdown not-click">
-          <a href="#">Projects</a>
+          <a class="nav-button" href="projects.html">Projects</a>
           <ul class="dropdown">
-            <li><a href="#">Code Crush</a></li>
-            <li><a href="#">Who To Follow</a></li>
-            <li><a href="#">Tesla Comparison</a></li>
-            <li><a href="#">Famo.us Bikes</a></li>
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
           </ul>
         </li>
       </ul>
     </section>
   </nav>
+</div>
   <header class="wide-row">
     <div class="large-12 wide-column">
       <img src="images/zion-header-plain3.jpg" class="header-image">
@@ -61,7 +68,7 @@
   <div class="row">
     <div class="large-12 columns">
       <h2 class="skill-heading">HTML5 | CSS3 | Zurb Foundation </h2>
-      <p class="skill-text">HTML and CSS were some of the first subjects I studied, as with most developers. I began learning online, mainly through Lynda.com, but wanted to be part of a classroom environment. Before I applied to a full time immersive class, I attended a front-end only course in Austin, TX at Makersquare. This was great additional exposure to HTML, CSS, Javascript, and CSS frameworks like Zurb Foundation to make responsive environments.</p>
+      <p class="skill-text">HTML and CSS were some of the first subjects I studied, as with most developers. I began teaching myself online, mainly through Lynda.com, but wanted to be part of a classroom environment. Before I applied to a full stack immersive class, I attended a front-end only course in Austin, TX at Makersquare. This was great additional exposure to HTML, CSS, Javascript, and CSS frameworks like Zurb Foundation to build responsive environments.</p>
     </div>
   </div>
   <div class="row">
@@ -75,7 +82,9 @@
   <div class="row">
     <div class="large-12 columns">
       <h2 class="skill-heading">Ruby | JavaScript</h2>
-      <p class="skill-text">The very first interpreted language I chose to learn was JavaScript. I had experimented with HTML and CSS but wanted to add functionality to my pages. Through the course in Austin, DevBootcamp, and practice on my own, JavaScript has become one of my more comfortable languages. I love how adaptable it is, and how many platforms use it. I </p>
+      <p class="skill-text">The very first interpreted language I chose to learn was JavaScript. I had experimented with HTML and CSS but wanted to add functionality to my pages. Through the course in Austin, DevBootcamp, and practice on my own, JavaScript has become one of my more comfortable languages. I love how adaptable it is, and how many platforms use it. During my course at DevBootcamp, we practiced principles such as OOjs and the MVC pattern. I have used Javascript in Phaser.io game engine and Famo.us platform.</p>
+      <p class="skill-text">
+      After many hours practicing Ruby at DevBootcamp, it has become one of my favorite languages. Ruby made learning the fundamentals of object-oriented languages easier to understand. The syntax as very intuitive and there are many powerful built in methods. We got plenty of practice using ruby, in combination with Rails or Sinatra, to CRUD apps, and more. </p>
     </div>
   </div>
   <div class="row">
@@ -89,7 +98,7 @@
   <div class="row">
     <div class="large-12 columns">
       <h2 class="skill-heading">Sinatra | Ruby on Rails</h2>
-      <p class="skill-text">HTML and CSS were some of the first subjects I studied, as with most developers. I began learning online, mainly through Lynda.com, but wanted to be part of a classroom environment. Before I applied to a full time immersive class, I attended a front-end only course in Austin, TX at Makersquare. This was great additional exposure to HTML, CSS, Javascript, and CSS frameworks like Zurb Foundation to make responsive environments.</p>
+      <p class="skill-text">As part of the DevBootcamp curriculum we first learned the Sinatra framework and principles of Restful Routes. Then it was time for Ruby on Rails. We were able to see how much Rails could do for you right out of the box. I must say that I prefer the lighter weight of Sinatra for most of the work I have done so far. With Sinatra there seems to be more flexibility as you do not have to follow as many conventions. Both frameworks have their pros and cons.</p>
     </div>
   </div>
   
@@ -98,13 +107,15 @@
       <img src="images/skills/postgres.svg" class="skill-image">
     </div>
     <div class="large-6 medium-6 small-6 columns skill-box">
-      <img src="images/skills/sqlite.png" class="skill-image">
+      <div class="skill-back">
+        <img src="images/skills/sqlite.png" class="skill-image sqlite-image">
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="large-12 columns">
       <h2 class="skill-heading">PostgreSQL | SQLite | Active Record</h2>
-      <p class="skill-text">HTML and CSS were some of the first subjects I studied, as with most developers. I began learning online, mainly through Lynda.com, but wanted to be part of a classroom environment. Before I applied to a full time immersive class, I attended a front-end only course in Austin, TX at Makersquare. This was great additional exposure to HTML, CSS, Javascript, and CSS frameworks like Zurb Foundation to make responsive environments.</p>
+      <p class="skill-text">SQL was the first DBMS I looked at during Phase 0 of the DevBootcamp curriculum. Writing raw SQL queries was good practice for Active Record. Active record was a </p>
     </div>
   </div>
   <div class="row">
@@ -118,18 +129,61 @@
   <div class="row">
     <div class="large-12 columns">
       <h2 class="skill-heading">Node.js | MongoDB | Express </h2>
-      <p class="skill-text">HTML and CSS were some of the first subjects I studied, as with most developers. I began learning online, mainly through Lynda.com, but wanted to be part of a classroom environment. Before I applied to a full time immersive class, I attended a front-end only course in Austin, TX at Makersquare. This was great additional exposure to HTML, CSS, Javascript, and CSS frameworks like Zurb Foundation to make responsive environments.</p>
+      <p class="skill-text">During our final project, we decided to get away for the conventional Ruby on Rails taught at DevBootcamp and use a framework that was new to us. We wrote our project in the MEAN stack using Node.js for the backend, MongoDB for our database of users, Express to render the views, and Angular.js to render page elements. It was a very cool experience to dive into new technologies we had never used before. However, because of our previous expierence with other frameworks, it was not that hard to get use to.</p>
     </div>
   </div>
-<footer class="social-media row">
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="mailto:sfd1987@gmail.com" class="footer-link">E-mail Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="tel:3025931771"  class="footer-link">Call Me</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="http://www.linkedin.com/pub/sam-david/28/453/7b3/"  class="footer-link">LinkedIn</a></div>
-  <div class="large-3 medium-3 columns left footer-link-box"><a href="https://github.com/sfd1987"  class="footer-link">GitHub:sfd1987</a></div>
-</footer>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/angularjs.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/phaser.png" class="skill-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Angular.js | Phaser.io</h2>
+      <p class="skill-text">Angular.js is a newer technology to me. I have used it on a few projects, but it is a pretty robust framework and there is still much I could learn. I know how to use </p>
+      <p class="skill-text">Phaser.io was the game engine used in our final project. It was also brand new to us at the time, but with the relative complexity of our game, we got a lot of practice. Phaser is a great engine to get a 2D game up in running in short time. We chose Phaser because of the popularity and support relative to other game engines out there. It proved to be a very good choice, allowing us to make a game with solid gameplay.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/photoshop.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/indesign.png" class="skill-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Adobe Photoshop | Adobe InDesign</h2>
+      <p class="skill-text">Adobe InDesign was something I first used in high school during computer class. I continued using it over the years and have used it in the professional environemnt and for personal projects. It is a great tool to format documents and other collateral. I have used Adobe Photoshop over the years, but for basic things. More recently I have taken a few courses online on how to design page elements in photoshop. This has been helpful for wireframing and to design elements used in production. </p>
+    </div>
+  </div>
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
+  </div>
 <div class="row">
   <div class="large-12 columns"></div>
   </div>
   <img src="images/bike-footer-short.jpg" class="footer-image">
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>
