@@ -70,7 +70,7 @@ body {
 #pagetitle {
   text-align: center;
   margin-top: 3%;
-  margin-bottom: 3%;
+  margin-bottom: 1%;
   font-family: 'Nunito', cursive;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
@@ -347,11 +347,30 @@ body {
 }
 
 .project-box {
-  background-color: rgba(0, 0, 0, 0.3)
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid #0F2D40 2px;
+}
+
+.small-project-box {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid #0F2D40 2px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.project-title-box {
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 2%;
 }
 
 .project-image {
-  border: solid #296B73 4px;
+  border-top: solid #0F2D40 3px;
+  border-left: solid #0F2D40 3px;
+  border-right: solid #0F2D40 3px;
+}
+
+.indent-point {
+  margin-left: 5%;
 }
 
 .bottom {
@@ -360,8 +379,14 @@ body {
 }
 
 .project-link {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 1%;
+}
+
+.code-text {
+  font-family: monospace;
+  font-size: 1.3em;
+  margin-bottom: 0px;
+  line-height: normal;
 }
 
 .project-title {
@@ -371,6 +396,14 @@ body {
   font-family: 'Nunito';
   font-weight: bold;
   padding-top: 1%;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
+.tech-title-text {
+  font-size: 1.7em;
+  font-family: monospace;
+  text-decoration: underline;
   margin-bottom: 0px;
 }
 

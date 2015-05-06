@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sam David : Blog</title>
-  <!-- favicon image doesn't seem to be working!! -->
+  <title>Sam David : Web Developer</title>
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
@@ -14,6 +13,7 @@
   <link href="blog-stylesheet.css" rel="stylesheet" type="text/css" />
   <script src="js/jquery-2.1.0.js"></script>
   <script src="js/modernizr.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 
 </head>
 <body>
@@ -21,7 +21,7 @@
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="index.html" class="nav-title">Sam David</a></h1>
+        <h1><a href="index.html" onclick="fireLink('home')" class="nav-title">Sam David</a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -30,9 +30,9 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li><a class="nav-button" href="about.html">About</a></li>
-        <li><a class="nav-button" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
-        <li><a class="nav-button" href="projects.html">Projects</a></li>
+        <li><a class="nav-button" onclick="fireLink('about')" href="about.html">About</a></li>
+        <li><a class="nav-button" onclick="fireLink('resume')" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
+        <li><a class="nav-button" onclick="fireLink('projects')" href="projects.html">Projects</a></li>
       </ul>
     </section>
   </nav>
@@ -156,25 +156,26 @@
   <div class="wide-row">
     <div class="large-4 columns footer-box">
       <img src="images/skills/mail.png" class="linkedin-footer-image">
-      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+      <a class="footer-text" onclick="fireLink('email')" href="mailto:sfd1987@gmail.com">E-mail Me</a>
     </div>
     <div class="large-4 columns footer-box">
       <img src="images/skills/linkedin.png" class="linkedin-footer-image">
-      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+      <a class="footer-text" onclick="fireLink('linkedin')" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
     </div>
     <div class="large-4 columns footer-box">
       <img src="images/skills/github.png" class="linkedin-footer-image">
-      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+      <a class="footer-text" onclick="fireLink('github')" href="https://github.com/sfd1987">GitHub:sfd1987</a>
     </div>
   </div>
 <div class="row">
   <div class="large-12 columns"></div>
   </div>
-  <img src="images/bike-footer-short.jpg" class="footer-image">
+  <img src="images/sanfranfooter.jpg" class="footer-image">
   <script src="js/foundation.min.js"></script>
   <script src="js/foundation.topbar.js"></script>
    <script>
     $(document).foundation();
   </script>
+  <script src="js/firebase.js"></script>
 </body>
 </html>

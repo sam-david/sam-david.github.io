@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Sam David : Blog</title>
+  <title>Sam David : Projects</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/normalize.css" />
@@ -12,13 +14,14 @@
   <script src="js/jquery-2.1.0.js"></script>
   <script src="js/modernizr.js"></script>
   <script src="js/projects.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 </head>
 <body>
   <div class="fixed">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="index.html" class="nav-title">Sam David</a></h1>
+        <h1><a href="index.html" onclick="fireLink('home')" class="nav-title">Sam David</a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -27,98 +30,134 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li><a class="nav-button" href="about.html">About</a></li>
-        <li><a class="nav-button" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
-        <li><a class="nav-button" href="projects.html">Projects</a></li>
+        <li><a class="nav-button" onclick="fireLink('about')" href="about.html">About</a></li>
+        <li><a class="nav-button" onclick="fireLink('resume')" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
+        <li><a class="nav-button" onclick="fireLink('projects')" href="projects.html">Projects</a></li>
       </ul>
     </section>
   </nav>
 </div>
-  <header class="wide-row">
-    <div class="large-12 wide-column">
-      <img src="images/zion-header-small2.jpg" class="header-image">
-    </div>
-  </header>
   <div class="row">
-    <div class="large-8 large-centered columns"><h1 id="pagetitle">Projects</h1></div>
+    <div class="large-10 large-centered columns"><h1 id="pagetitle">Projects</h1></div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-box">
-      <h2 class="project-title">Code Crush</h2>
-      <h2 class="project-description">Final project of DevBootcamp, a coding typing game with a full backend to save high scores. We also use OAuth Login for Google and Facebook to allow users to login with these accounts. I was the team lead of this project which we made it about a week.</h2>
+    <div class="large-4 large-centered columns project-title-box">
+      <h2 class="project-title"><a onclick="fireLink('code-crush')" class="project-title" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-10 large-centered columns project-link"><a class="" target="_blank" href ="http://codecrush.herokuapp.com/"><img src="images/projects/code-crush-top.jpg" id="code-crush-top" class="project-image"><img src="images/projects/code-crush-bottom.jpg" id="code-crush-bottom" class="project-image bottom"></a></div>
+    <div class="large-8 large-centered columns project-link"><a class="" onclick="fireLink('code-crush')" target="_blank" href="http://codecrush.herokuapp.com/"><img src="images/projects/code-crush.png" class="project-image"></a></div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-box">
-      <h2 class="project-title">Teslacomparison.com</h2>
-      <h2 class="project-description">Using APIs courtesy of Edmunds.com, this site compares the Tesla Model S to any car on the market across a variety of statistics</h2>
+    <div class="large-9 large-centered columns project-box">
+      <h2 class="project-description">Final project of DevBootcamp, a coding typing game with a full back-end using Node.js to save high scores. The game itself is built with Phaser.io. We chose Phaser.io because it is one of the most popular JavaScript based game engines for 2D games. We also use OAuth Login for Google and Facebook to allow users to login with these accounts. I was the team lead of this project which we made it about a week.</h2>
+      <p class='tech-title-text'>Tech Used:</p>
+      <ul>
+        <li class='code-text'>M.E.A.N Stack</li>
+        <li class='indent-point code-text'>MongoDB</li>
+        <li class='indent-point code-text'>Express</li>
+        <li class='indent-point code-text'>AngularJS</li>
+        <li class='indent-point code-text'>Node.js</li>
+        <li class='code-text'>Phaser.io</li>
+      </ul>
     </div>
   </div>
   <div class="row">
-    <div class="large-10 large-centered columns project-link"><a class="" target="_blank" href="http://www.teslacomparison.com/"><img src="images/projects/tesla-comparison-top.jpg" id="tesla-top" class="project-image"><img src="images/projects/tesla-comparison-bottom.jpg" id="tesla-bottom" class="project-image bottom"></a></div>
+    <div class="large-5 large-centered columns project-title-box">
+      <h2 class="project-title"><a class="project-title" onclick="fireLink('tesla-comp')" target="_blank" href="http://www.teslacomparison.com/">Tesla Car Comparison</a></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns project-link"><a class="" onclick="fireLink('tesla-comp')" target="_blank" href="http://www.teslacomparison.com/"><img src="images/projects/tesla-comp.png" class="project-image"></a></div>
+  </div>
+  <div class="row">
+    <div class="large-9 large-centered columns project-box">
+      <h2 class="project-description">Using Edmunds.com's API (vast automotive database), this site compares the Tesla Model S to any car on the market across a variety of statistics. Inspired from my time as an employee at Tesla, I made this tool so people could see the costs and energy usage of the electric car versus their gas guzzlers. These were very common questions and concerns we would get from customers.</h2>
+      <p class='tech-title-text'>Tech Used:</p>
+      <ul>
+        <li class='code-text'>HTML/CSS</li>
+        <li class='code-text'>JavaScript</li>
+        <li class='code-text'>jQuery</li>
+        <li class='code-text'>Foundation</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-5 large-centered columns project-title-box">
+      <h2 class="project-title"><a class='project-title' onclick="fireLink('coc-calc')" target="_blank" href="http://clashofclanscalculator.com/">Clash of Clans Calculator</a></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-centered columns project-link"><a target="_blank" onclick="fireLink('coc-calc')"  href="http://clashofclanscalculator.com/"><img src="images/projects/coc-calc.png" class="project-image"></a></div>
+  </div>
+  <div class="row">
+    <div class="large-9 large-centered columns project-box">
+      <h2 class="project-description">What started as my very first website, I have continued to iterate upon. Most recently, I introduced Angular.js to the site which vastly simplified my original vanilla JS version. It also made the UI components much more flexible and interactive. This was great practice to learn core CSS and HTML principles as there is plenty of formatting in the UI elements.</h2>
+      <p class='tech-title-text'>Tech Used:</p>
+      <ul>
+        <li class='code-text'>HTML/CSS</li>
+        <li class='code-text'>JavaScript</li>
+        <li class='code-text'>jQuery</li>
+        <li class='code-text'>Angular.js</li>
+      </ul>
+    </div>
   </div>
   <div class="row">
     <div class="large-8 large-centered columns"><h1 id="pagetitle">In Development</h1></div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-box">
-      <h2 class="project-title">Who To Follow</h2>
-      <h2 class="project-description">A major solo project during the DevBootcamp curriculum in which we were required to use Oauth and the Sinatra framework. I chose to make an app that gave you suggestions of people to follow based on category by querying hashtags.</h2>
+    <div class="large-4 large-centered columns project-title-box">
+      <h2 class="project-title"><a class='project-title' onclick="fireLink('who-to-follow')" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-10 large-centered columns project-link"><a target="_blank" href="https://who-to-follow.herokuapp.com/"><img src="images/projects/who-to-follow-top.jpg" id="who-to-follow-top" class="project-image"><img src="images/projects/who-to-follow-bottom.jpg" id="who-to-follow-bottom" class="project-image bottom"></a></div>
+    <div class="large-8 large-centered columns project-link"><a target="_blank" onclick="fireLink('who-to-follow')" href="https://who-to-follow.herokuapp.com/"><img src="images/projects/who-to-follow.png" class="project-image"></a></div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-box">
-      <a href="http://sfd1987.github.io/bike-famous.html"><h2 class="project-title underline">Famo.us Bike App</h2></a>
-      <h2 class="project-description">My First app made with the Famo.us platform during a 3-day workshop. Very early stages of development but shows the power of Famo.us transitions and draggable properties.</h2>
-    </div>
-  </div>
-  <!-- <div class="row">
-    <div class="large-10 large-centered columns project-link"><a target="_blank" href="http://sfd1987.github.io/bike-famous.html"><img src="images/projects/bike-famous-top.png" id="bike-top" class="project-image"><img src="images/projects/bike-famous-bottom.png" id="bike-bottom" class="project-image bottom"></a></div>
-  </div> Early stage image, need to wait-->
-  
-  <div class="row">
-    <div class="large-8 large-centered columns"><h1 id="pagetitle">Early Projects</h1></div>
-  </div>
-  <div class="row">
-    <div class="large-8 large-centered columns project-box">
-      <h2 class="project-title">Clash of Clans Calculator</h2>
-      <h2 class="project-description">Really my first website that I created from scratch. This was used mainly to practice JavaScript functions and CSS design layouts. jQuery elements are used as well.</h2>
+    <div class="large-9 large-centered columns project-box">
+      <h2 class="project-description">A major solo project during the DevBootcamp curriculum in which we were required to use OAuth and the Sinatra framework. I chose to make an app that gave you suggestions of people to follow on Twitter based on category. The app works by querying tweets with words related to that category and adding them to the database whenever a user clicks that category. From there it queries the DB for all the users related to that category sorted by popularity. This allows to DB to continue to grow each time a user clicks.</h2>
+      <p class='tech-title-text'>Tech Used:</p>
+      <ul>
+        <li class='code-text'>HTML/CSS</li>
+        <li class='code-text'>JavaScript</li>
+        <li class='code-text'>Sinatra</li>
+        <li class='code-text'>OAuth</li>
+      </ul>
     </div>
   </div>
   <div class="row">
-    <div class="large-10 large-centered columns project-link"><a target="_blank" href="http://clashofclanscalculator.com/"><img src="images/projects/coc-calc-top.jpg" id="coc-top" class="project-image"><img src="images/projects/coc-calc-bottom.jpg" id="coc-bottom" class="project-image bottom"></a></div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns"><h2 class="project-description"></h2></div>
+    <div class="large-9 large-centered columns small-project-box">
+      <a href="http://sfd1987.github.io/bike-famous.html" onclick="fireLink('bike-famous')" ><h2 class="project-title underline">Famo.us Bike App</h2></a>
+      <h2 class="project-description">My First app made with the Famo.us platform during a 3-day workshop. Still at very early stages of development but shows the power of Famo.us transitions and draggable properties.</h2>
+      <p class='tech-title-text'>Tech Used:</p>
+      <ul>
+        <li class='code-text'><a href='http://famo.us/'>Famo.us</a></li>
+      </ul>
+    </div>
   </div>
   <div class="wide-row">
     <div class="large-4 columns footer-box">
       <img src="images/skills/mail.png" class="linkedin-footer-image">
-      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+      <a class="footer-text" onclick="fireLink('email')" href="mailto:sfd1987@gmail.com">E-mail Me</a>
     </div>
     <div class="large-4 columns footer-box">
       <img src="images/skills/linkedin.png" class="linkedin-footer-image">
-      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/" onclick="fireLink('linkedin')" >LinkedIn</a>
     </div>
     <div class="large-4 columns footer-box">
       <img src="images/skills/github.png" class="linkedin-footer-image">
-      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+      <a class="footer-text" onclick="fireLink('github)" href="https://github.com/sfd1987">GitHub:sfd1987</a>
     </div>
   </div>
 <div class="row">
   <div class="large-12 columns"></div>
   </div>
-  <img src="images/bike-footer-short.jpg" class="footer-image">
+  <img src="images/sanfranfooter.jpg" class="footer-image">
   <script src="js/foundation.min.js"></script>
   <script src="js/foundation.topbar.js"></script>
    <script>
     $(document).foundation();
   </script>
+  <script src="js/firebase.js"></script>
 </body>
 </html>
