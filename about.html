@@ -16,7 +16,7 @@
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 </head>
 <body>
-  <div class="fixed">
+<div class="fixed">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
@@ -30,6 +30,7 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <li><a class="nav-button" onclick="fireLink('about')" href="about.html">About</a></li>
+        <li><a class="nav-button" onclick="fireLink('blog')" href="blog.html">Blog</a></li>
         <li><a class="nav-button" onclick="fireLink('resume')" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
         <li><a class="nav-button" onclick="fireLink('projects')" href="projects.html">Projects</a></li>
       </ul>
@@ -42,7 +43,7 @@
     </div>
   </header>
   <div class="row">
-    <div class="large-8 large-centered columns"><h1 id="pagetitle">About Me</h1></div>
+    <div class="large-8 large-centered columns"><h1 class="page-title">About Me</h1></div>
   </div>
   <div class="row">
     <div class="large-6 medium-6 columns">
@@ -87,12 +88,10 @@
     </div>
     <div class="large-4 columns footer-box">
       <img src="images/skills/github.png" class="linkedin-footer-image">
-      <a class="footer-text" onclick="fireLink('github')" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+      <a class="footer-text" onclick="fireLink('github')" href="https://github.com/sam-david">GitHub:sfd1987</a>
     </div>
   </div>
-<div class="row">
-  <div class="large-12 columns"></div>
-  </div>
+
   <img src="images/sanfranfooter.jpg" class="footer-image">
   <script src="js/foundation.min.js"></script>
   <script src="js/foundation.topbar.js"></script>

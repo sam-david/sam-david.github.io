@@ -77,6 +77,16 @@ body {
 
 }
 
+.page-title {
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  font-family: 'Nunito', cursive;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -155,6 +165,46 @@ body {
 
 //Blog classes
 
+
+
+/*-----------New Blog Classes------------*/
+
+.indent-one {
+  margin-left: 5%;
+}
+
+.indent-two {
+  margin-left: 8%;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+
+
+.blog-title {
+  text-align: center;
+  color: #296B73;
+  font-size: 1.4em;
+  font-family: 'Nunito';
+  font-weight: bold;
+  padding-top: 1%;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
+.blog-title-small {
+  text-align: center;
+  color: #296B73;
+  font-size: 1em;
+  font-family: 'Nunito';
+  font-weight: bold;
+  padding-top: 1%;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
 .blog-date-text {
   text-align: center;
   color: white;
@@ -174,8 +224,18 @@ body {
 
 .blog-box {
   background-color: rgba(255, 255, 255, 1);
+  /*border: solid #296B73 2px;*/
+  max-width: 55rem;
+}
+
+.dev-blog-box {
   margin-bottom: 2%;
-  border: solid #296B73 2px;
+}
+
+.blog-container {
+  background-color: white;
+  border: solid black 1px;
+  margin-bottom: 2%;
 }
 
 .blog-date {
@@ -196,15 +256,12 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.blog-title {
-  text-align: center;
-  color: #296B73;
-  font-size: 1.4em;
-  font-family: 'Nunito';
-  font-weight: bold;
-  padding-top: 1%;
+
+
+.blog-content {
+  color: black;
   margin-bottom: 0px;
-  text-decoration: underline;
+  text-align: justify;
 }
 
 .blogblurb {
@@ -284,13 +341,9 @@ body {
   text-decoration: underline;
 }
 
-.blogcontent {
-  color: #D8F2F0;
-}
 
 .code-example {
   font-family: monospace;
-  margin-left: 25px;
 }
 
 .ruby-return {
@@ -312,9 +365,6 @@ body {
   margin-left: 4%;
 }
 
-.double-indent {
-  margin-left: 8%;
-}
 
 .caption {
   text-align: center;
