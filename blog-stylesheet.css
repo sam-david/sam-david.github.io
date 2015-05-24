@@ -164,7 +164,6 @@ body {
   opacity: .9;
   width: 100%;
   border: solid #296B73 4px;
-  border-top: solid #296B73 2px;
 }
 
 //Blog classes
@@ -247,9 +246,9 @@ body {
 .blog-date {
   color: #194759;
   font-size: 1.2em;
-  font-style: italic;
   padding-top: 1%;
   margin-bottom: 0px;
+  font-family: 'Montserrat';
 }
 
 .blog-heading {

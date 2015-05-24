@@ -7,6 +7,7 @@ var StateModifier = famous.modifiers.StateModifier;
 var Transform = famous.core.Transform;
 var Transitionable = famous.transitions.Transitionable;
 var ImageSurface = famous.surfaces.ImageSurface;
+var TextareaSurface = famous.surfaces.TextareaSurface;
 var Surface = famous.core.Surface;
 var MouseSync = famous.inputs.MouseSync;
 var Easing = famous.transitions.Easing;
@@ -39,450 +40,441 @@ var framePosition = [-150, -480];
 var framePosition2 = [-250, -473];
 var saddlePosition = [-380, -515];
 var saddlePosition2 = [-458, -525];
-
-// set transitionables for each item 
-var jamaicanFramePosition = new Transitionable([0, 0]);
-var jamaicanFrameSync = new MouseSync();
-var jamaicanFrameScale = new Transitionable(0);
-var bomberFramePosition = new Transitionable([0, 0]);
-var bomberFrameSync = new MouseSync();
-var stateWheelPosition = new Transitionable([0, 0]);
-var stateWheelRightPosition = new Transitionable([0, 0]);
-var stateWheelSync = new MouseSync();
-var vigorWheelLeftPosition = new Transitionable([0, 0]);
-var vigorWheelRightPosition = new Transitionable([0, 0]);
-var vigorWheelSync = new MouseSync();
-var stateSaddlePosition = new Transitionable([0, 0]);
-var stateSaddleSync = new MouseSync();
-var brooksSaddlePosition = new Transitionable([0, 0]);
-var brooksSaddleSync = new MouseSync();
-
-
-//Background and platform surface and origin modifiers
-var background = new Surface({
-	size: [1200, 850],
-	properties: {
-		backgroundColor: 'white',
-		border: 'black solid 1px',
-		color: 'white'
-	}
-});
+var totalPrice = 0;
+var activeFrame = {};
+var activeSaddle = {};
+var activeWheel = {};
 
 var platform = new Surface({
-	size: [800, 480],
-	content: 'platform',
+	size: [1200, 520],
 	properties: {
-		backgroundColor: 'grey',
+		backgroundColor: '#D60C00',
 		border: 'black solid 1px',
 		color: 'white'
 	}
 });
+
+var blackPlatformBorder = new Surface({
+	size: [1180, 500],
+	properties: {
+		backgroundColor: 'black',
+		border: 'black solid 1px',
+		color: 'black'
+	}
+});
+
+var innerPlatform = new Surface({
+	size: [1160, 480],
+	properties: {
+		backgroundColor: '#F2DCC2',
+		border: 'black solid 1px',
+		color: '#BFB2A3'
+	}
+});
+
+
+var bikeStats = new Surface({
+	size: [250, 440],
+	properties: {
+		backgroundColor: '#84B1D9',
+		border: 'black solid 1px',
+		color: 'black',
+		textAlign: 'center'
+	}
+});
+
+var frameHeading = new Surface({
+	size: [200, 50],
+	content: 'Frame:',
+	properties: {
+		color: 'black',
+		fontSize: '1em',
+		textDecoration: 'underline'
+	}
+});
+
+var frameTitle = new Surface({
+	size: [200, 50],
+	content: 'Select Frame',
+	properties: {
+		color: 'black',
+		fontSize: '1.1em'
+	}
+});
+
+var framePrice = new Surface({
+	size: [70, 50],
+	content: '$0',
+	properties: {
+		color: 'green',
+		fontSize: '1.4em',
+		fontFamily: 'Arial'
+	}
+});
+
+var frameDescription = new Surface({
+	size: [210, 60],
+	properties: {
+		color: 'black',
+		fontSize: '.7em'
+	}
+});
+
+var frameHeadingOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 60, 0)
+}); 
+
+var frameTitleOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 80, 0)
+}); 
+
+var framePriceOriginModifier = new StateModifier({
+	transform: Transform.translate(1190, 80, 0)
+});
+
+var frameDescriptionOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 105, 0)
+});
+
+var wheelHeading = new Surface({
+	size: [200, 50],
+	content: 'Wheels:',
+	properties: {
+		color: 'black',
+		fontSize: '1em',
+		textDecoration: 'underline'
+	}
+});
+
+var wheelTitle = new Surface({
+	size: [200, 50],
+	content: 'Select Wheels',
+	properties: {
+		color: 'black',
+		fontSize: '1.1em'
+	}
+});
+
+var wheelPrice = new Surface({
+	size: [70, 50],
+	content: '$0',
+	properties: {
+		color: 'green',
+		fontSize: '1.4em',
+		fontFamily: 'Arial'
+	}
+});
+
+var wheelDescription = new Surface({
+	size: [210, 60],
+	properties: {
+		color: 'black',
+		fontSize: '.7em'
+	}
+});
+
+var wheelDescriptionOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 235, 0)
+});
+
+var wheelHeadingOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 190, 0)
+}); 
+
+var wheelTitleOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 210, 0)
+}); 
+
+var wheelPriceOriginModifier = new StateModifier({
+	transform: Transform.translate(1190, 210, 0)
+});
+
+var saddleHeading = new Surface({
+	size: [200, 50],
+	content: 'Saddle:',
+	properties: {
+		color: 'black',
+		fontSize: '1em',
+		textDecoration: 'underline'
+	}
+});
+
+var saddleTitle = new Surface({
+	size: [200, 50],
+	content: 'Select Saddle',
+	properties: {
+		color: 'black',
+		fontSize: '1.1em'
+	}
+});
+
+var saddlePrice = new Surface({
+	size: [70, 50],
+	content: '$0',
+	properties: {
+		color: 'green',
+		fontSize: '1.4em',
+		fontFamily: 'Arial'
+	}
+});
+
+var saddleDescription = new Surface({
+	size: [210, 60],
+	properties: {
+		color: 'black',
+		fontSize: '.7em'
+	}
+});
+
+var saddleDescriptionOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 365, 0)
+});
+
+var saddleHeadingOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 320, 0)
+}); 
+
+var saddleTitleOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 340, 0)
+}); 
+
+var saddlePriceOriginModifier = new StateModifier({
+	transform: Transform.translate(1190, 340, 0)
+});
+
+var grandTotalHeading = new Surface({
+	size: [200, 50],
+	content: 'Current Total:',
+	properties: {
+		color: 'black',
+		fontSize: '1.1em',
+		textDecoration: 'underline',
+		paddingTop: '2px'
+	}
+});
+
+var grandTotalPrice = new Surface({
+	size: [70, 50],
+	content: '$0',
+	properties: {
+		color: 'green',
+		fontSize: '1.6em',
+		fontFamily: 'Arial'
+	}
+});
+
+var grandTotalHeadingOriginModifier = new StateModifier({
+	transform: Transform.translate(1030, 450, 0)
+});
+
+var grandTotalPriceOriginModifier = new StateModifier({
+	transform: Transform.translate(1160, 450, 0)
+});
+
+var bikeStatsOriginModifier = new StateModifier({
+	transform: Transform.translate(1010, 50, 0),
+	opacity: .50
+})
 
 var platformOriginModifier = new StateModifier({
 	transform: Transform.translate(100, 10, 0)
 })
 
-var bikeStats = new Surface({
-	size: [220, 250],
-	content: 'Bike Stats',
-	properties: {
-		backgroundColor: 'white',
-		border: 'black solid 2px'
-	}
-});
+var innerPlatformOriginModifier = new StateModifier({
+	transform: Transform.translate(120, 30, 0)
+})
 
-var bikeStatsOriginModifier = new StateModifier({
-	transform: Transform.translate(940, 40, 0)
+var blackBorderOriginModifier = new StateModifier({
+	transform: Transform.translate(110, 20, 0)
+})
+
+
+
+var rightFrameOriginModifier = new StateModifier({
+	transform: Transform.translate(1300, 0, 0)
 })
 
 var framePlatform = new Surface({
-	size: [250, 130],
+	size: [500, 200],
 	content: 'Frames',
 	properties: {
-		backgroundColor: 'white',
+		backgroundColor: '#BFB2A3',
 		border: 'black solid 2px',
 		textAlign: 'center'
 	}
 });
 
 var framePlatformOriginModifier = new StateModifier({
-	transform: Transform.translate(375, 500, 0)
+	transform: Transform.translate(100, 540, 0)
 })
 
 var wheelPlatform = new Surface({
-	size: [250, 130],
+	size: [410, 200],
 	content: 'Wheels',
 	properties: {
-		backgroundColor: 'white',
+		backgroundColor: '#BFB2A3',
 		border: 'black solid 2px',
 		textAlign: 'center'
 	}
 });
 
 var wheelPlatformOriginModifier = new StateModifier({
-	transform: Transform.translate(100, 500, 0)
+	transform: Transform.translate(620, 540, 0)
 });
 
 var saddlePlatform = new Surface({
-	size: [250, 130],
+	size: [250, 200],
 	content: 'Saddles',
 	properties: {
-		backgroundColor: 'white',
+		backgroundColor: '#BFB2A3',
 		border: 'black solid 2px',
 		textAlign: 'center'
 	}
 });
 
 var saddlePlatformOriginModifier = new StateModifier({
-	transform: Transform.translate(650, 500, 0)
+	transform: Transform.translate(1050, 540, 0)
 });
 
-//Bike Part surfaces
-//Jamaican Frame
-
-var jamaicanFrame = new ImageSurface({
-	size: [500,329],
-	content: 'bike-famous/images/jamaican-frame.png',
+var signatureSurface = new Surface({
+	size: [150, 40],
+	content: 'Sam David 2015 &copy',
 	properties: {
-		zIndex: 10
+		color: '#5A86BF',
+		fontSize: '.7em'
 	}
 });
 
-var jamaicanOriginModifier = new StateModifier({
-	// origin: [0.5,0.5],
-	transform: Transform.translate(400, 550, 0)
+var signatureSurfaceOriginModifier = new StateModifier({
+	transform: Transform.translate(1180,750,0)
 })
 
-var jamaicanScaleModifier = new StateModifier({
-	transform: Transform.scale(.2, .2, 1)
-})
+mainContext.add(signatureSurfaceOriginModifier).add(signatureSurface);
 
-jamaicanFrame.pipe(jamaicanFrameSync);
-
-//Bomber Frame
-
-var bomberFrame = new ImageSurface({
-	size: [500,322],
-	content: 'bike-famous/images/bomber-frame.png',
-	properties: {
-		zIndex: 10
+function addItem(imageUrl,xOrigin,yOrigin,xScale,yScale,xDeltaPlatform,yDeltaPlatform,xSize,ySize,xScalePlatform,yScalePlatform,itemType,zIndex,itemName,itemPrice,itemDescription) {
+	this.xScale = xScale;
+	this.yScale = yScale;
+	this.price = itemPrice;
+	this.description = itemDescription;
+	var that = this
+	//add a new Transitionable property for the frame
+	this.itemPosition = new Transitionable([0, 0]);
+	this.secondItemPosition = new Transitionable([0, 0]);
+	//add a mouse sync, later to be piped to the surface
+	this.mouseFrameSync = new MouseSync();
+	//insert image surface with imageUrl reference
+	this.addImageSurface = new ImageSurface({
+		size: [xSize,ySize],
+		content: imageUrl,
+		properties: {
+			zIndex: zIndex
+		}
+	});
+	if (itemType == "wheel") {
+		//second wheel image surface
+		this.addsecondImageSurface = new ImageSurface({
+			size: [xSize,ySize],
+			content: imageUrl,
+			properties: {
+				zIndex: zIndex
+			}
+		});
+		//second wheel origin modifier
+		this.secondOriginModifier = new StateModifier({
+			transform: Transform.translate(xOrigin, yOrigin, 0)
+		});
+		//second wheel scale modifier
+		this.secondScaleModifier = new StateModifier({
+			transform: Transform.scale(xScale, yScale, 1)
+		})
+		//second wheel position modifier to be piped to same mouse sync
+		this.secondPositionModifier = new Modifier({
+			transform : function(){
+				var p = that.secondItemPosition.get()
+				return Transform.translate(p[0], p[1], 0);
+			}
+		});
 	}
-});
-
-var bomberOriginModifier = new StateModifier({
-	// origin: [0.5,0.5],
-	transform: Transform.translate(500, 550, 0)
-})
-
-var bomberScaleModifier = new StateModifier({
-	transform: Transform.scale(.2, .2, 1)
-})
-
-bomberFrame.pipe(bomberFrameSync);
-
-//State Wheel
-
-var stateWheel = new ImageSurface({
-	size: [300,300],
-	content: 'bike-famous/images/state-wheel.png',
-	properties: {
-		zIndex: 1
+	//origin modifier specifying resting point off main platform
+	this.originModifier = new StateModifier({
+		transform: Transform.translate(xOrigin, yOrigin, 0)
+	});
+	//scale modifier
+	this.scaleModifier = new StateModifier({
+		transform: Transform.scale(xScale, yScale, 1)
+	})
+	//position modifier to move surface around
+	this.positionModifier = new Modifier({
+		transform : function(){
+			var p = that.itemPosition.get()
+			return Transform.translate(p[0], p[1], 0);
+		}
+	});
+	//pipe image surface to the mouse sync
+	this.addImageSurface.pipe(this.mouseFrameSync);
+	if (itemType == "wheel") {
+		this.addsecondImageSurface.pipe(this.mouseFrameSync);
 	}
-});
-
-var stateOriginModifier = new StateModifier({
-	transform: Transform.translate(120, 550, 0)
-});
-
-var stateWheelLeftScaleModifier = new StateModifier({
-	transform: Transform.scale(.2, .2, 1)
-});
-
-stateWheel.pipe(stateWheelSync);
-
-var stateWheelRight = new ImageSurface({
-	size: [300,300],
-	content: 'bike-famous/images/state-wheel.png',
-	properties: {
-		zIndex: 1
-	}
-});
-
-var stateWheelRightOriginModifier = new StateModifier({
-	transform: Transform.translate(120, 550, 0)
-})
-
-var stateWheelRightScaleModifier = new StateModifier({
-	transform: Transform.scale(.2, .2, 1)
-});
-
-stateWheelRight.pipe(stateWheelSync);
-
-//Vigor Wheel
-
-var vigorWheelLeft = new ImageSurface({
-	size: [300,300],
-	content: 'bike-famous/images/vigor-wheel-large.png',
-	properties: {
-		zIndex: 1
-	}
-});
-
-var vigorWheelLeftOriginModifier = new StateModifier({
-	transform: Transform.translate(190, 550, 0)
-});
-
-var vigorWheelLeftScaleModifier = new StateModifier({
-	transform: Transform.scale(.2, .2, 1)
-});
-
-vigorWheelLeft.pipe(vigorWheelSync);
-
-var vigorWheelRight = new ImageSurface({
-	size: [300,300],
-	content: 'bike-famous/images/vigor-wheel-large.png',
-	properties: {
-		zIndex: 1
-	}
-});
-
-var vigorWheelRightOriginModifier = new StateModifier({
-	transform: Transform.translate(190, 550, 0)
-})
-
-var vigorWheelRightScaleModifier = new StateModifier({
-	transform: Transform.scale(.2, .2, 1)
-});
-
-vigorWheelRight.pipe(vigorWheelSync);
-
-//State Saddle
-
-var stateSaddle = new ImageSurface({
-	size: [130,93],
-	content: 'bike-famous/images/state-saddle.png',
-	properties: {
-		zIndex: 1
-	}
-});
-
-var stateSaddleOriginModifier = new StateModifier({
-	transform: Transform.translate(680, 550, 0)
-})
-
-var stateSaddleScaleModifier = new StateModifier({
-	transform: Transform.scale(.5, .5, 1)
-})
-
-stateSaddle.pipe(stateSaddleSync);
-
-//Brooks Saddle
-
-var brooksSaddle = new ImageSurface({
-	size: [198,152],
-	content: 'bike-famous/images/brooks-black.png',
-	properties: {
-		zIndex: 1
-	}
-});
-
-var brooksSaddleOriginModifier = new StateModifier({
-	transform: Transform.translate(750, 550, 0)
-})
-
-var brooksSaddleScaleModifier = new StateModifier({
-	transform: Transform.scale(.3, .3, 1)
-})
-
-brooksSaddle.pipe(brooksSaddleSync);
-
-//Sync update and end functions
-//Jamaican Sync
-
-jamaicanFrameSync.on('update', function(data){
+	//mouse sync on update moves the surface to the new x and y by using a change delta
+	this.mouseFrameSync.on('update', function(data){
 		var dx = data.delta[0];
 		var dy = data.delta[1];
-		var p = jamaicanFramePosition.get()
+		var p = that.itemPosition.get()
 		var x = p[0] + dx;
 		var y = p[1] + dy;
-		jamaicanFramePosition.set([x, y]);
-});
+		that.itemPosition.set([x, y]);
+		if (itemType == "wheel") {
+			that.secondItemPosition.set([x,y]);
+		}
+		console.log("moving to",x,y);
+	});
+	//mouse sync on 'end' checks if surface has landed within the x and y of the platform
+	this.mouseFrameSync.on('end', function(data) {
+		var inX = data.clientX < 900 &&
+			          data.clientX > 110
 
-jamaicanFrameSync.on('end', function(data) {
-	var inX = data.clientX < 780 &&
-		          data.clientX > 110
-
-	var inY = data.clientY < 480 &&
-							data.clientY > 10
-
-	if (inX && inY) {
-		jamaicanScaleModifier.setTransform(Transform.scale(1,1,1),{duration: 300})
-		snapToPlatform(jamaicanFramePosition,framePosition);
-
-	} else {
-		jamaicanScaleModifier.setTransform(Transform.scale(.2,.2,1),{duration: 700})
-		snapBack(jamaicanFramePosition,jamaicanScaleModifier);
+		var inY = data.clientY < 480 &&
+								data.clientY > 10
+		console.log(inX,inY);
+		if (inX && inY) {
+			that.scaleModifier.setTransform(Transform.scale(xScalePlatform,yScalePlatform,1),{duration: 300})
+			snapToPlatform(that.itemPosition,[xDeltaPlatform,yDeltaPlatform],that);
+			if (itemType == "wheel") {
+				that.secondScaleModifier.setTransform(Transform.scale(xScalePlatform,yScalePlatform,1),{duration: 300})
+				snapToPlatform(that.secondItemPosition,[xDeltaPlatform + 445, yDeltaPlatform]);
+			}
+			setActiveItemInfo(itemType,itemName,itemPrice,that,itemDescription)
+		} else {
+			that.scaleModifier.setTransform(Transform.scale(xScale,yScale,1),{duration: 700})
+			snapBack(that.itemPosition,that.scaleModifier);
+			if (itemType == "wheel") {
+				that.secondScaleModifier.setTransform(Transform.scale(xScale,yScale,1),{duration: 700})
+				snapBack(that.secondItemPosition,that.secondScaleModifier);
+			}
+			clearActiveItemInfo(itemType);
+		}
+		console.log(inX, inY)
+	});
+	//add modifiers and surface to main context
+	mainContext.add(this.originModifier).add(this.positionModifier).add(this.scaleModifier).add(this.addImageSurface);
+	if (itemType == "wheel") {
+		console.log('added second surface')
+		mainContext.add(this.secondOriginModifier).add(this.secondPositionModifier).add(this.secondScaleModifier).add(this.addsecondImageSurface);
 	}
-	console.log(inX, inY)
-});
+}
 
-//Bomber Sync
+// Arguments: imageUrl,xOrigin,yOrigin,xScale,yScale,xDeltaPlatform,yDeltaPlatform,xSize,ySize
+jamaicanBike = new addItem('../images/jamaican-frame.png',120,570,.2,.2,170,-485,500,322,1,1,'frame',10,'Jamaican',500,"A futurist update on the original best-seller: Glossy Black Frame, Neon Green & Vivid Yellow Accents sprinkled from top to bottom");
+bomberBike = new addItem('../images/bomber-frame.png',120,650,.2,.2,170,-568,500,322,1,1,'frame',10,'Bomber',550,"Sand-blasted Khaki Frame with Foliage Green & Imperial-Red Striped pattern with matching Hubs");
 
-bomberFrameSync.on('update', function(data){
-		var dx = data.delta[0];
-		var dy = data.delta[1];
-		var p = bomberFramePosition.get()
-		var x = p[0] + dx;
-		var y = p[1] + dy;
-		bomberFramePosition.set([x, y]);
-});
+vigorWheel = new addItem('../images/vigor-wheel-large.png',650,585,.2,.2,-490,-400,300,300,1,1,'wheel',1,'Vigor FX',699,"Rolf Prima has taken paired spokes to the track. Low spoke count and high spoke tensions on stiff deep section aero rims. These alloy track wheels are ideal for training and racing.");
+stateWheel = new addItem('../images/state-wheel.png',650,660,.2,.2,-490,-475,300,300,1,1,'wheel',1,'State Deep Set',120,"These deep-wheels are a size 700 with a 43mm rim depth front and rear. Additionally, each wheel features a high-quality nylon rim strip to protect tubes from punctures.");
+brooksSaddleNew = new addItem('../images/brooks-black.png',1080,585,.3,.3,-735, -535,198,152,.7,.7,'saddle',1,'Brooks B17',80,"The Brooks England flagship B17 flagship saddle has been around for 100 years. It's an excellent choice for touring, century rides, ultra-marathon rides and other demanding cycling.")
+stateSaddleNew = new addItem('../images/state-saddle.png',1080,655,.45,.45,-722, -588,130,93,.8,.8,'saddle',1,'State Bicycle',25,"Comfortable and durable PU State Bicycle Co. saddle with steel rails. Available in tons of colors. Will fit all State Bicycle's as well as most any other bicycle.")
 
-bomberFrameSync.on('end', function(data) {
-	var inX = data.clientX < 780 &&
-		          data.clientX > 110
 
-	var inY = data.clientY < 480 &&
-							data.clientY > 10
 
-	if (inX && inY) {
-		bomberScaleModifier.setTransform(Transform.scale(1,1,1),{duration: 300})
-		snapToPlatform(bomberFramePosition,framePosition2);
-
-	} else {
-		bomberScaleModifier.setTransform(Transform.scale(.2,.2,1),{duration: 700})
-		snapBack(bomberFramePosition,bomberScaleModifier);
-	}
-	console.log(inX, inY)
-});
-
-//State wheel sync (kind of dry)
-
-stateWheelSync.on('update', function(data){
-		var dx = data.delta[0];
-		var dy = data.delta[1];
-		var p = stateWheelPosition.get()
-		var wheelR = stateWheelRightPosition.get();
-		var x = p[0] + dx;
-		var y = p[1] + dy;
-		stateWheelPosition.set([x, y]);
-		stateWheelRightPosition.set([x, y]);
-});
-
-stateWheelSync.on('end', function(data) {
-	var inX = data.clientX < 780 &&
-		          data.clientX > 110
-
-	var inY = data.clientY < 480 &&
-							data.clientY > 10
-
-	if (inX && inY) {
-		stateWheelLeftScaleModifier.setTransform(Transform.scale(1,1,1),{duration: 700})
-		stateWheelRightScaleModifier.setTransform(Transform.scale(1,1,1),{duration: 700})
-		snapToPlatform(stateWheelPosition,leftWheelPosition);
-		snapToPlatform(stateWheelRightPosition,rightWheelPosition);
-	} else {
-		stateWheelLeftScaleModifier.setTransform(Transform.scale(.2,.2,1),{duration: 700})
-		stateWheelRightScaleModifier.setTransform(Transform.scale(.2,.2,1),{duration: 700})
-		snapBack(stateWheelPosition);
-		snapBack(stateWheelRightPosition);
-	}
-	console.log(inX, inY)
-	
-});
-
-//Vigor wheel sync (kind of dry)
-
-vigorWheelSync.on('update', function(data){
-		var dx = data.delta[0];
-		var dy = data.delta[1];
-		var p = vigorWheelLeftPosition.get()
-		var wheelR = vigorWheelRightPosition.get();
-		var x = p[0] + dx;
-		var y = p[1] + dy;
-		vigorWheelLeftPosition.set([x, y]);
-		vigorWheelRightPosition.set([x, y]);
-});
-
-vigorWheelSync.on('end', function(data) {
-	var inX = data.clientX < 780 &&
-		          data.clientX > 110
-
-	var inY = data.clientY < 480 &&
-							data.clientY > 10
-
-	if (inX && inY) {
-		vigorWheelLeftScaleModifier.setTransform(Transform.scale(1,1,1),{duration: 700})
-		vigorWheelRightScaleModifier.setTransform(Transform.scale(1,1,1),{duration: 700})
-		snapToPlatform(vigorWheelLeftPosition,vigorLeftWheelPosition);
-		snapToPlatform(vigorWheelRightPosition,vigorRightWheelPosition);
-	} else {
-		vigorWheelLeftScaleModifier.setTransform(Transform.scale(.2,.2,1),{duration: 700})
-		vigorWheelRightScaleModifier.setTransform(Transform.scale(.2,.2,1),{duration: 700})
-		snapBack(vigorWheelLeftPosition);
-		snapBack(vigorWheelRightPosition);
-	}
-	console.log(inX, inY)
-	
-});
-
-//State Saddle sync (super dry)
-
-stateSaddleSync.on('update', function(data){
-		var dx = data.delta[0];
-		var dy = data.delta[1];
-		var p = stateSaddlePosition.get()
-		var x = p[0] + dx;
-		var y = p[1] + dy;
-		stateSaddlePosition.set([x, y]);
-});
-
-stateSaddleSync.on('end', function(data) {
-	var inX = data.clientX < 780 &&
-		          data.clientX > 110
-
-	var inY = data.clientY < 480 &&
-							data.clientY > 10
-
-	if (inX && inY) {
-		stateSaddleScaleModifier.setTransform(Transform.scale(1,1,1),{duration: 700})
-		snapToPlatform(stateSaddlePosition,saddlePosition);
-	} else {
-		stateSaddleScaleModifier.setTransform(Transform.scale(.5,.5,1),{duration: 700})
-		snapBack(stateSaddlePosition);
-	}
-	console.log(inX, inY)
-});
-
-//Brooks Saddle sync (super dry)
-
-brooksSaddleSync.on('update', function(data){
-		var dx = data.delta[0];
-		var dy = data.delta[1];
-		var p = brooksSaddlePosition.get()
-		var x = p[0] + dx;
-		var y = p[1] + dy;
-		brooksSaddlePosition.set([x, y]);
-});
-
-brooksSaddleSync.on('end', function(data) {
-	var inX = data.clientX < 780 &&
-		          data.clientX > 110
-
-	var inY = data.clientY < 480 &&
-							data.clientY > 10
-
-	if (inX && inY) {
-		brooksSaddleScaleModifier.setTransform(Transform.scale(.8,.8,1),{duration: 700})
-		snapToPlatform(brooksSaddlePosition,saddlePosition2);
-	} else {
-		brooksSaddleScaleModifier.setTransform(Transform.scale(.3,.3,1),{duration: 700})
-		snapBack(brooksSaddlePosition);
-	}
-	console.log(inX, inY)
-});
-
-function snapToPlatform(trans, itemPosition) {
-	console.log('snapping to platform');
+function snapToPlatform(trans, itemPosition,surface) {
 	// trans.set(itemPosition, snap)
 	trans.set(itemPosition, {
 		duration: 800
@@ -498,76 +490,89 @@ function snapBack(trans,scaleMod) {
 	// scaleMod.setTransform(Transform.scale(.2,.2,.2),{duration: 700})
 }
 
-//Position modifiers to follow dragging of mouse
-var jamaicanPositionModifier = new Modifier({
-	transform : function(){
-		var p = jamaicanFramePosition.get()
-		return Transform.translate(p[0], p[1], 0);
+function setActiveItemInfo(itemType,itemName,itemPrice,itemObject,itemDescription) {
+	if (itemType == 'frame') {
+		console.log('setting frame price',itemType,itemName,itemPrice)
+		framePrice.setContent('$' + itemPrice);
+		frameTitle.setContent(itemName);
+		frameDescription.setContent(itemDescription)
+		if (jQuery.isEmptyObject(activeFrame) == false) {
+			console.log("Snaping back previously active frame",activeFrame);
+			totalPrice -= activeFrame.price;
+			activeFrame.scaleModifier.setTransform(Transform.scale(activeFrame.xScale,activeFrame.yScale,1),{duration: 700})
+			snapBack(activeFrame.itemPosition,activeFrame.scaleModifier)
+		}
+		activeFrame = itemObject;
+	} else if (itemType == 'wheel') {
+		wheelTitle.setContent(itemName);
+		wheelPrice.setContent('$' + itemPrice);
+		wheelDescription.setContent(itemDescription);
+		if (jQuery.isEmptyObject(activeWheel) == false) {
+			console.log("Snaping back previously active wheel",activeWheel);
+			totalPrice -= activeWheel.price;
+			activeWheel.scaleModifier.setTransform(Transform.scale(activeWheel.xScale,activeWheel.yScale,1),{duration: 700})
+			activeWheel.secondScaleModifier.setTransform(Transform.scale(activeWheel.xScale,activeWheel.yScale,1),{duration: 700})
+			snapBack(activeWheel.itemPosition,activeWheel.scaleModifier)
+			snapBack(activeWheel.secondItemPosition,activeWheel.secondScaleModifier)
+		}
+		activeWheel = itemObject;
+	} else if (itemType == 'saddle') {
+		saddleTitle.setContent(itemName);
+		saddlePrice.setContent('$' + itemPrice);
+		saddleDescription.setContent(itemDescription);
+		if (jQuery.isEmptyObject(activeSaddle) == false) {
+			console.log('snapping back active saddle', activeSaddle);
+			totalPrice -= activeSaddle.price;
+			activeSaddle.scaleModifier.setTransform(Transform.scale(activeSaddle.xScale,activeSaddle.yScale,1),{duration: 700})
+			snapBack(activeSaddle.itemPosition,activeSaddle.scaleModifier)
+		}
+		activeSaddle = itemObject;
 	}
-});
+	totalPrice += itemPrice;
+	grandTotalPrice.setContent('$' + totalPrice);
+}
 
-var bomberPositionModifier = new Modifier({
-	transform : function(){
-		var p = bomberFramePosition.get()
-		return Transform.translate(p[0], p[1], 0);
+function clearActiveItemInfo(itemType) {
+	if (itemType == 'frame') {
+		totalPrice -= activeFrame.price;
+		frameTitle.setContent('Select Frame');
+		framePrice.setContent('$0')
+		frameDescription.setContent('')
+		activeFrame = {}
+	} else if (itemType == 'wheel') {
+		totalPrice -= activeWheel.price;
+		wheelTitle.setContent('Select Wheels');
+		wheelPrice.setContent('$0')
+		wheelDescription.setContent('')
+		activeWheel = {}
+	} else if (itemType == 'saddle') {
+		totalPrice -= activeSaddle.price;
+		saddleTitle.setContent('Select Saddle');
+		saddlePrice.setContent('$0');
+		saddleDescription.setContent('')
+		activeSaddle = {}
 	}
-});
+	grandTotalPrice.setContent('$' + totalPrice);
+}
 
-var statePositionModifier = new Modifier({
-	transform : function(){
-		var p = stateWheelPosition.get()
-		return Transform.translate(p[0], p[1], 0);
-	}
-});
-
-var stateSaddlePositionModifier = new Modifier({
-	transform : function(){
-		var p = stateSaddlePosition.get()
-		return Transform.translate(p[0], p[1], 0);
-	}
-});
-
-var brooksSaddlePositionModifier = new Modifier({
-	transform : function(){
-		var p = brooksSaddlePosition.get()
-		return Transform.translate(p[0], p[1], 0);
-	}
-});
-
-var stateWheelRightPositionModifier = new Modifier({
-	transform : function(){
-		var p = stateWheelRightPosition.get()
-		return Transform.translate(p[0], p[1], 0);
-	}
-});
-
-var vigorWheelRightPositionModifier = new Modifier({
-	transform : function(){
-		var p = vigorWheelRightPosition.get()
-		return Transform.translate(p[0], p[1], 0);
-	}
-});
-
-var vigorWheelLeftPositionModifier = new Modifier({
-	transform : function(){
-		var p = vigorWheelLeftPosition.get()
-		return Transform.translate(p[0], p[1], 0);
-	}
-});
-
-mainContext.add(background)
 mainContext.add(platformOriginModifier).add(platform);
+mainContext.add(innerPlatformOriginModifier).add(innerPlatform);
+mainContext.add(blackBorderOriginModifier).add(blackPlatformBorder);
+mainContext.add(bikeStatsOriginModifier).add(bikeStats);
+mainContext.add(saddleTitleOriginModifier).add(saddleTitle);
+mainContext.add(saddlePriceOriginModifier).add(saddlePrice);
+mainContext.add(saddleHeadingOriginModifier).add(saddleHeading);
+mainContext.add(saddleDescriptionOriginModifier).add(saddleDescription);
+mainContext.add(wheelTitleOriginModifier).add(wheelTitle);
+mainContext.add(wheelPriceOriginModifier).add(wheelPrice);
+mainContext.add(wheelHeadingOriginModifier).add(wheelHeading);
+mainContext.add(wheelDescriptionOriginModifier).add(wheelDescription);
+mainContext.add(frameHeadingOriginModifier).add(frameHeading);
+mainContext.add(frameTitleOriginModifier).add(frameTitle);
+mainContext.add(framePriceOriginModifier).add(framePrice);
+mainContext.add(frameDescriptionOriginModifier).add(frameDescription);
+mainContext.add(grandTotalHeadingOriginModifier).add(grandTotalHeading);
+mainContext.add(grandTotalPriceOriginModifier).add(grandTotalPrice);
 mainContext.add(framePlatformOriginModifier).add(framePlatform);
 mainContext.add(saddlePlatformOriginModifier).add(saddlePlatform);
 mainContext.add(wheelPlatformOriginModifier).add(wheelPlatform);
-mainContext.add(bikeStatsOriginModifier).add(bikeStats);
-mainContext.add(jamaicanOriginModifier).add(jamaicanPositionModifier).add(jamaicanScaleModifier).add(jamaicanFrame);
-mainContext.add(bomberOriginModifier).add(bomberPositionModifier).add(bomberScaleModifier).add(bomberFrame);
-mainContext.add(stateOriginModifier).add(statePositionModifier).add(stateWheelLeftScaleModifier).add(stateWheel);
-mainContext.add(stateWheelRightOriginModifier).add(stateWheelRightPositionModifier).add(stateWheelRightScaleModifier).add(stateWheelRight);
-mainContext.add(vigorWheelLeftOriginModifier).add(vigorWheelLeftPositionModifier).add(vigorWheelLeftScaleModifier).add(vigorWheelLeft);
-mainContext.add(vigorWheelRightOriginModifier).add(vigorWheelRightPositionModifier).add(vigorWheelRightScaleModifier).add(vigorWheelRight);
-mainContext.add(stateSaddleOriginModifier).add(stateSaddlePositionModifier).add(stateSaddleScaleModifier).add(stateSaddle);
-mainContext.add(brooksSaddleOriginModifier).add(brooksSaddlePositionModifier).add(brooksSaddleScaleModifier).add(brooksSaddle)
-// mainContext.add(bikeOriginModifier).add(bike);
-// mainContext.add(wheelOriginModifier).add(wheelPositionModifier).add(wheel);
