@@ -464,13 +464,13 @@ function addItem(imageUrl,xOrigin,yOrigin,xScale,yScale,xDeltaPlatform,yDeltaPla
 }
 
 // Arguments: imageUrl,xOrigin,yOrigin,xScale,yScale,xDeltaPlatform,yDeltaPlatform,xSize,ySize
-jamaicanBike = new addItem('../images/jamaican-frame.png',120,570,.2,.2,170,-485,500,322,1,1,'frame',10,'Jamaican',500,"A futurist update on the original best-seller: Glossy Black Frame, Neon Green & Vivid Yellow Accents sprinkled from top to bottom");
+jamaicanBike = new addItem('images/jamaican-frame.png',120,570,.2,.2,170,-485,500,322,1,1,'frame',10,'Jamaican',500,"A futurist update on the original best-seller: Glossy Black Frame, Neon Green & Vivid Yellow Accents sprinkled from top to bottom");
 bomberBike = new addItem('../images/bomber-frame.png',120,650,.2,.2,170,-568,500,322,1,1,'frame',10,'Bomber',550,"Sand-blasted Khaki Frame with Foliage Green & Imperial-Red Striped pattern with matching Hubs");
 
-vigorWheel = new addItem('../images/vigor-wheel-large.png',650,585,.2,.2,-490,-400,300,300,1,1,'wheel',1,'Vigor FX',699,"Rolf Prima has taken paired spokes to the track. Low spoke count and high spoke tensions on stiff deep section aero rims. These alloy track wheels are ideal for training and racing.");
-stateWheel = new addItem('../images/state-wheel.png',650,660,.2,.2,-490,-475,300,300,1,1,'wheel',1,'State Deep Set',120,"These deep-wheels are a size 700 with a 43mm rim depth front and rear. Additionally, each wheel features a high-quality nylon rim strip to protect tubes from punctures.");
-brooksSaddleNew = new addItem('../images/brooks-black.png',1080,585,.3,.3,-735, -535,198,152,.7,.7,'saddle',1,'Brooks B17',80,"The Brooks England flagship B17 flagship saddle has been around for 100 years. It's an excellent choice for touring, century rides, ultra-marathon rides and other demanding cycling.")
-stateSaddleNew = new addItem('../images/state-saddle.png',1080,655,.45,.45,-722, -588,130,93,.8,.8,'saddle',1,'State Bicycle',25,"Comfortable and durable PU State Bicycle Co. saddle with steel rails. Available in tons of colors. Will fit all State Bicycle's as well as most any other bicycle.")
+vigorWheel = new addItem('images/vigor-wheel-large.png',650,585,.2,.2,-490,-400,300,300,1,1,'wheel',1,'Vigor FX',699,"Rolf Prima has taken paired spokes to the track. Low spoke count and high spoke tensions on stiff deep section aero rims. These alloy track wheels are ideal for training and racing.");
+stateWheel = new addItem('images/state-wheel.png',650,660,.2,.2,-490,-475,300,300,1,1,'wheel',1,'State Deep Set',120,"These deep-wheels are a size 700 with a 43mm rim depth front and rear. Additionally, each wheel features a high-quality nylon rim strip to protect tubes from punctures.");
+brooksSaddleNew = new addItem('images/brooks-black.png',1080,585,.3,.3,-735, -535,198,152,.7,.7,'saddle',1,'Brooks B17',80,"The Brooks England flagship B17 flagship saddle has been around for 100 years. It's an excellent choice for touring, century rides, ultra-marathon rides and other demanding cycling.")
+stateSaddleNew = new addItem('images/state-saddle.png',1080,655,.45,.45,-722, -588,130,93,.8,.8,'saddle',1,'State Bicycle',25,"Comfortable and durable PU State Bicycle Co. saddle with steel rails. Available in tons of colors. Will fit all State Bicycle's as well as most any other bicycle.")
 
 
 
