@@ -46,7 +46,7 @@ function appendTimeCard(timeCard) {
 			$('#time-card-table tr:last').after(appendHTML);
 	}	
 
-	$('#hours').text('(' + timeCard.totalHours + ' Hours)')
+	$('#hours').text(timeCard.totalHours + ' Hours')
 }
 
 appendTimeCard(startingTimeCard)
