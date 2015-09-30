@@ -71,6 +71,7 @@
 
 function TimeCard(weeklyHours,dayStartTime,weekStartDate,weeklyWorkDays) {
 	weeklyWorkDays = weeklyWorkDays = typeof weeklyWorkDays !== 'undefined' ? weeklyWorkDays : 5;
+	this.totalHours = weeklyHours;
 	this.totalMinutes = weeklyHours * 60;
 	var dateTime = new Date(weekStartDate)
 	var dayStartMins = parseInt(dayStartTime.slice(-2))
