@@ -1,7 +1,7 @@
 var startingTimeCard = new TimeCard(40,"08:30","9/28/15")
 
 function toHrs(min) {
-	return Math.floor(min / 60) + "Hrs" + (min % 60) + "min"
+	return Math.floor(min / 60) + "Hrs " + (min % 60) + "min"
 }
 
 function appendTimeCard(timeCard) {
@@ -43,9 +43,7 @@ function appendTimeCard(timeCard) {
 			appendHTML += '<td>' + toHrs((timeCard.workWeek[i+1] - timeCard.workWeek[i]) / 1000 / 60) + '</td>'
 			toHrs(((timeCard.workWeek[i+1] - timeCard.workWeek[i]) / 1000 / 60).toFixed(2))
 			appendHTML += '</tr>'
-			console.log(appendHTML)
 			$('#time-card-table tr:last').after(appendHTML);
-		console.log("appending row")
 	}	
 }
 
@@ -55,7 +53,10 @@ $('#regenerate-button').click(function() {
 	var startTime = $('#start-time').val();
 	var startDate = $('#start-date').val();
 	var weeklyHours = $('#weekly-hours').val();
-	var newTimeCard = new TimeCard(weeklyHours,startTime,startDate)
-	appendTimeCard(newTimeCard)
-	console.log("regen",startTime,startDate,weeklyHours);
+	if (startDate == "" || startTime == "" || weeklyHours == "") {
+		alert('Please fill all inputs')
+	} else {
+		var newTimeCard = new TimeCard(weeklyHours,startTime,startDate)
+		appendTimeCard(newTimeCard)
+	}
 })
