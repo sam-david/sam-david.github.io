@@ -14,27 +14,7 @@
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 </head>
 <body>
-  <div class="fixed">
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="../index.html" onclick="fireLink('home')" class="nav-title">Sam David</a></h1>
-        </li>
-         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li><a class="nav-button" onclick="fireLink('about')" href="../about.html">About</a></li>
-          <li><a class="nav-button" onclick="fireLink('blog')" href="../blog.html">Blog</a></li>
-          <li><a class="nav-button" onclick="fireLink('resume')" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
-          <li><a class="nav-button" onclick="fireLink('projects')" href="../projects.html">Projects</a></li>
-        </ul>
-      </section>
-    </nav>
-  </div>
+  <nav></nav>
   <header class="wide-row">
     <div class="large-12 wide-column">
       <img src="../images/zion-header-small2.jpg" class="header-image">
@@ -92,16 +72,16 @@
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <p class="code-example"> &#60;VirtualHost *:80&#62; <br>     
-        <span class="indent">ServerName www.rackexample.com</span>  <br>   
-        <span class="indent">DocumentRoot /webapps/rack_example/public</span> <br>   
-        <span class="indent">&#60;Directory /webapps/rack_example/public&#62;</span> <br>         
-        <span class="indent-two">Allow from all </span> <br>        
+      <p class="code-example"> &#60;VirtualHost *:80&#62; <br>
+        <span class="indent">ServerName www.rackexample.com</span>  <br>
+        <span class="indent">DocumentRoot /webapps/rack_example/public</span> <br>
+        <span class="indent">&#60;Directory /webapps/rack_example/public&#62;</span> <br>
+        <span class="indent-two">Allow from all </span> <br>
         <span class="indent-two">Options -MultiViews</span> <br>
-        <span class="indent-two"># Line below is optional if you want friendly error page when app fails to start</span> <br>              
-        <span class="indent-two">PassengerFriendlyErrorPages on</span> <br>      
-        <span class="indent-two"># Uncomment this if you're on Apache >= 2.4:</span> <br>         
-        <span class="indent-two">#Require all granted </span> <br>   
+        <span class="indent-two"># Line below is optional if you want friendly error page when app fails to start</span> <br>
+        <span class="indent-two">PassengerFriendlyErrorPages on</span> <br>
+        <span class="indent-two"># Uncomment this if you're on Apache >= 2.4:</span> <br>
+        <span class="indent-two">#Require all granted </span> <br>
         <span class="indent">&#60;/Directory&#62; </span> <br>
         &#60;/VirtualHost&#62;
       </p>
@@ -118,12 +98,12 @@
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <p class="code-example"> /webapps/rackapp<br>     
-        <span class="indent">|</span>  <br>   
-        <span class="indent">+-- config.ru</span> <br>   
-        <span class="indent">|</span>  <br>   
-        <span class="indent">+-- public/</span> <br>   
-        <span class="indent">|</span>  <br>   
+      <p class="code-example"> /webapps/rackapp<br>
+        <span class="indent">|</span>  <br>
+        <span class="indent">+-- config.ru</span> <br>
+        <span class="indent">|</span>  <br>
+        <span class="indent">+-- public/</span> <br>
+        <span class="indent">|</span>  <br>
         <span class="indent">+-- tmp/</span>
       </p>
     </div>
@@ -142,25 +122,11 @@
       </p>
     </div>
   </div>
-<div class="wide-row">
-  <div class="large-4 columns footer-box">
-    <img src="../images/skills/mail.png" class="linkedin-footer-image">
-    <a class="footer-text" onclick="fireLink('email')" href="mailto:sfd1987@gmail.com">E-mail Me</a>
-  </div>
-  <div class="large-4 columns footer-box">
-    <img src="../images/skills/linkedin.png" class="linkedin-footer-image">
-    <a class="footer-text" onclick="fireLink('linkedin')" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
-  </div>
-  <div class="large-4 columns footer-box">
-    <img src="../images/skills/github.png" class="linkedin-footer-image">
-    <a class="footer-text" onclick="fireLink('github')" href="https://github.com/sam-david">GitHub</a>
-  </div>
-</div>
-
-<img src="../images/sanfranfooter.jpg" class="footer-image">
+<footer></footer>
 
   <script src="../js/foundation.min.js"></script>
   <script src="../js/foundation.topbar.js"></script>
+  <script src="../js/layout.js"></script>
    <script>
     $(document).foundation();
   </script>

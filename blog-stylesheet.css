@@ -33,8 +33,8 @@ body {
 }
 
 .wide-row {
-  min-width:100% !important; //make rows %100 of page 
-} 
+  min-width:100% !important; //make rows %100 of page
+}
 
 .wide-column {
   width: 100%;
@@ -47,6 +47,10 @@ body {
 
 .top-bar {
   background: #0F2D40;
+}
+
+.top-nav-bottom-padding {
+  margin-top: 2.8125rem;
 }
 
 .name {
@@ -74,7 +78,7 @@ body {
   text-align: center;
   margin-top: 3%;
   margin-bottom: 1%;
-  font-family: 'Montserrat', cursive;
+  font-family: 'Montserrat', arial;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
 
@@ -139,7 +143,7 @@ body {
   color: white;
   font-size: 1.8em;
   font-weight: bold;
-  font-family: 'Montserrat', cursive;
+  font-family: 'Montserrat', arial;
 }
 
 .skill-text {
@@ -151,7 +155,7 @@ body {
   color: white;
   font-size: 1.2em;
   font-weight: bold;
-  font-family: 'Montserrat', cursive;
+  font-family: 'Montserrat', arial;
 }
 
 .footer-box {
@@ -164,7 +168,7 @@ body {
 
 .footer-text {
   color: white;
-  font-family: 'Montserrat', cursive;
+  font-family: 'Montserrat', arial;
   font-size: 1.2em;
   text-decoration: underline;
 }
@@ -175,11 +179,8 @@ body {
   border: solid #296B73 4px;
 }
 
-//Blog classes
 
-
-
-/*-----------New Blog Classes------------*/
+/*-----------Blog Classes------------*/
 
 .indent-one {
   margin-left: 5%;
@@ -264,13 +265,24 @@ body {
   text-decoration: underline;
   color: white;
   text-align: center;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  font-family: 'Montserrat', cursive;
+  margin-top: 1%;
+  margin-bottom: 0;
+  font-family: 'Montserrat', arial;
   background-color: rgba(0, 0, 0, 0.6);
+  font-size: 1.3em;
 }
 
 
+.blog-heading-info {
+  font-size: 1em;
+  margin-top: 0;
+  text-decoration: none;
+  font-family: arial;
+  background-color: white;
+  color: black;
+  padding: 1%;
+  line-height: 1.3;
+}
 
 .blog-content {
   color: black;
@@ -361,8 +373,36 @@ body {
   font-family: monospace;
 }
 
+.ruby-code-block {
+  font-family: monospace;
+  background-color: #242424;
+  color: white;
+  margin-bottom: 2%;
+}
+
+.ruby-class {
+  color: #ebde68;
+}
+
+.ruby-symbol {
+  color: #c1ef65;
+}
+
+.ruby-self {
+  color: #28A198;
+}
+
+.ruby-code-line {
+  padding: 1%;
+  margin-bottom: 0;
+}
+
 .ruby-return {
   color: #5eff1f;
+}
+
+.ruby-comment {
+  color: grey;
 }
 
 .blue {
@@ -483,7 +523,7 @@ body {
   font-size: 1.2em;
   text-align: justify;
   color: black;
-  font-family: 'Montserrat', cursive;
+  font-family: 'Montserrat', arial;
 }
 
 .gallery-project {

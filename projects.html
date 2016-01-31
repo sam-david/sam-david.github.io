@@ -13,41 +13,20 @@
   <link href="blog-stylesheet.css" rel="stylesheet" type="text/css" />
   <script src="js/jquery-2.1.0.js"></script>
   <script src="js/modernizr.js"></script>
-  <script src="js/projects.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 </head>
 <body>
-  <div class="fixed">
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="index.html" onclick="fireLink('home')" class="nav-title">Sam David</a></h1>
-      </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <li><a class="nav-button" onclick="fireLink('about')" href="about.html">About</a></li>
-        <li><a class="nav-button" onclick="fireLink('blog')" href="blog.html">Blog</a></li>
-        <li><a class="nav-button" onclick="fireLink('resume')" target="_blank" href="Sam David Resume.pdf">Resume</a></li>
-        <li><a class="nav-button" onclick="fireLink('projects')" href="projects.html">Projects</a></li>
-      </ul>
-    </section>
-  </nav>
-</div>
+  <nav></nav>
   <div class="row">
     <div class="large-10 large-centered columns"><h1 id="pagetitle">Projects</h1></div>
   </div>
   <div class="row">
     <div class="large-4 large-centered columns project-title-box">
-      <h2 class="project-title"><a onclick="fireLink('rentjoy')" class="project-title" target="_blank" href="http://www.rentjoy.co/">Rentjoy</a></h2>
+      <h2 class="project-title"><a id='rentjoy' class="project-title fire-link" target="_blank" href="http://www.rentjoy.co/">Rentjoy</a></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-link"><a class="" onclick="fireLink('rentjoy')" target="_blank" href="http://www.rentjoy.co/"><img src="images/projects/rentjoy.png" class="project-image"></a></div>
+    <div class="large-8 large-centered columns project-link fire-link"><a id='rentjoy' class="fire-link" target="_blank" href="http://www.rentjoy.co/"><img src="images/projects/rentjoy.png" class="project-image"></a></div>
   </div>
   <div class="row">
     <div class="large-9 large-centered columns project-box">
@@ -64,11 +43,11 @@
   </div>
   <div class="row">
     <div class="large-4 large-centered columns project-title-box">
-      <h2 class="project-title"><a onclick="fireLink('code-crush')" class="project-title" target="_blank" href="http://code-crush.herokuapp.com/">Code Crush</a></h2>
+      <h2 class="project-title"><a id='code-crush' class="project-title fire-link" target="_blank" href="http://code-crush.herokuapp.com/">Code Crush</a></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-link"><a class="" onclick="fireLink('code-crush')" target="_blank" href="http://code-crush.herokuapp.com/"><img src="images/projects/code-crush.png" class="project-image"></a></div>
+    <div class="large-8 large-centered columns project-link"><a id='code-crush' class="fire-link" target="_blank" href="http://code-crush.herokuapp.com/"><img src="images/projects/code-crush.png" class="project-image"></a></div>
   </div>
   <div class="row">
     <div class="large-9 large-centered columns project-box">
@@ -86,11 +65,11 @@
   </div>
   <div class="row">
     <div class="large-5 large-centered columns project-title-box">
-      <h2 class="project-title"><a class="project-title" onclick="fireLink('tesla-comp')" target="_blank" href="http://www.teslacomparison.com/">Tesla Car Comparison</a></h2>
+      <h2 class="project-title"><a id='tesla-comp' class="project-title fire-link" target="_blank" href="http://www.teslacomparison.com/">Tesla Car Comparison</a></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-link"><a class="" onclick="fireLink('tesla-comp')" target="_blank" href="http://www.teslacomparison.com/"><img src="images/projects/tesla-comp.png" class="project-image"></a></div>
+    <div class="large-8 large-centered columns project-link"><a id='tesla-comp' class="fire-link" target="_blank" href="http://www.teslacomparison.com/"><img src="images/projects/tesla-comp.png" class="project-image"></a></div>
   </div>
   <div class="row">
     <div class="large-9 large-centered columns project-box">
@@ -106,11 +85,11 @@
   </div>
   <div class="row">
     <div class="large-5 large-centered columns project-title-box">
-      <h2 class="project-title"><a class='project-title' onclick="fireLink('coc-calc')" target="_blank" href="http://clashofclanscalculator.com/">Clash of Clans Calculator</a></h2>
+      <h2 class="project-title"><a id='coc-calc' class='project-title fire-link' target="_blank" href="http://clashofclanscalculator.com/">Clash of Clans Calculator</a></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-link"><a target="_blank" onclick="fireLink('coc-calc')"  href="http://clashofclanscalculator.com/"><img src="images/projects/coc-calc.png" class="project-image"></a></div>
+    <div class="large-8 large-centered columns project-link"><a id="coc-calc" class="fire-link" target="_blank" href="http://clashofclanscalculator.com/"><img src="images/projects/coc-calc.png" class="project-image"></a></div>
   </div>
   <div class="row">
     <div class="large-9 large-centered columns project-box">
@@ -129,11 +108,11 @@
   </div>
   <div class="row">
     <div class="large-4 large-centered columns project-title-box">
-      <h2 class="project-title"><a class='project-title' onclick="fireLink('bike-famous')" target="_blank" href="http://sam-david.github.io/bike-famous.html">Famo.us Bike App</a></h2>
+      <h2 class="project-title"><a id="bike-famous" class='project-title fire-link' target="_blank" href="http://sam-david.github.io/bike-famous.html">Famo.us Bike App</a></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-8 large-centered columns project-link"><a target="_blank" onclick="fireLink('bike-famous')" href="http://sam-david.github.io/bike-famous.html"><img src="images/projects/bike-famous.png" class="project-image"></a></div>
+    <div class="large-8 large-centered columns project-link"><a id='bike-famous' class="fire-link" target="_blank" href="http://sam-david.github.io/bike-famous.html"><img src="images/projects/bike-famous.png" class="project-image"></a></div>
   </div>
   <div class="row">
     <div class="large-9 large-centered columns project-box">
@@ -144,29 +123,15 @@
       </ul>
     </div>
   </div>
-  <div class="wide-row">
-    <div class="large-4 columns footer-box">
-      <img src="images/skills/mail.png" class="linkedin-footer-image">
-      <a class="footer-text" onclick="fireLink('email')" href="mailto:sfd1987@gmail.com">E-mail Me</a>
-    </div>
-    <div class="large-4 columns footer-box">
-      <img src="images/skills/linkedin.png" class="linkedin-footer-image">
-      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/" onclick="fireLink('linkedin')" >LinkedIn</a>
-    </div>
-    <div class="large-4 columns footer-box">
-      <img src="images/skills/github.png" class="linkedin-footer-image">
-      <a class="footer-text" onclick="fireLink('github)" href="https://github.com/sam-david">GitHub</a>
-    </div>
-  </div>
-<div class="row">
-  <div class="large-12 columns"></div>
-  </div>
-  <img src="images/sanfranfooter.jpg" class="footer-image">
+
+  <footer></footer>
+
   <script src="js/foundation.min.js"></script>
   <script src="js/foundation.topbar.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/firebase.js"></script>
    <script>
     $(document).foundation();
   </script>
-  <script src="js/firebase.js"></script>
 </body>
 </html>
