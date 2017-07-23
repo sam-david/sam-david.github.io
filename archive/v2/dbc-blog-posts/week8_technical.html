@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Sam David : Blog</title>
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/modernizr.js"></script>
+  <script src="../js/projects.js"></script>
+</head>
+<body>
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="../index.html" class="nav-title">Sam David</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a class="nav-button" href="../about.html">About</a></li>
+        <li><a class="nav-button" href="../blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="../Sam David Resume.pdf">Resume</a></li>
+        <li class="has-dropdown not-click">
+          <a class="nav-button" href="../projects.html">Projects</a>
+          <ul class="dropdown">
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="../images/zion-header-small2.jpg" class="header-image">
+    </div>
+  </header>
+  <div class="row">
+    <div class="large-6 large-centered columns"><h1 class="blog-heading">Ruby on Rails</h1></div>
+  </div>
+
+  <div class="row">
+    <div class="large-2 medium-2 columns">
+      <img src="../images/rubyonrails.png" class="rails-image">
+    </div>
+    <div class="large-10 medium-10 columns">
+      <p class="blogcontent">Ruby on rails is a web application framework originally founded in 2004, by David Heinemeier Hansson. Hansson is a Danish programmer who is also a partner with Basecamp. Interestingly enough, Hansson is not only a programmer, but a race car driver as well! A major breakthrough in Rails history was when Apple chose to include it with its shipment of their new operating system Leopard in 2007. In 2009 it went under some major new developments including templates, engines, and forms. Rails has had many updates since then, almost one major update a year and it is currently on version 4.1.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent">
+      Rails is a very agile framework that emphasizes convention over configuration and DRY programming principles. Convention of configuration decreases the decisions that developers make by increasing simplicity. However, it does not decrease flexibility. DRY programming, or 'Don't Repeat Yourself', is somewhat self-explanatory. DRY means limiting repetition in multi-tiered programming architectures. Rails makes it so that a modification to one element does not require you to change other unrelated elements.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent">
+      Rails operates a model-view-controller pattern like many other web frameworks. The <span class="bold-text">Model</span> maps to a table in a database and a ruby file. The <span class="bold-text">Controller</span> responds to external requests from web server to determine which files to render. Lastly, the <span class="bold-text">View</span> is used to compile the rails files to HTML, generating the output for the user.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent">
+      Many major web applications have used rails as their framework. Some of the most famous ones are Hulu, SoundCloud, BleacherReport, Square, and even the original Twitter to name a few. Twitter has since changed their framework because of a few crashes in 2007 and 2008. Some criticize the scalability of Ruby on Rails for this reason, but clearly it seems to work for most. Twitter is just a whole different beast that is obviously one of the most accessed sites on the internet.</p>
+    </div>
+  </div>
+  
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
+  </div>
+<div class="row">
+  <div class="large-12 columns"></div>
+  </div>
+  <img src="../images/bike-footer-short.jpg" class="footer-image">
+  <script src="../js/foundation.min.js"></script>
+  <script src="../js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

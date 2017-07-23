@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sam David : Web Developer</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link href="blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-2.1.0.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+</head>
+<body>
+  <nav></nav>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="images/zion-header-plain4.jpg" class="header-image">
+    </div>
+  </header>
+  <div class="row">
+    <div class="large-8 large-centered columns"><h1 id="pagetitle">Technical Skills</h1></div>
+  </div>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/html5.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/css3.svg" class="skill-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">HTML5 | CSS3</h2>
+      <p class="skill-text">HTML and CSS continue to be a staple of every project I work on. Even projects where I am assigned a backend role, CSS or frontend HTML templating comes into play at some point. It is essential for every project that we know these fundamentals and how to tweak CSS styling. At my current position I work on many Ionic apps that are compiled to mobile platforms like iOS and Andriod. Styling to both of these platforms can be tricky! </p>
+      <h3 class="skill-project">Related Project Example(HTML, CSS, JS, jQuery): <a id='tesla-comp' class='fire-link' target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison Calculator</a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/ruby.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/js.png" class="skill-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Ruby | JavaScript</h2>
+      <p class="skill-text">Most of the code I write is in one of these two languages. The first interpreted language I chose to learn was JavaScript. I wanted to add functionality and interactivity to my web pages. Through programs at Makersquare in Austin, DevBootcamp, and practice on my own, JavaScript has become one of my more comfortable languages. I love how adaptable it is, and how many frameworks use it. During my course at DevBootcamp, we practiced principles such as OOjs and the MVC pattern. I have used Javascript in the <a href="http://phaser.io/">Phaser.io</a> game engine and the <a href="http://famo.us/">Famo.us</a> platform as well.</p>
+      <p class="skill-text">
+      My current engineering position has many products with a Ruby on Rails stack so I code frequently in Ruby. Initially I was introduced to Ruby by coding and listening to lectures for many hours at DevBootcamp, it has become one of my favorite languages. Ruby made learning the fundamentals of object-oriented languages easier to understand. The syntax is very intuitive and there are many powerful built in methods and classes.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/rails.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/sinatra.png" class="skill-image sinatra-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Ruby on Rails | Sinatra</h2>
+      <p class="skill-text">My current position at  <a id='infuse' class='fire-link' href='http://infuse.us/'>Infuse</a>, the tech stack is based on a Ruby on Rails framework. This position, along with the the full stack position I had previously at Rentjoy.co, is allowing me to get a lot of experience with Ruby on Rails. I'm comfortable with the MVC structure, configuring, and deploying Rails apps. My initial exposure to Rails was actually through DevBootcamp where we first learned the Sinatra framework and principles of Restful Routes.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/ionic.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/cordova.png" class="skill-image sinatra-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Ionic | Cordova</h2>
+      <p class="skill-text">In order to deploy to a variety of platforms, we use Ionic framwork which deploys through Cordova. This allows us to code in JavaScript, but have the flexibility of being on different platforms like iOS and Andriod. Ionic also provides functions and templates for mobile functionality. This makes it easy to adapt similar mobile behaviors across platform. </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/postgres.svg" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <div class="skill-back">
+        <img src="images/skills/sqlite.png" class="skill-image sqlite-image">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">PostgreSQL | SQLite | ActiveRecord</h2>
+      <p class="skill-text">PostgreSQL continues to be the main DBMS used on most of the projects I work on. It works very well with Ruby on Rails and ActiveRecord. For deployment I frequently use PostgreSQL on Heroku. Using ActiveRecord and Rails to map advanced relations is something that I continue to gain experience in. At my current position at Paid, our stack includes PostgreSQL and ActiveRecord.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/node-js.png" class="skill-image node-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/mongodb.png" class="skill-image node-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Node.js | MongoDB </h2>
+      <p class="skill-text">During my final project at DevBootcamp, we decided to try something new rather than go the conventional route using Ruby on Rails. We wanted to use a framework that was new to us. We wrote our project with the 'MEAN' stack using Node.js for the back-end, MongoDB for our database of users, Express, and Angular.js. Node is a platform I continue to use on projects to gain more experience.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/angularjs.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/phaser.png" class="skill-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Angular.js | Phaser.io</h2>
+      <p class="skill-text">Angular.js is still a fairly new technology to me. I have used it on a few projects, but it is a robust framework and there is still much to learn. To continue practicing Angular I have used it on additional personal projects.</p>
+      <p class="skill-text">Phaser.io was the game engine used in our final project. It was also brand new to us at the time, but with the relative complexity of our game, we got a lot of practice. Phaser is a great engine to get a 2D game up in running in a very short amount of time. We chose Phaser because of the popularity and support relative to other game engines out there. It proved to be a very good choice, allowing us to make a coding typing tutor with solid gameplay(<a href="http://codecrush.herokuapp.com/">Code Crush</a>).
+      </p>
+      <h3 class="skill-project">Related Project Example(Phaser.io): <a id='code-crush' class='fire-link' target="_blank" href="http://code-crush.herokuapp.com/">Code Crush(DBC Final Project)</a></h3>
+      <h3 class="skill-project">Related Project Example(Angular.js): <a id='coc-calc' class='fire-link' target="_blank" href="http://clashofclanscalculator.com/">Clash of Clans Calculator</a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/photoshop.png" class="skill-image">
+    </div>
+    <div class="large-6 medium-6 small-6 columns skill-box">
+      <img src="images/skills/indesign.png" class="skill-image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="skill-heading">Adobe Photoshop | Adobe InDesign</h2>
+      <p class="skill-text"> I was first introduced to Adobe InDesign in a high school computer class. I continued practicing with it over the years and have used it in the professional environment as well as personal projects. It is a great tool to format documents and other collateral. I have used Adobe Photoshop over the years, for basic photo editing. More recently, I took a few courses online on how to design page elements using Photoshop. Photoshop is also a very helpful wireframing tool. I find myself using Photoshop on almost every project I do for some purpose.</p>
+    </div>
+  </div>
+  <footer></footer>
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation.topbar.js"></script>
+  <script src="js/layout.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
+  <script src="js/firebase.js"></script>
+</body>
+</html>

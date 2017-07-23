@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Sam David : Blog</title>
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/modernizr.js"></script>
+  <script src="../js/projects.js"></script>
+</head>
+<body>
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="../index.html" class="nav-title">Sam David</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a class="nav-button" href="../about.html">About</a></li>
+        <li><a class="nav-button" href="../blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="../Sam David Resume.pdf">Resume</a></li>
+        <li class="has-dropdown not-click">
+          <a class="nav-button" href="../projects.html">Projects</a>
+          <ul class="dropdown">
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="../images/zion-header-small2.jpg" class="header-image">
+    </div>
+  </header>
+  <div class="row">
+    <div class="large-8 large-centered columns"><h1 class="blog-heading">Blocs, Procs, and Lambdas</h1></div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent">Blocs, Procs, and Lambdas are all a way of grouping code together. With procs and lambdas you can call on that block of code later because it is an object. Blocks are not objects so they cannot be called, they are just part of the method syntax. Below are a few examples of a block. We use them all the time already.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> [1,2,3].each {|x| x * x} <span class="ruby-return">| {|x| x * x} is the block</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> [1,2,3].each do |x| </br> x * x </br> end </br> <span class="ruby-return">Between do to end is the block</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">Procs and lambdas have a similar purpose but differ in a few different ways. Shown below is a basic example of how to construct a proc and a lambda.</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> p = Proc.new {|x| x * x} </br> [1,2,3].each(&p)</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">Notice how we have to have the & symbol before we call the proc. This tells ruby it is time to turn the proc into a block.</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> p = Proc.new { puts "Hello World" } </br> p.call </p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">See because procs are objects we can call methods on them like we do above. Here we call the proc and get the expected output.</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> lam = lambda {|x| x * x} </br> [1,2,3].each(&lam) </p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> lam = lambda { puts "Hello World" } </br> lam.call </p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">Almost the same format for both a lambda and a proc. Notice how there is no .new when creating the lambda, however. So how are they different? For one, lambdas will return an argument error if the wrong number of arguments are passed into them</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> lam = lambda { |x| puts x } </br> lam.call(2) <span class="ruby-return">#=> 2</span> </br> lam.call <span class="ruby-return">#=> ArgumentError: wrong number of arguments (0 for 1)</span></br> lam.call(1,2,3) <span class="ruby-return">#=> # ArgumentError: wrong number of arguments (3 for 1)</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> p = Proc.new { |x| puts x } </br> p.call(2) <span class="ruby-return">#=> 2</span> </br> p.call <span class="ruby-return">#=> nil</span></br> p.call(1,2,3) <span class="ruby-return">#=> 1</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">Notice when the proc recieves more arguments than it should, it would execute the proc on the first argument and forget about the rest. Lastly, when you use return in lambda it exits the block handing control to the calling method. With the proc it behaves like it is part of the calling method. Return with a proc would then return for both the block and the calling method.</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> def proc_test </br> proc = Proc.new { return } </br> proc.call </br> puts "Hello world" </br> end </br> proc_test <span class="ruby-return">#=> nothing is printed</span></div>
+    <div class="large-12 columns"><p class="code-example"> def lambda_test </br> lam = lambda { return } </br> lam.call </br> puts "Hello world" </br> end </br> lambda_test <span class="ruby-return">#=> 'Hello World'</span></div>
+  </div>
+  
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
+  </div>
+<div class="row">
+  <div class="large-12 columns"></div>
+  </div>
+  <img src="../images/bike-footer-short.jpg" class="footer-image">
+  <script src="../js/foundation.min.js"></script>
+  <script src="../js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

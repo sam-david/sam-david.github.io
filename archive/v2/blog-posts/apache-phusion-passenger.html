@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sam David: Configure Apache with Phusion Passenger</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/modernizr.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+</head>
+<body>
+  <nav></nav>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="../images/zion-header-small2.jpg" class="header-image">
+    </div>
+  </header>
+  <div class="row">
+  <h2 class="large-12 columns page-title">Apache server configuration with Phusion Passenger</h2>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">I have always wanted to be a server admin! I'm being slightly facetious, but now that I have my own server I do feel somewhat empowered. How I got here was rather unexpected, I was more forced into it. I was using GoDaddy's Shared Hosting, and they did not have any way of supporting apps that used Ruby on Rails or Sinatra. I was left with no choice, if I wanted to stick with GoDaddy, than to buy my own dedicated server (they call it VPS or Virtual Private Server). Of course, there are other options out there to host Rails apps. I still use Heroku but I did not want to be stuck under the confines of their service when it came to Dynos.</p>
+      <p class="blog-content"> After working through this process I have realized there is not one single resource that walks you through from the bottom installing Ruby on the server. I will provide a summary of sorts, but also reference the resource I used at the bottom of this page. This guide will walk through the steps I took to configure this Apache server from scratch to host Rails and Sinatra based apps. There are plenty of alternative ways to host your apps out there, but I thoroughly enjoyed setting up this server because it allowed me to interact with and learn about a server in a way I had never done before.</p>
+      <p class="blog-content">The first thing I realized is that my server was rocking Ruby v1.8. This older version of Ruby would probably not work with some of the gems I was using and I knew that it could be a problem at some point. I was unsure of how to update the system Ruby, and frankly did not want to play around with it too much, so I installed RVM. RVM is a Ruby version manager that will allow me to easily update and specify which version of Ruby to use. In this case, I did a multiuser install because I plan on using RVM for multiple projects on this server. (Note: You can obviously skip installing RVM entirely if you are comfortable with the Ruby version you have on your server. You would then just install passenger to your system Ruby gemfiles.) To install RVM multi-user enter:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> \curl -sSL https://get.rvm.io | sudo bash -s stable</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">When this is done, an 'rvm' group is added to the server. In order to gain RVM access across other users, you need to add the username to this group by typing:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example">sudo adduser [username] rvm</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">You will then have to add RVM to your .bash_profile of any user you wish to use this version of Ruby with:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example">echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">Following this, we can now install the Phusion Passenger gem. it shouldn't matter what account you are using here as it will install to the local RVM ruby gems library.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example">gem install passenger</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">The next step is to run the Phusion Passenger installer. This is a fairly straight forward process but obviously make sure you select 'Ruby' as one of the options to install.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> passenger-install-apache2-module</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">In order to deploy the app, you need to configure the passenger.conf file with a new Virtual Host module. This took me a while to figure out as I was adding the Virtual Host to my Apache conf files (Specifically the httpd.conf), don't do this! I found the virtual host was not deployed correctly when located in this file. Also note that the Document root and Directory root are to the public folder and not the overall app directory.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="code-example"> &#60;VirtualHost *:80&#62; <br>
+        <span class="indent">ServerName www.rackexample.com</span>  <br>
+        <span class="indent">DocumentRoot /webapps/rack_example/public</span> <br>
+        <span class="indent">&#60;Directory /webapps/rack_example/public&#62;</span> <br>
+        <span class="indent-two">Allow from all </span> <br>
+        <span class="indent-two">Options -MultiViews</span> <br>
+        <span class="indent-two"># Line below is optional if you want friendly error page when app fails to start</span> <br>
+        <span class="indent-two">PassengerFriendlyErrorPages on</span> <br>
+        <span class="indent-two"># Uncomment this if you're on Apache >= 2.4:</span> <br>
+        <span class="indent-two">#Require all granted </span> <br>
+        <span class="indent">&#60;/Directory&#62; </span> <br>
+        &#60;/VirtualHost&#62;
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">I also added friendly error pages to my virtual host because in development it makes it a LOT easier to understand what's going on. Passport gives you specific error messages similar to what you would expect running on localhost in development. Without this it was like shooting in the dark as to why my apps weren't running. I recommend leaving this in here until you have your app is in development.</p> <br>
+      <p class="blog-content">When deploying a rack-based Ruby app, Passenger is looking for a certain layout. The Rack APP you specified above must have the following three things:</p>
+      <p class="blog-content"> <span class="italic-text bold-text">config.ru</span> This is the file that starts the app, contiaing logic to initialize the app</p>
+      <p class="blog-content"> <span class="italic-text bold-text">public/</span> should be where your web assets such as images and stylesheets exist </p>
+      <p class="blog-content"> <span class="italic-text bold-text"> tmp/ </span>You will probably have to create this directory but it is used for a restart.txt file</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="code-example"> /webapps/rackapp<br>
+        <span class="indent">|</span>  <br>
+        <span class="indent">+-- config.ru</span> <br>
+        <span class="indent">|</span>  <br>
+        <span class="indent">+-- public/</span> <br>
+        <span class="indent">|</span>  <br>
+        <span class="indent">+-- tmp/</span>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns blog-container">
+      <p class="blog-content">Now all that is left is for you to restart your server. Did your app deploy? Hopefully the friendly errors help if not...</p>
+      <p class="blog-content">Listed below I have all the resources I used when configuring this server. They should server well as alternative resources when you run into problems:</p>
+      <p class="blog-content">
+        <ul>
+          <li class="resource-link">Installing RVM (<a href="https://rvm.io/rvm/install">Link</a>)</li>
+          <li class="resource-link">Phusion Passenger Apache Users Guide (<a href="https://www.phusionpassenger.com/documentation/Users%20guide%20Apache.html">Link</a>)</li>
+          <li class="resource-link">Sinatra Recipes: Apache and Passenger (<a href="http://recipes.sinatrarb.com/p/deployment/apache_with_passenger">Link</a>)</li>
+          <li class="resource-link">Using RVM rubies with Phusion Passenger (<a href="https://rvm.io/deployment/passenger">Link</a>)</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+<footer></footer>
+
+  <script src="../js/foundation.min.js"></script>
+  <script src="../js/foundation.topbar.js"></script>
+  <script src="../js/layout.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
+</body>
+
+</html>

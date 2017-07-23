@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Sam David : Blog</title>
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Nunito' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link href="../blog-stylesheet.css" rel="stylesheet" type="text/css" />
+  <script src="../js/jquery-2.1.0.js"></script>
+  <script src="../js/modernizr.js"></script>
+  <script src="../js/projects.js"></script>
+</head>
+<body>
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="../index.html" class="nav-title">Sam David</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a class="nav-button" href="../about.html">About</a></li>
+        <li><a class="nav-button" href="../blog.html">Blog</a></li>
+        <li><a class="nav-button" target="_blank" href="../Sam David Resume.pdf">Resume</a></li>
+        <li class="has-dropdown not-click">
+          <a class="nav-button" href="../projects.html">Projects</a>
+          <ul class="dropdown">
+            <li><a class="nav-button" target="_blank" href="http://codecrush.herokuapp.com/">Code Crush</a></li>
+            <li><a class="nav-button" target="_blank" href="https://who-to-follow.herokuapp.com/">Who To Follow</a></li>
+            <li><a class="nav-button" target="_blank" href="http://www.teslacomparison.com/">Tesla Comparison</a></li>
+            <li><a class="nav-button" target="_blank" href="http://sfd1987.github.io/bike-famous.html">Famo.us Bikes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>
+  <header class="wide-row">
+    <div class="large-12 wide-column">
+      <img src="../images/zion-header-small2.jpg" class="header-image">
+    </div>
+  </header>
+  <div class="row">
+    <div class="large-8 large-centered columns"><h1 class="blog-heading">Ruby Method Blog: .rand</h1></div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent">There are always times where you are going to some way to generate random numbers. We can find a variety of uses for these from a random roll of a die, to a word scrambler that might randomize the letters. Whatever it is, programmers know that the use of random numbers does come up here and there. Luckily, Ruby has a pretty easy method already in place that can produce pseudo random integers, floats, or binary strings. They say pseudorandom because no computer can produce truly random numbers by computation. This also means that to the casual observer the numbers will appear random but over time there is a pattern to the numbers based on the original seed, and you could eventually guess what the next number in the order is.</p>
+      <p class="blogcontent">
+        The easiest way to execute the rand function is shown below. This would generate a random number between 0 and 1.  </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> rand() <span class="ruby-return">#=> 0.34242484593133105</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p class="blogcontent"> If you would like a random integer from 0 to 10 you could type to following.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> rand(10) <span class="ruby-return">#=> 5</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">How about a specific range, say from 5 through 9?</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example">rand(5..9)<span class="ruby-return">#=> 7</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">So as we said these numbers aren't truly random, they all start at a seed. You can specify the seed by doing the following.</p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> prng1 = Random.new(1234) </br> prng1.seed <span class="ruby-return">#=> 1234</span> </br> prng1.rand(100) <span class="ruby-return">#=> 47</span></br> prng1.rand(100) <span class="ruby-return">#=> 83</span></p></div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="blogcontent">From then on when you call a random number using that same seed value, you will get the same results for your random numbers. This can be useful, however if you want to call on the results of your random numbers later on in a program. See below the results are the same with the same seed.</p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns"><p class="code-example"> prng2 = Random.new(1234) </br> prng2.seed <span class="ruby-return">#=> 1234</span> </br> prng2.rand(100) <span class="ruby-return">#=> 47</span></br> prng2.rand(100) <span class="ruby-return">#=> 83</span></p></div>
+  </div>
+  
+  <div class="wide-row">
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/mail.png" class="linkedin-footer-image">
+      <a class="footer-text" href="mailto:sfd1987@gmail.com">E-mail Me</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/linkedin.png" class="linkedin-footer-image">
+      <a class="footer-text" href="http://www.linkedin.com/in/samdavid21/">LinkedIn</a>
+    </div>
+    <div class="large-4 columns footer-box">
+      <img src="../images/skills/github.png" class="linkedin-footer-image">
+      <a class="footer-text" href="https://github.com/sfd1987">GitHub:sfd1987</a>
+    </div>
+  </div>
+<div class="row">
+  <div class="large-12 columns"></div>
+  </div>
+  <img src="../images/bike-footer-short.jpg" class="footer-image">
+  <script src="../js/foundation.min.js"></script>
+  <script src="../js/foundation.topbar.js"></script>
+   <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
