@@ -876,7 +876,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "img {\n  max-height: 40px;\n}\n\n.row {\n  text-align: center;\n  margin-bottom: 0;\n}\n\n.card-panel {\n  padding: 5%;\n  background-color: #B2C9DB;\n  /*cursor: pointer;*/\n}\n\n.card-panel:hover {\n  box-shadow:         inset 0 0 10px #000000;\n}\n\n.title {\n  font-weight: bold;\n  color: #0c213e;\n}\n\nhr {\n  background-color: black;\n  border: solid #0c213e 1px;\n}\n", ""]);
+exports.push([module.i, "img {\n  max-height: 40px;\n}\n\n.row {\n  text-align: center;\n  margin-bottom: 0;\n}\n\n.card-panel {\n  padding: 5%;\n  background-color: #B2C9DB;\n  /*cursor: pointer;*/\n}\n\n.card-panel:hover {\n  box-shadow:         inset 0 0 10px #000000;\n}\n\n.title {\n  font-weight: bold;\n  color: #0c213e;\n}\n\nhr {\n  background-color: black;\n  border: solid #0c213e 1px;\n}\n\n\n.responsive-img {\n  max-width: 85%;\n}\n", ""]);
 
 // exports
 
@@ -950,7 +950,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card-content {\n  padding: 15px;\n}\n\n.card-image {\n  text-align: center;\n  background-color: #cacaca;\n  max-width: 30% !important;\n}\n\n.card-image img {\n  width: 50%;\n  margin: 2%;\n  display:block;\n  margin: auto;\n  padding: 7%;\n\n  vertical-align: middle;\n}\n\n.card-title {\n  font-size: 1.3em;\n  margin-bottom: 0;\n  margin-top: 1%;\n}\n\n.card.horizontal {\n  /*min-height: 100px;*/\n}\n", ""]);
+exports.push([module.i, ".card-content {\n  padding: 15px;\n}\n\n.card-image {\n  text-align: center;\n  background-color: #cacaca;\n  max-width: 30% !important;\n}\n\n.card-image img {\n  width: 50%;\n  margin: 2%;\n  display:block;\n  margin: auto;\n  padding: 7%;\n\n  vertical-align: middle;\n}\n\n.card-title {\n  font-size: 1.3em;\n  margin-bottom: 0;\n  margin-top: 1%;\n}\n\n.card.horizontal {\n  /*min-height: 100px;*/\n}\n\n\n.responsive-img {\n  max-width: 90%;\n}\n", ""]);
 
 // exports
 
@@ -1116,7 +1116,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".page-heading {\n  text-align: center;\n  color: #0C1828;\n  text-decoration: underline;\n}\n\n.page-blurb {\n  font-size: 1.6em;\n}\n.row {\n  margin-bottom: 2px;\n}\n", ""]);
+exports.push([module.i, ".page-heading {\n  text-align: center;\n  color: #0C1828;\n  text-decoration: underline;\n}\n\n.page-blurb {\n  font-size: 1.6em;\n}\n.row {\n  margin-bottom: 2px;\n}\n\n.responsive-img {\n  max-width: 85%;\n}\n", ""]);
 
 // exports
 
@@ -1153,26 +1153,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var SkillsComponent = (function () {
     function SkillsComponent() {
+        this.awsSkills = [
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('EC2', "EC2 is cool", "aws-ec2.svg"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('RDS', "RDS is cool", "aws-rds.svg"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('DynamoDB', "DynamoDB is cool", "aws-dynamodb.svg"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('CloudFront', "CloudFront is cool", "aws-cloudfront.svg"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Lambda', "EC2 is cool", "aws-lambda.svg"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('IAM', "EC2 is cool", "aws-iam.svg"),
+        ];
         this.skills = [
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Ruby', "Because of how often I'm working in projects with Rails, I use Ruby quite often. Ruby was one of the first object oriented languages I learned. The syntax is very intuitive as there are many powerful built in methods and classes. Ruby will remain one of the core languages I practice for years to come as I continue to use Rails moving forward.", 'ruby.png'),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('JavaScript', "The very first interpreted language I chose to learn was JavaScript. I had experimented with HTML and CSS but wanted to add functionality and interactivity to my pages. JavaScript has become one of my more comfortable languages. I love how adaptable it is, and how many frameworks use it. At first I would use JavaScript in conjunction with jQuery, but these days I'm using js with frameworks like AngularJS or ReactJS.", 'js.png'),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Ruby on Rails', "My current software engineering position has many projects using Ruby on Rails for APIs or for the full MVC pattern. In both of my previous positions, we used Rails as the backend framework. I'm comfortable with the MVC structure, configuring, and deploying Rails apps. With the support for Rails out there, and the amount of Ruby gems it is easy to apply Rails to many different applications. Deploying Rails apps to AWS or Heroku environments is fairly common to me now. ", 'rails.png'),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Python', "Scripting for one off features and personal projects", 'python.png'),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Node.js', "Node is something that I often use for smaller microservice type projects or a project using the M.E.A.N. stack. At my current employer we might use node to set up a quick server for websockets or webhooks. ", "node-js.png"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Elasticsearch', "Integrating Elasticsearch into application environments. Replacing existing SQL queries with more efficient Elasticsearch lookup.", "elasticsearch3.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Laravel', "Working with Rails has made working with Laravel extremely easy transition. Working with PHP has similar elements to Ruby as they are both object oriented.", "laravel.svg"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('HTML5', 'HTML remains at the core of web development I do every day. .', 'html5.png'),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('CSS3', 'HTML and CSS were some of the first languages I studied, as you would expect. I began teaching myself online, mainly through Lynda.com, Codeacademy.com, but desired to return to a classroom environment to accelerate my learning. Before I applied to a full-stack immersive class, I attended a front-end part-time course in Austin, TX at Makersquare. This was great initial exposure to HTML, CSS, Javascript, and CSS frameworks like Zurb Foundation to build responsive environments. HTML and CSS remain at the core of all my front end development.', 'css3.svg'),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('jQuery', "jQuery is a technology that I still find myself using from time to time. Mostly I rely on jQuery for ajax calls, DOM manipulation and search, or existing third party plugins.", "jquery.gif"),
-            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('AngularJS', "Angular is currently my preferred frontend framework. This site was designed with Angular 4. I have worked with both Angular 1 and 2/4. The power of the component design with Angular 2 is really compelling.", "angularjs.png"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('React', "React is the frontend framework I prefer at this point. Experience at ReferralExchange has led me to see how this framework is better constructed.", "react.png"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('AngularJS', "Angular is no longer my preferred frontend framework. Even though this site was designed with angular 6. My recent exposure of the last few years t work to React has led me to prefer React over Angular. I have worked with both Angular 1-6.", "angularjs.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('PostgreSQL', "Most of the Rails appliations I have used have a Postgres or MySQL based database. I've become use to setting up postgres on servers and working with existing databases using psql.", "postgres.svg"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('MongoDB', "Mongo is something that I frequently use with Node applications. When making apps in the M.E.A.N stack, Mongo with NoSQL is the way to go. I prefer SQL based databases, however.", "mongodb.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Sinatra', "If I want to spin up a quick web serve with Ruby, Sintra is the way to go. Most of the time I'm using Rails but this light frameworks has it's advantages.", "sinatra.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Swift', "Swift is preferred to me over objective-c when programming iOS. Working with Xcode, I have developed a few apps and worked on legacy code as well.", "swift.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Adobe Photoshop', "Photoshop remains a tool I use mostly for modifying page assets on the frontend. I use it sometimes for web mock ups as well.", "photoshop.png"),
-            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Adobe InDesign', "InDesign is great for creating marketing material or quick mock ups.", "indesign.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('PHP', "PHP is used mainly with Laravel. In terms of server side languages, PHP is secondary to Ruby.", "php.png")
         ];
         this.thirdParties = [
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Stripe', "", "stripe.png"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Twilio', "", "twilio.svg"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('CardFlight', "", "cardflight2.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Payeezy', "", "payeezy.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Heroku', "", "heroku2.svg"),
@@ -1183,6 +1194,7 @@ var SkillsComponent = (function () {
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Twitter API', "", "twitter.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Facebook API', "", "facebook.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Codeship', "", "codeship.png"),
+            new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Travis', "", "travis.png"),
             new __WEBPACK_IMPORTED_MODULE_1__skill__["a" /* Skill */]('Ionic', "", "ionic.png"),
         ];
     }
