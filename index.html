@@ -8,7 +8,9 @@
   <meta property="og:title" content="Samuel David — Software Engineer">
   <meta property="og:description" content="Full-stack engineer building AI-native development systems.">
   <meta property="og:url" content="https://sam-david.github.io/">
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -127,6 +129,7 @@
     .card .tag { display: inline-block; margin-top: 14px; font-size: 12px; color: var(--accent); font-family: "JetBrains Mono", monospace; }
     .card.feature { grid-column: 1 / -1; background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); }
     .card.feature p { color: var(--text); }
+    .card.span { grid-column: 1 / -1; }
 
     .flow {
       margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
@@ -175,10 +178,10 @@
 
   <main id="top">
     <header class="hero wrap">
-      <div class="eyebrow">Software Engineer · San Francisco Bay Area</div>
+      <div class="eyebrow">Senior Software Engineer · San Francisco Bay Area</div>
       <h1>I build software, and the AI systems that build it with me.</h1>
       <p class="lede">
-        I'm a full-stack engineer at GiveCampus with over a decade of shipping production
+        I'm a senior software engineer at GiveCampus with over a decade of shipping production
         web apps. Lately I spend most of my time on AI-driven development: giving agents shared
         context, durable documentation, and custom tools so they can do real engineering work.
       </p>
@@ -200,14 +203,14 @@
 
         <div class="grid">
           <div class="card feature">
-            <h3>Context Share: handing off agent sessions across machines</h3>
+            <h3><a href="https://github.com/sam-david/claude-code-context-share-plugin" target="_blank" rel="noopener" data-track="proj_context_share">Context Share</a>: handing off agent sessions across machines</h3>
             <p>
-              A Claude Code plugin with a small Go + SQLite server. One agent runs
-              <code>/context-save my-feature</code>; another agent on any machine runs
-              <code>/context-load my-feature</code> and continues where the first stopped. Each save is a
-              structured bundle covering the summary, decisions and their reasoning, files touched, current state,
-              next steps, key snippets, and warnings. The server is a single binary that idles at about 5&nbsp;MB of RAM, with
-              bearer-token auth and optional TTL expiry.
+              A Claude Code plugin that came out of a question my team raised at our AI retreat: how do you
+              pass context between agent sessions, across machines and teammates? One agent runs
+              <code>/context-save my-feature</code>; another agent anywhere runs <code>/context-load my-feature</code>
+              and continues where the first stopped. Each save is a structured bundle covering decisions and their reasoning,
+              files touched, current state, next steps, and warnings. The server is a single Go + SQLite binary
+              that runs on about 5&nbsp;MB of RAM.
             </p>
             <div class="flow">
               <span class="step">agent A</span><span class="arrow">→</span>
@@ -219,10 +222,54 @@
           </div>
 
           <div class="card">
-            <h3>Custom MCP servers</h3>
+            <h3><a href="https://github.com/sam-david/ci-patrol" target="_blank" rel="noopener" data-track="proj_ci_patrol">CI Patrol</a></h3>
             <p>
-              Tools that let agents act on real systems: a small, auditable email MCP server; a Fusion 360 CAD
-              server designed around roughly 50 typed tools; and an MCP interface so agents can use a citation API directly.
+              Built for GiveCampus's heavily parallelized CircleCI suite, which runs 80+ nodes. When a build fails, Claude reads
+              the test output and the PR diff and classifies the failure as flaky, legitimate, or unclear. Flaky jobs rerun
+              automatically, and engineers only get a Slack DM when it's real.
+            </p>
+            <span class="tag">Claude API · CircleCI · Slack</span>
+          </div>
+
+          <div class="card">
+            <h3><a href="https://clawtalkapp.com" target="_blank" rel="noopener" data-track="proj_clawtalk">ClawTalk</a>, an iOS app on the App Store</h3>
+            <p>
+              A native client for self-hosted OpenClaw AI agents, by voice or text. Speech recognition runs on-device on the
+              Apple Neural Engine with WhisperKit, and responses stream back as rendered markdown across multi-agent channels.
+              The backend runs on AWS Lightsail and Bedrock, deployed with Terraform. It's open source (<a href="https://github.com/sam-david/clawtalk-ios" target="_blank" rel="noopener" data-track="proj_clawtalk_gh">GitHub</a>).
+            </p>
+            <span class="tag">Swift · SwiftUI · WhisperKit · Bedrock</span>
+          </div>
+
+          <div class="card">
+            <h3><a href="https://github.com/sam-david/pg-redact-mcp" target="_blank" rel="noopener" data-track="proj_pg_redact">pg-redact-mcp</a></h3>
+            <p>
+              Lets AI agents query PostgreSQL without seeing PII. It detects sensitive columns using name heuristics and
+              Microsoft Presidio, and masks results before they reach the model. Real values are revealed selectively, with
+              human approval. It's read-only by default.
+            </p>
+            <span class="tag">MCP · Python · Postgres</span>
+          </div>
+
+          <div class="card">
+            <h3><a href="https://github.com/sam-david/unreal-mcp" target="_blank" rel="noopener" data-track="proj_unreal">unreal-mcp</a></h3>
+            <p>
+              An MCP server for Unreal Engine with 127 tools across 16 subsystems and four transport layers. It needs no C++
+              plugin, so Claude can work with a UE 5.3+ project directly.
+            </p>
+            <span class="tag">MCP · Unreal Engine · Python</span>
+          </div>
+
+          <div class="card">
+            <h3>A growing set of MCP servers</h3>
+            <p>
+              Tools that give agents access to real systems:
+              <a href="https://github.com/sam-david/email-on-acid-mcp" target="_blank" rel="noopener" data-track="proj_eoa">Email on Acid</a> and
+              <a href="https://github.com/sam-david/mailgun-mcp" target="_blank" rel="noopener" data-track="proj_mailgun">Mailgun</a> for email QA,
+              <a href="https://github.com/sam-david/pg-pool-mcp" target="_blank" rel="noopener" data-track="proj_pg_pool">pg-pool</a> for multi-database Postgres,
+              <a href="https://github.com/sam-david/email-mcp" target="_blank" rel="noopener" data-track="proj_email">email</a>,
+              <a href="https://github.com/sam-david/openai-images-mcp" target="_blank" rel="noopener" data-track="proj_images">image generation</a>, and
+              <a href="https://github.com/sam-david/lutron-mcp" target="_blank" rel="noopener" data-track="proj_lutron">Lutron</a> home lighting.
             </p>
             <span class="tag">MCP · Node · Python</span>
           </div>
@@ -230,27 +277,19 @@
           <div class="card">
             <h3>Documentation as agent memory</h3>
             <p>
-              A living knowledge base that agents read and write. It catalogs reusable workflows by pattern
-              (single agent, pipeline, parallel fan-out, fan-out + synthesis, loop-until-dry), each with a
-              "use when" trigger and its key gotcha.
+              A living knowledge base that agents read and write. Reusable workflows are cataloged by pattern (pipeline,
+              parallel fan-out, fan-out + synthesis, loop-until-dry), and handoff docs are written for the next session.
+              One handoff doc let a fresh Claude Code instance on an NVIDIA Jetson finish a hardware bring-up on its own.
             </p>
             <span class="tag">Notion MCP · subagents</span>
           </div>
 
-          <div class="card">
-            <h3>Handoff docs for fresh agents</h3>
+          <div class="card span">
+            <h3>Claude Code tooling</h3>
             <p>
-              Written for the next session rather than for a person: after a long hardware bring-up, a
-              handoff doc gave a fresh Claude Code instance on an NVIDIA Jetson enough context to finish setup on its own.
-            </p>
-            <span class="tag">Claude Code · edge devices</span>
-          </div>
-
-          <div class="card">
-            <h3>Developer tooling for Claude Code</h3>
-            <p>
-              Plugins, skills, hooks, and status lines, including a color-coded context-window usage
-              bar showing model and session cost, so it's clear when a session needs a handoff.
+              Plugins, skills, and hooks, including a
+              <a href="https://github.com/sam-david/context-usage-bar" target="_blank" rel="noopener" data-track="proj_usage_bar">context-usage status bar</a>
+              that shows context fill, model, and session cost, so it's clear when a session needs a handoff.
             </p>
             <span class="tag">plugins · skills · hooks</span>
           </div>
@@ -268,43 +307,56 @@
     <section id="experience">
       <div class="wrap">
         <h2>Experience</h2>
-        <p class="section-sub">Full-stack product engineering, mostly Ruby on Rails and JavaScript, across fintech, real estate, and higher-ed fundraising.</p>
+        <p class="section-sub">Full-stack product engineering, mostly Ruby on Rails, React, and React Native, across higher-ed fundraising, digital health, real estate, and fintech.</p>
 
         <div class="job">
-          <div class="when">2023 – Present</div>
+          <div class="when">Aug 2023 – Present</div>
           <div>
             <h3>GiveCampus</h3>
-            <p class="role">Software Engineer · Online Giving &amp; Events</p>
+            <p class="role">Senior Software Engineer · Events &amp; Online Giving</p>
             <ul>
-              <li>Tech lead for the promo code feature, requested by hundreds of partner institutions.</li>
-              <li>Built offline uploads of event registration data, so on-site check-in keeps working without connectivity.</li>
-              <li>Redesigned the frontend of schools' main landing pages.</li>
-              <li>Built user-access permissions that large schools need to manage their teams.</li>
-              <li>Fixed high-priority production bugs and shared the on-call rotation.</li>
-              <li>Contributed to internal engineering education sessions.</li>
+              <li>Tech lead across the Events product: event sequences, ticket packages, affiliation-restricted ticket types, reusable form fields, a guest list revamp, backend registrations, multiple constituent IDs, and custom reporting.</li>
+              <li>Led <strong>Event Sequences</strong>, scheduled outreach to event audiences built on dynamic recipient segments.</li>
+              <li>Led <strong>name tag printing</strong>, the badge-printing system for on-site check-in. It renders ZPL templates on the server, sends print jobs through Zebra's cloud API to ZD621 printers, and includes a provisioning playbook covering enrollment, firmware, fonts, calibration, and Wi-Fi. It debuted live at GiveCampus's partner conference and drew a wave of beta requests from schools.</li>
+              <li>Led <strong>Events permissions</strong>, role-based access for large schools, based on discovery calls with partner universities.</li>
+              <li>Tech lead on <strong>promo codes</strong>, requested by hundreds of partners, and on bulk offline registration uploads.</li>
+              <li>Built <a href="https://github.com/sam-david/ci-patrol" target="_blank" rel="noopener">CI Patrol</a>, which uses Claude to triage flaky CI failures, and brought context-sharing tooling out of the team's AI retreat.</li>
             </ul>
           </div>
         </div>
 
         <div class="job">
-          <div class="when">2017</div>
+          <div class="when">May 2022 – Aug 2023</div>
+          <div>
+            <h3>Brightside Health</h3>
+            <p class="role">Senior Software Engineer</p>
+            <ul>
+              <li>Helped launch a company-wide crisis care program for people in acute need.</li>
+              <li>Built a React Native app that lets in-house pharmacists handle prescription refills.</li>
+              <li>Rebuilt patient–therapist matching on the Rails API to improve treatment outcomes.</li>
+              <li>Mentored mid-level and junior engineers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="when">Oct 2017 – May 2022</div>
           <div>
             <h3>ReferralExchange</h3>
-            <p class="role">Full Stack Engineer · Platform Team</p>
+            <p class="role">Software Engineer · Platform Team</p>
             <ul>
-              <li>Built a three-way call system on Twilio connecting agents, leads, and operations.</li>
               <li>Ran experiments on and maintained the lead funnel, which created thousands of leads each month.</li>
-              <li>Built the mobile app thousands of agents use to accept leads.</li>
-              <li>Ran AWS infrastructure and Elasticsearch across development and production.</li>
+              <li>Built the mobile app thousands of agents use to accept leads, and a three-way calling system on Twilio.</li>
+              <li>Ran AWS infrastructure and Elasticsearch across environments, and led application upgrades.</li>
             </ul>
           </div>
         </div>
 
         <div class="job">
-          <div class="when">2016 – 2017</div>
+          <div class="when">Aug 2016 – Sep 2017</div>
           <div>
             <h3>Infuse</h3>
-            <p class="role">Full Stack Engineer</p>
+            <p class="role">Software Engineer</p>
             <ul>
               <li>Lead engineer on a point-of-sale product for a car wash chain processing $10M+ a year.</li>
               <li>Reduced the frontend codebase by 30% by refactoring AngularJS controllers into modular services.</li>
@@ -314,25 +366,24 @@
         </div>
 
         <div class="job">
-          <div class="when">2015 – 2016</div>
+          <div class="when">Sep 2015 – Jul 2016</div>
           <div>
-            <h3>Paid Labs</h3>
-            <p class="role">Full Stack Engineer</p>
+            <h3>Paid</h3>
+            <p class="role">Software Engineer</p>
             <ul>
-              <li>Cut the OAuth backend by about 50% with modular OAuth 2.0 connection models for Stripe and QuickBooks.</li>
-              <li>Built a Handlebars templating engine that 25%+ of customers used to customize their invoices and emails.</li>
+              <li>Built modular OAuth 2.0 connections for Stripe and QuickBooks, and a Handlebars engine customers used to customize their invoices and emails.</li>
+              <li>Built an internal Rails messaging system that cut ticket response time by about a day.</li>
             </ul>
           </div>
         </div>
 
         <div class="job">
-          <div class="when">2014 – 2015</div>
+          <div class="when">Mar 2015 – Sep 2015</div>
           <div>
             <h3>Rentjoy</h3>
-            <p class="role">Full Stack Engineer</p>
+            <p class="role">Full Stack Developer</p>
             <ul>
-              <li>Integrated Stripe into a Rails rental payments platform processing about $20K a month.</li>
-              <li>Cut average clicks by 40% through UI/UX work, and raised RSpec coverage to 95%.</li>
+              <li>Integrated Stripe into a Rails rental payments platform, cut average clicks by 40%, and raised RSpec coverage to 95%.</li>
             </ul>
           </div>
         </div>
@@ -355,14 +406,14 @@
           <h3>Languages &amp; frameworks</h3>
           <div class="chips">
             <span class="chip">Ruby on Rails</span><span class="chip">JavaScript / TypeScript</span>
-            <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Python</span>
+            <span class="chip">React</span><span class="chip">React Native</span><span class="chip">Swift / SwiftUI</span><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Python</span>
           </div>
         </div>
         <div class="skill-group">
           <h3>Data &amp; infrastructure</h3>
           <div class="chips">
             <span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">Elasticsearch</span>
-            <span class="chip">AWS</span><span class="chip">Heroku</span><span class="chip">Stripe</span><span class="chip">Twilio</span>
+            <span class="chip">AWS</span><span class="chip">Terraform</span><span class="chip">CircleCI</span><span class="chip">Heroku</span><span class="chip">Stripe</span><span class="chip">Twilio</span><span class="chip">Zebra / ZPL</span>
           </div>
         </div>
       </div>
@@ -372,10 +423,11 @@
       <div class="wrap">
         <h2>Background</h2>
         <p>
-          I studied Interactive Entertainment (game design) at USC's School of Cinematic Arts, then interned at Activision
-          on <em>Skylanders</em>, worked as a real estate analyst, and taught myself web development before going through
-          Dev Bootcamp in San Francisco. I've been building production software since 2014. That mix of design, product,
-          and engineering still shapes how I work.
+          I studied Interactive Entertainment (game design) at USC's School of Cinematic Arts, interned at CAA and at
+          Activision on <em>Skylanders</em>, and spent a year and a half underwriting apartment deals as a real estate analyst.
+          After a stint as a product specialist at Tesla, I taught myself web development, went through Dev Bootcamp in
+          San Francisco, and have been shipping production software since 2015. That mix of design, product, and engineering
+          still shapes how I work.
         </p>
         <p>Outside of work: 3D printing, drones, electronics projects, and anything with a motor.</p>
       </div>
