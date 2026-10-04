@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Samuel David — Software Engineer</title>
-  <meta name="description" content="Samuel David is a full-stack software engineer in the San Francisco Bay Area, building AI-native development systems with Claude Code, MCP, and shared agent context.">
-  <meta property="og:title" content="Samuel David — Software Engineer">
-  <meta property="og:description" content="Full-stack engineer building AI-native development systems.">
+  <title>Samuel David — Senior Software Engineer</title>
+  <meta name="description" content="Samuel David is a senior full-stack software engineer working remotely across the U.S., building AI-native development tools with Claude Code and MCP.">
+  <meta property="og:title" content="Samuel David — Senior Software Engineer">
+  <meta property="og:description" content="Full-stack engineer building AI-native development systems. Remote, U.S.">
   <meta property="og:url" content="https://sam-david.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!--
     Analytics (replaces the old Firebase "portfolio-clicks" logger).
@@ -40,37 +40,40 @@
 
   <style>
     :root {
-      --bg: #fbfaf7;
+      --bg: #f6f6f3;
       --surface: #ffffff;
-      --text: #1b1b1f;
-      --muted: #5d5d66;
-      --line: #e6e3dc;
-      --accent: #c2410c;
-      --accent-soft: #fdf0e8;
-      --code-bg: #f3f1ec;
+      --text: #15171a;
+      --muted: #5a6068;
+      --line: #e2e3df;
+      --accent: #2445d1;
+      --accent-soft: #eef1fc;
+      --code-bg: #eff0ec;
       --max: 920px;
+      --serif: Newsreader, Georgia, "Times New Roman", serif;
+      --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --bg: #111113;
-        --surface: #18181b;
-        --text: #ececee;
-        --muted: #a0a0aa;
-        --line: #2a2a2f;
-        --accent: #fb923c;
-        --accent-soft: #2a1a10;
-        --code-bg: #1f1f23;
+        --bg: #0e1013;
+        --surface: #15181d;
+        --text: #e8eaed;
+        --muted: #9aa1aa;
+        --line: #262a31;
+        --accent: #8fa3ff;
+        --accent-soft: #161b31;
+        --code-bg: #1c2027;
       }
     }
     :root[data-theme="dark"] {
-      --bg: #111113;
-      --surface: #18181b;
-      --text: #ececee;
-      --muted: #a0a0aa;
-      --line: #2a2a2f;
-      --accent: #fb923c;
-      --accent-soft: #2a1a10;
-      --code-bg: #1f1f23;
+      --bg: #0e1013;
+      --surface: #15181d;
+      --text: #e8eaed;
+      --muted: #9aa1aa;
+      --line: #262a31;
+      --accent: #8fa3ff;
+      --accent-soft: #161b31;
+      --code-bg: #1c2027;
     }
 
     * { box-sizing: border-box; }
@@ -79,13 +82,12 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font: 16px/1.65 Inter, system-ui, -apple-system, sans-serif;
+      font: 16px/1.65 var(--sans);
       -webkit-font-smoothing: antialiased;
     }
     a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    code, .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.88em; }
-    code { background: var(--code-bg); padding: 1px 6px; border-radius: 4px; overflow-wrap: anywhere; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    code { font-family: var(--mono); font-size: 0.86em; background: var(--code-bg); padding: 1px 6px; border-radius: 4px; overflow-wrap: anywhere; }
 
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
 
@@ -96,71 +98,73 @@
       border-bottom: 1px solid var(--line);
     }
     nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
-    nav .name { font-weight: 600; color: var(--text); }
+    nav .name { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--text); }
     nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; font-size: 14px; }
     nav ul a { color: var(--muted); }
     nav ul a:hover { color: var(--text); text-decoration: none; }
     @media (max-width: 600px) { nav ul li.hide-sm { display: none; } }
 
-    header.hero { padding-top: 88px; padding-bottom: 56px; }
-    .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-    h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 12px 0 20px; }
-    .lede { font-size: 19px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+    header.hero { padding-top: 96px; padding-bottom: 64px; }
+    .eyebrow { font-family: var(--mono); font-size: 12.5px; letter-spacing: .04em; color: var(--muted); }
+    .eyebrow .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #22a06b; margin-right: 8px; vertical-align: 1px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
+    h1 { font-size: clamp(38px, 6.4vw, 60px); line-height: 1.06; letter-spacing: -0.015em; margin: 16px 0 22px; }
+    h1 em { font-style: italic; color: var(--accent); }
+    .lede { font-size: 18.5px; color: var(--muted); max-width: 640px; margin: 0 0 30px; }
     .links { display: flex; flex-wrap: wrap; gap: 10px; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 500;
+      padding: 9px 16px; border-radius: 6px; font-size: 14px; font-weight: 500;
       border: 1px solid var(--line); color: var(--text); background: var(--surface);
     }
     .btn:hover { border-color: var(--accent); text-decoration: none; }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.primary { background: var(--text); border-color: var(--text); color: var(--bg); }
 
-    section { padding: 56px 0; border-top: 1px solid var(--line); }
-    h2 { font-size: 26px; letter-spacing: -0.01em; margin: 0 0 8px; }
-    .section-sub { color: var(--muted); margin: 0 0 32px; max-width: 680px; }
-    h3 { font-size: 17px; margin: 0 0 6px; }
+    section { padding: 64px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 34px; letter-spacing: -0.01em; margin: 0 0 10px; }
+    .section-sub { color: var(--muted); margin: 0 0 34px; max-width: 680px; }
+    h3 { font-size: 21px; margin: 0 0 8px; line-height: 1.25; }
 
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
-    .card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px;
-    }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; }
     .card p { margin: 0; color: var(--muted); font-size: 15px; }
-    .card .tag { display: inline-block; margin-top: 14px; font-size: 12px; color: var(--accent); font-family: "JetBrains Mono", monospace; }
-    .card.feature { grid-column: 1 / -1; background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); }
+    .card h3 a { color: var(--text); }
+    .card h3 a:hover { color: var(--accent); }
+    .card .tag { display: block; margin-top: 14px; font-size: 12px; color: var(--muted); font-family: var(--mono); }
+    .card .where { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-bottom: 8px; }
+    .card.feature { grid-column: 1 / -1; background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 25%, var(--line)); }
+    .card.feature h3 { font-size: 25px; }
     .card.feature p { color: var(--text); }
     .card.span { grid-column: 1 / -1; }
 
-    .flow {
-      margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-      font-family: "JetBrains Mono", monospace; font-size: 13px;
-    }
-    .flow span.step { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; }
+    .flow { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12.5px; }
+    .flow span.step { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; }
     .flow span.arrow { color: var(--muted); }
 
-    .principles { margin: 28px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-    .principles li { padding-left: 22px; position: relative; color: var(--muted); }
-    .principles li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-    .principles strong { color: var(--text); font-weight: 600; }
+    .principles { margin: 32px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 28px; }
+    @media (max-width: 640px) { .principles { grid-template-columns: 1fr; } }
+    .principles li { color: var(--muted); font-size: 15px; border-left: 2px solid var(--accent); padding-left: 14px; }
+    .principles strong { display: block; color: var(--text); font-family: var(--serif); font-size: 18px; font-weight: 500; }
 
-    .job { display: grid; grid-template-columns: 180px 1fr; gap: 8px 32px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .job { display: grid; grid-template-columns: 170px 1fr; gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid var(--line); }
     .job:last-child { border-bottom: 0; }
-    .job .when { color: var(--muted); font-size: 14px; padding-top: 2px; }
+    .job .when { color: var(--muted); font-family: var(--mono); font-size: 12.5px; padding-top: 6px; }
     .job .role { color: var(--muted); font-size: 15px; margin: 0 0 10px; }
     .job ul { margin: 0; padding-left: 18px; }
-    .job li { margin: 4px 0; }
+    .job li { margin: 5px 0; }
     @media (max-width: 640px) { .job { grid-template-columns: 1fr; } }
 
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { font-size: 13px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
     .skill-group { margin-bottom: 22px; }
-    .skill-group h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+    .skill-group h3 { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 500; margin-bottom: 10px; }
 
     .story p { color: var(--muted); max-width: 700px; }
 
     footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-    .wip { font-family: "JetBrains Mono", monospace; font-size: 12px; }
+    .wip { font-family: var(--mono); font-size: 12px; }
   </style>
 </head>
 <body>
@@ -168,9 +172,9 @@
     <div class="wrap">
       <a class="name" href="#top">Samuel David</a>
       <ul>
-        <li><a href="#ai">AI Development</a></li>
+        <li><a href="#ai">AI Work</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li class="hide-sm"><a href="#skills">Skills</a></li>
+        <li class="hide-sm"><a href="resume.pdf" data-track="resume_nav">Résumé</a></li>
         <li class="hide-sm"><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -178,15 +182,16 @@
 
   <main id="top">
     <header class="hero wrap">
-      <div class="eyebrow">Senior Software Engineer · San Francisco Bay Area</div>
-      <h1>I build software, and the AI systems that build it with me.</h1>
+      <div class="eyebrow"><span class="dot"></span>Senior Software Engineer · Remote, across the U.S.</div>
+      <h1>I build software, and the <em>AI systems</em> that build it with me.</h1>
       <p class="lede">
         I'm a senior software engineer at GiveCampus with over a decade of shipping production
-        web apps. Lately I spend most of my time on AI-driven development: giving agents shared
-        context, durable documentation, and custom tools so they can do real engineering work.
+        web and mobile apps. These days most of my time goes into AI-driven development: giving agents
+        safe access to real systems, shared context, and documentation they can use.
       </p>
       <div class="links">
-        <a class="btn primary" href="mailto:Sam.David.Engineer@gmail.com" data-track="email">Get in touch</a>
+        <a class="btn primary" href="resume.pdf" data-track="resume">Download résumé</a>
+        <a class="btn" href="mailto:Sam.David.Engineer@gmail.com" data-track="email">Email</a>
         <a class="btn" href="https://www.linkedin.com/in/samdavid21" target="_blank" rel="noopener" data-track="linkedin">LinkedIn</a>
         <a class="btn" href="https://github.com/sam-david" target="_blank" rel="noopener" data-track="github">GitHub</a>
       </div>
@@ -196,62 +201,66 @@
       <div class="wrap">
         <h2>AI-Driven Development</h2>
         <p class="section-sub">
-          The bottleneck in agentic coding usually isn't the model. It's context: what the agent knows,
-          what it remembers, and what it can reach. Most of my side work goes into that layer, built
-          on Claude Code and the Model Context Protocol.
+          The bottleneck in agentic coding usually isn't the model. It's what the agent can safely see and reach.
+          Most of what I build is that layer, using Claude Code and the Model Context Protocol.
         </p>
 
         <div class="grid">
           <div class="card feature">
-            <h3><a href="https://github.com/sam-david/claude-code-context-share-plugin" target="_blank" rel="noopener" data-track="proj_context_share">Context Share</a>: handing off agent sessions across machines</h3>
+            <div class="where">Built at GiveCampus</div>
+            <h3><a href="https://github.com/sam-david/solarwinds-mcp" target="_blank" rel="noopener" data-track="proj_solarwinds">SolarWinds Observability MCP</a>: debugging production from inside Claude Code</h3>
             <p>
-              A Claude Code plugin that came out of a question my team raised at our AI retreat: how do you
-              pass context between agent sessions, across machines and teammates? One agent runs
-              <code>/context-save my-feature</code>; another agent anywhere runs <code>/context-load my-feature</code>
-              and continues where the first stopped. Each save is a structured bundle covering decisions and their reasoning,
-              files touched, current state, next steps, and warnings. The server is a single Go + SQLite binary
-              that runs on about 5&nbsp;MB of RAM.
+              An MCP server that wraps the SolarWinds Observability (Papertrail) API, so Claude Code can query production
+              logs, metrics, entities, and traces directly. Give it a request ID and it pulls every log line for that request.
+              Give it a search and it groups the matching logs by request so the agent can follow a failure end to end.
+              Production debugging used to mean bouncing between a log dashboard and an editor. Now it happens in one session.
             </p>
             <div class="flow">
-              <span class="step">agent A</span><span class="arrow">→</span>
-              <span class="step">/context-save</span><span class="arrow">→</span>
-              <span class="step">Go + SQLite</span><span class="arrow">→</span>
-              <span class="step">/context-load</span><span class="arrow">→</span>
-              <span class="step">agent B</span>
+              <span class="step">Claude Code</span><span class="arrow">→</span>
+              <span class="step">search_logs</span><span class="arrow">→</span>
+              <span class="step">analyze_requests</span><span class="arrow">→</span>
+              <span class="step">get_request_logs</span><span class="arrow">→</span>
+              <span class="step">root cause</span>
             </div>
           </div>
 
           <div class="card">
+            <div class="where">Open source</div>
+            <h3><a href="https://github.com/sam-david/pg-redact-mcp" target="_blank" rel="noopener" data-track="proj_pg_redact">pg-redact-mcp</a></h3>
+            <p>
+              Lets AI agents query PostgreSQL without exposing PII. It detects sensitive columns using name heuristics and
+              Microsoft Presidio, and masks the results before they reach the model, so <code>john@example.com</code> becomes
+              <code>j***@e***.com</code>. Real values are revealed only with human approval. Encrypted fields can never be
+              unmasked, and the server is read-only by default.
+            </p>
+            <span class="tag">MCP · Python · Postgres · Presidio</span>
+          </div>
+
+          <div class="card">
+            <div class="where">On the App Store</div>
+            <h3><a href="https://clawtalkapp.com" target="_blank" rel="noopener" data-track="proj_clawtalk">ClawTalk</a></h3>
+            <p>
+              My first shipped iOS app, a native client for self-hosted OpenClaw AI agents, by voice or text. Speech
+              recognition runs on-device on the Apple Neural Engine with WhisperKit, so audio never leaves the phone.
+              Responses stream back as rendered markdown across multi-agent channels. The backend runs on AWS Lightsail and
+              Bedrock, deployed with Terraform. It's open source (<a href="https://github.com/sam-david/clawtalk-ios" target="_blank" rel="noopener" data-track="proj_clawtalk_gh">GitHub</a>).
+            </p>
+            <span class="tag">Swift · SwiftUI · WhisperKit · Bedrock · Terraform</span>
+          </div>
+
+          <div class="card">
+            <div class="where">Built at GiveCampus</div>
             <h3><a href="https://github.com/sam-david/ci-patrol" target="_blank" rel="noopener" data-track="proj_ci_patrol">CI Patrol</a></h3>
             <p>
-              Built for GiveCampus's heavily parallelized CircleCI suite, which runs 80+ nodes. When a build fails, Claude reads
-              the test output and the PR diff and classifies the failure as flaky, legitimate, or unclear. Flaky jobs rerun
-              automatically, and engineers only get a Slack DM when it's real.
+              Watches CircleCI on a heavily parallelized suite of 80+ nodes. When a build fails, Claude reads the test output and the PR
+              diff and classifies the failure as flaky, legitimate, or unclear. Flaky jobs rerun automatically, and engineers
+              get a Slack DM only when the failure is real.
             </p>
             <span class="tag">Claude API · CircleCI · Slack</span>
           </div>
 
           <div class="card">
-            <h3><a href="https://clawtalkapp.com" target="_blank" rel="noopener" data-track="proj_clawtalk">ClawTalk</a>, an iOS app on the App Store</h3>
-            <p>
-              A native client for self-hosted OpenClaw AI agents, by voice or text. Speech recognition runs on-device on the
-              Apple Neural Engine with WhisperKit, and responses stream back as rendered markdown across multi-agent channels.
-              The backend runs on AWS Lightsail and Bedrock, deployed with Terraform. It's open source (<a href="https://github.com/sam-david/clawtalk-ios" target="_blank" rel="noopener" data-track="proj_clawtalk_gh">GitHub</a>).
-            </p>
-            <span class="tag">Swift · SwiftUI · WhisperKit · Bedrock</span>
-          </div>
-
-          <div class="card">
-            <h3><a href="https://github.com/sam-david/pg-redact-mcp" target="_blank" rel="noopener" data-track="proj_pg_redact">pg-redact-mcp</a></h3>
-            <p>
-              Lets AI agents query PostgreSQL without seeing PII. It detects sensitive columns using name heuristics and
-              Microsoft Presidio, and masks results before they reach the model. Real values are revealed selectively, with
-              human approval. It's read-only by default.
-            </p>
-            <span class="tag">MCP · Python · Postgres</span>
-          </div>
-
-          <div class="card">
+            <div class="where">Open source</div>
             <h3><a href="https://github.com/sam-david/unreal-mcp" target="_blank" rel="noopener" data-track="proj_unreal">unreal-mcp</a></h3>
             <p>
               An MCP server for Unreal Engine with 127 tools across 16 subsystems and four transport layers. It needs no C++
@@ -261,12 +270,12 @@
           </div>
 
           <div class="card">
-            <h3>A growing set of MCP servers</h3>
+            <div class="where">Toolbox</div>
+            <h3>More MCP servers</h3>
             <p>
-              Tools that give agents access to real systems:
               <a href="https://github.com/sam-david/email-on-acid-mcp" target="_blank" rel="noopener" data-track="proj_eoa">Email on Acid</a> and
               <a href="https://github.com/sam-david/mailgun-mcp" target="_blank" rel="noopener" data-track="proj_mailgun">Mailgun</a> for email QA,
-              <a href="https://github.com/sam-david/pg-pool-mcp" target="_blank" rel="noopener" data-track="proj_pg_pool">pg-pool</a> for multi-database Postgres,
+              <a href="https://github.com/sam-david/pg-pool-mcp" target="_blank" rel="noopener" data-track="proj_pg_pool">pg-pool</a> for working across many Postgres databases,
               <a href="https://github.com/sam-david/email-mcp" target="_blank" rel="noopener" data-track="proj_email">email</a>,
               <a href="https://github.com/sam-david/openai-images-mcp" target="_blank" rel="noopener" data-track="proj_images">image generation</a>, and
               <a href="https://github.com/sam-david/lutron-mcp" target="_blank" rel="noopener" data-track="proj_lutron">Lutron</a> home lighting.
@@ -275,6 +284,7 @@
           </div>
 
           <div class="card">
+            <div class="where">Practice</div>
             <h3>Documentation as agent memory</h3>
             <p>
               A living knowledge base that agents read and write. Reusable workflows are cataloged by pattern (pipeline,
@@ -285,20 +295,21 @@
           </div>
 
           <div class="card span">
-            <h3>Claude Code tooling</h3>
+            <div class="where">Claude Code plugins</div>
+            <h3><a href="https://github.com/sam-david/claude-code-context-share-plugin" target="_blank" rel="noopener" data-track="proj_context_share">Context Share</a> and tooling</h3>
             <p>
-              Plugins, skills, and hooks, including a
-              <a href="https://github.com/sam-david/context-usage-bar" target="_blank" rel="noopener" data-track="proj_usage_bar">context-usage status bar</a>
-              that shows context fill, model, and session cost, so it's clear when a session needs a handoff.
+              A plugin that saves a structured snapshot of a session and loads it into another session on any machine, backed by
+              a small Go + SQLite server. Also a <a href="https://github.com/sam-david/context-usage-bar" target="_blank" rel="noopener" data-track="proj_usage_bar">context-usage status bar</a>
+              that shows context fill, model, and session cost.
             </p>
-            <span class="tag">plugins · skills · hooks</span>
+            <span class="tag">Go · SQLite · plugins · hooks</span>
           </div>
         </div>
 
         <ul class="principles">
-          <li><strong>Context is infrastructure.</strong> Treat what an agent knows as something you version, share, and maintain.</li>
-          <li><strong>Write docs for the next agent.</strong> Decisions, current state, and gotchas matter more than polished prose.</li>
+          <li><strong>Safe access first.</strong> Agents get real data only through guardrails like redaction, read-only modes, and human approval.</li>
           <li><strong>Give agents real tools.</strong> A well-scoped MCP server beats a long prompt every time.</li>
+          <li><strong>Write docs for the next agent.</strong> Decisions, current state, and gotchas matter more than polished prose.</li>
           <li><strong>Orchestrate deliberately.</strong> Match the pattern to the task, whether that's a pipeline, a fan-out, or a verify loop.</li>
         </ul>
       </div>
@@ -313,14 +324,14 @@
           <div class="when">Aug 2023 – Present</div>
           <div>
             <h3>GiveCampus</h3>
-            <p class="role">Senior Software Engineer · Events &amp; Online Giving</p>
+            <p class="role">Senior Software Engineer · Events &amp; Online Giving · Remote</p>
             <ul>
               <li>Tech lead across the Events product: event sequences, ticket packages, affiliation-restricted ticket types, reusable form fields, a guest list revamp, backend registrations, multiple constituent IDs, and custom reporting.</li>
               <li>Led <strong>Event Sequences</strong>, scheduled outreach to event audiences built on dynamic recipient segments.</li>
               <li>Led <strong>name tag printing</strong>, the badge-printing system for on-site check-in. It renders ZPL templates on the server, sends print jobs through Zebra's cloud API to ZD621 printers, and includes a provisioning playbook covering enrollment, firmware, fonts, calibration, and Wi-Fi. It debuted live at GiveCampus's partner conference and drew a wave of beta requests from schools.</li>
-              <li>Led <strong>Events permissions</strong>, role-based access for large schools, based on discovery calls with partner universities.</li>
+              <li>Led <strong>Events permissions</strong>, role-based access for large schools, shaped by discovery calls with partner universities.</li>
               <li>Tech lead on <strong>promo codes</strong>, requested by hundreds of partners, and on bulk offline registration uploads.</li>
-              <li>Built <a href="https://github.com/sam-david/ci-patrol" target="_blank" rel="noopener">CI Patrol</a>, which uses Claude to triage flaky CI failures, and brought context-sharing tooling out of the team's AI retreat.</li>
+              <li>Built AI tooling for the engineering team, including a <a href="https://github.com/sam-david/solarwinds-mcp" target="_blank" rel="noopener">SolarWinds Observability MCP</a> for debugging production logs from Claude Code and <a href="https://github.com/sam-david/ci-patrol" target="_blank" rel="noopener">CI Patrol</a> for triaging flaky CI.</li>
             </ul>
           </div>
         </div>
@@ -399,21 +410,23 @@
           <div class="chips">
             <span class="chip">Claude Code</span><span class="chip">Model Context Protocol</span>
             <span class="chip">Agent orchestration</span><span class="chip">Subagents &amp; skills</span>
-            <span class="chip">Context engineering</span><span class="chip">Claude API</span>
+            <span class="chip">Context engineering</span><span class="chip">Claude API</span><span class="chip">AWS Bedrock</span>
           </div>
         </div>
         <div class="skill-group">
           <h3>Languages &amp; frameworks</h3>
           <div class="chips">
             <span class="chip">Ruby on Rails</span><span class="chip">JavaScript / TypeScript</span>
-            <span class="chip">React</span><span class="chip">React Native</span><span class="chip">Swift / SwiftUI</span><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Python</span>
+            <span class="chip">React</span><span class="chip">React Native</span><span class="chip">Swift / SwiftUI</span>
+            <span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Python</span>
           </div>
         </div>
         <div class="skill-group">
           <h3>Data &amp; infrastructure</h3>
           <div class="chips">
             <span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">Elasticsearch</span>
-            <span class="chip">AWS</span><span class="chip">Terraform</span><span class="chip">CircleCI</span><span class="chip">Heroku</span><span class="chip">Stripe</span><span class="chip">Twilio</span><span class="chip">Zebra / ZPL</span>
+            <span class="chip">AWS</span><span class="chip">Terraform</span><span class="chip">CircleCI</span><span class="chip">SolarWinds / Papertrail</span>
+            <span class="chip">Stripe</span><span class="chip">Twilio</span><span class="chip">Zebra / ZPL</span>
           </div>
         </div>
       </div>
@@ -425,9 +438,8 @@
         <p>
           I studied Interactive Entertainment (game design) at USC's School of Cinematic Arts, interned at CAA and at
           Activision on <em>Skylanders</em>, and spent a year and a half underwriting apartment deals as a real estate analyst.
-          After a stint as a product specialist at Tesla, I taught myself web development, went through Dev Bootcamp in
-          San Francisco, and have been shipping production software since 2015. That mix of design, product, and engineering
-          still shapes how I work.
+          After a stint as a product specialist at Tesla, I taught myself web development, went through Dev Bootcamp, and
+          have been shipping production software since 2015. That mix of design, product, and engineering still shapes how I work.
         </p>
         <p>Outside of work: 3D printing, drones, electronics projects, and anything with a motor.</p>
       </div>
@@ -436,9 +448,10 @@
     <section id="contact">
       <div class="wrap">
         <h2>Let's talk</h2>
-        <p class="section-sub">Open to conversations about AI-driven engineering, developer tooling, and full-stack product work.</p>
+        <p class="section-sub">I work remotely across U.S. time zones and I'm open to conversations about AI-driven engineering, developer tooling, and full-stack product work.</p>
         <div class="links">
           <a class="btn primary" href="mailto:Sam.David.Engineer@gmail.com" data-track="email">Sam.David.Engineer@gmail.com</a>
+          <a class="btn" href="resume.pdf" data-track="resume_contact">Résumé (PDF)</a>
           <a class="btn" href="https://www.linkedin.com/in/samdavid21" target="_blank" rel="noopener" data-track="linkedin">LinkedIn</a>
           <a class="btn" href="https://github.com/sam-david" target="_blank" rel="noopener" data-track="github">GitHub</a>
         </div>
